@@ -198,11 +198,11 @@ WHERE  Salary > (SELECT AVG(Salary) FROM Instructor);
 ### Multi-row subquery: `IN`, `ANY`, `ALL`
 
 ```sql
--- Students who have taken IDB202
+-- Students who have taken IDB201
 SELECT FullName FROM Student
 WHERE  StudentID IN (SELECT e.StudentID
                      FROM Enrollment e JOIN Section s ON e.SectionID = s.SectionID
-                     WHERE s.CourseID = 'IDB202');
+                     WHERE s.CourseID = 'IDB201');
 
 -- Instructors who earn more than every SE instructor
 SELECT FullName, Salary FROM Instructor

@@ -113,10 +113,10 @@ Department ⟕ Department.DeptID = Instructor.DeptID Instructor
 
 `R(Z) ÷ S(X)`, where X ⊆ Z, returns the tuples t over Y = Z − X such that **for every** tuple s in S, the combination (t, s) is in R. Use division for **"for all"** queries.
 
-**Example.** Students who enrolled in **all** sections of IDB202 taught in SP2026:
+**Example.** Students who enrolled in **all** sections of IDB201 taught in SP2026:
 
 ```
-IDBSec  ← π SectionID (σ CourseID = 'IDB202' ∧ Semester = 'SP2026' (Section))
+IDBSec  ← π SectionID (σ CourseID = 'IDB201' ∧ Semester = 'SP2026' (Section))
 StuSec  ← π StudentID, SectionID (Enrollment)
 Result  ← StuSec ÷ IDBSec
 ```

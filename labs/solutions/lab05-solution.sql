@@ -1,4 +1,4 @@
-/* IDB202 – Lab 5 sample solutions (UniversityDB) */
+/* IDB201 – Lab 5 sample solutions (UniversityDB) */
 USE UniversityDB;
 GO
 

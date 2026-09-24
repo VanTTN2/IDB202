@@ -1,4 +1,4 @@
-"""IDB202 – Lab 8 reference solution: schedules and serializability.
+"""IDB201 – Lab 8 reference solution: schedules and serializability.
 
 A schedule is written as a string of operations separated by spaces, e.g.
     "r1(A) w1(A) r2(A) w2(A) c1 c2"

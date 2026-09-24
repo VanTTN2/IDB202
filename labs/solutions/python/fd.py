@@ -1,4 +1,4 @@
-"""IDB202 – Lab 7 reference solution: algorithms on functional dependencies.
+"""IDB201 – Lab 7 reference solution: algorithms on functional dependencies.
 
 Conventions
 -----------

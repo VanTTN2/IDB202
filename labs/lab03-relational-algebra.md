@@ -36,7 +36,7 @@ For each query, (a) write the relational algebra expression, (b) write the equiv
 
 5. For each student, their name and the name of the department of their major.
 6. Names of instructors who taught at least one section in SP2026.
-7. Names of students who enrolled in a section of IDB202.
+7. Names of students who enrolled in a section of IDB201.
 8. Every department (name) together with the name of its head. Include departments that have no head (use an outer join).
 9. Pairs of courses (title, prerequisite title).
 

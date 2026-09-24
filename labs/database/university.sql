@@ -1,5 +1,5 @@
 /* =====================================================================
-   IDB202 – Introduction to Databases
+   IDB201 – Introduction to Databases
    Sample database: UniversityDB
    DBMS: Microsoft SQL Server 2019+
    Run this whole script in SSMS or Azure Data Studio.
@@ -174,7 +174,7 @@ INSERT INTO Course (CourseID, Title, Credits, DeptID) VALUES
 ('PRF192', N'Programming Fundamentals',          3, 'SE'),
 ('MAD101', N'Discrete Mathematics',              3, 'MATH'),
 ('CSD201', N'Data Structures and Algorithms',    3, 'CS'),
-('IDB202', N'Introduction to Databases',         3, 'CS'),
+('IDB201', N'Introduction to Databases',         3, 'CS'),
 ('PRO192', N'Object-Oriented Programming',       3, 'SE'),
 ('SWE201', N'Introduction to Software Engineering', 3, 'SE'),
 ('SWP391', N'Software Development Project',      4, 'SE'),
@@ -189,9 +189,9 @@ INSERT INTO Prerequisite (CourseID, PrereqID) VALUES
 ('PRO192', 'PRF192'),
 ('SWE201', 'PRO192'),
 ('SWP391', 'SWE201'),
-('SWP391', 'IDB202'),
-('IAO202', 'IDB202'),
-('DBA301', 'IDB202');
+('SWP391', 'IDB201'),
+('IAO202', 'IDB201'),
+('DBA301', 'IDB201');
 
 SET IDENTITY_INSERT Section ON;
 INSERT INTO Section (SectionID, CourseID, Semester, InstructorID, Room, Capacity) VALUES
@@ -199,14 +199,14 @@ INSERT INTO Section (SectionID, CourseID, Semester, InstructorID, Room, Capacity
 ( 2, 'MAD101', 'FA2025', 'I0007', 'B201', 40),
 ( 3, 'PRF192', 'SP2026', 'I0004', 'A102', 35),
 ( 4, 'CSD201', 'SP2026', 'I0001', 'A201', 30),
-( 5, 'IDB202', 'SP2026', 'I0003', 'A202', 30),
-( 6, 'IDB202', 'SP2026', 'I0008', 'A203', 30),
+( 5, 'IDB201', 'SP2026', 'I0003', 'A202', 30),
+( 6, 'IDB201', 'SP2026', 'I0008', 'A203', 30),
 ( 7, 'PRO192', 'SP2026', 'I0002', 'A101', 35),
 ( 8, 'ECO111', 'SP2026', 'I0006', 'C101', 50),
 ( 9, 'MAS291', 'SP2026', 'I0007', 'B201', 40),
 (10, 'IAO202', 'FA2026', 'I0005', 'B101', 30),
 (11, 'SWE201', 'FA2026', 'I0004', 'A201', 30),
-(12, 'IDB202', 'FA2026', 'I0003', 'A202', 30),
+(12, 'IDB201', 'FA2026', 'I0003', 'A202', 30),
 (13, 'SWP391', 'FA2026', NULL,    'A301', 25);
 SET IDENTITY_INSERT Section OFF;
 

@@ -1,4 +1,4 @@
-"""IDB202 – Lab 3 reference solution: a tiny relational algebra evaluator.
+"""IDB201 – Lab 3 reference solution: a tiny relational algebra evaluator.
 
 A relation is a pair (schema, rows):
 * ``schema`` is a tuple of attribute names, e.g. ("StudentID", "Name");

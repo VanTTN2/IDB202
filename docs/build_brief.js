@@ -76,7 +76,7 @@ const children = [];
 // Title block
 children.push(
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 1800, after: 240 },
-    children: [new TextRun({ text: "IDB202 – Introduction to Databases", bold: true, size: 40, color: ACCENT })] }),
+    children: [new TextRun({ text: "IDB201 – Introduction to Databases", bold: true, size: 40, color: ACCENT })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 480 },
     children: [new TextRun({ text: "Academic Emphasis Brief for the Syllabus Review Council", size: 30, color: "404040" })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 },
@@ -84,7 +84,7 @@ children.push(
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 },
     children: [new TextRun({ text: "Talented-student (honors) classes – Year 1, Semester 1 – 3 credits", size: 22 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 960 },
-    children: [new TextRun({ text: "Companion document to IDB202_Syllabus.xlsx", size: 22, italics: true })] }),
+    children: [new TextRun({ text: "Companion document to IDB201_Syllabus.xlsx", size: 22, italics: true })] }),
   new Paragraph({ alignment: AlignmentType.CENTER,
     children: [new TextRun({ text: "How to read this brief: ", bold: true, size: 20 }),
                new TextRun({ text: "text marked like ", size: 20 }),
@@ -98,7 +98,7 @@ children.push(
 // 1. Executive summary
 children.push(
   H1("1. Executive summary"),
-  P("This brief supports the review of the proposed IDB202 syllabus. The course is delivered to **talented first-year Computer Science students in their first semester**. Following the direction from the program leadership, it is designed with an **academic and research orientation** rather than an applied, tool-centred one."),
+  P("This brief supports the review of the proposed IDB201 syllabus. The course is delivered to **talented first-year Computer Science students in their first semester**. Following the direction from the program leadership, it is designed with an **academic and research orientation** rather than an applied, tool-centred one."),
   P("The proposal keeps every topic in the official course description (Appendix 2(d) of the K22A curriculum) and the university syllabus template: 3 credits, 45 contact hours in 60 sessions, 1 hour of final exam and 104 hours of self-study. What changes is the **depth and the way of learning**:"),
   B("==Formal foundations==: the relational model is treated as mathematics (sets, relations, first-order logic), linking directly to MAD102 Discrete Mathematics, which students take in the same semester."),
   B("==Proofs and algorithms==: students prove core results (Armstrong's axioms, the lossless-join test, correctness of two-phase locking) and implement the algorithms in Python, linking to PFP191."),
@@ -109,7 +109,7 @@ children.push(
   table(
     ["Item", "Proposal"],
     [
-      ["Course", "IDB202 – Introduction to Databases (listed as IDB201 in the K22A curriculum; see §10)"],
+      ["Course", "IDB201 – Introduction to Databases (as listed in the K22A curriculum, Appendix 2(a))"],
       ["Learners", "Talented-student (honors) classes; Year 1, Semester 1; no prerequisite"],
       ["Workload", "3 credits: 45h contact (60 sessions) + 1h final exam + 104h self-study"],
       ["Textbooks", "Silberschatz, Korth & Sudarshan, Database System Concepts, 7th ed. (2020); Ramakrishnan & Gehrke, Database Management Systems, 3rd ed. (2003)"],
@@ -124,14 +124,14 @@ children.push(
 // 2. Positioning
 children.push(
   H1("2. What is core for Computer Science students"),
-  P("A database course serves a different purpose in each major. The proposal positions IDB202 as a **Computer Science** course: it answers *why* the relational approach works and *how* a DBMS works inside, rather than only *how to use* a database."),
+  P("A database course serves a different purpose in each major. The proposal positions IDB201 as a **Computer Science** course: it answers *why* the relational approach works and *how* a DBMS works inside, rather than only *how to use* a database."),
   table(
     ["Major", "Main question the course answers", "Typical emphasis"],
     [
       ["Information Systems / Business", "How do I use a database to support an organization?", "Requirements, ER modeling, reporting SQL, BI tools"],
       ["Software Engineering", "How do I build applications on a DBMS?", "SQL, stored procedures, triggers, ORM, migrations"],
       ["Information Assurance", "How do I protect data?", "Access control, auditing, SQL injection, encryption"],
-      ["==Computer Science (IDB202)==", "==Why does the relational approach work, and how does a DBMS work inside?==", "==Formal foundations, algorithms, complexity, correctness, system internals=="],
+      ["==Computer Science (IDB201)==", "==Why does the relational approach work, and how does a DBMS work inside?==", "==Formal foundations, algorithms, complexity, correctness, system internals=="],
     ],
     [2300, 3363, 3363],
     { highlightRows: [3] },
@@ -182,7 +182,7 @@ children.push(
   P("Every chapter ends with a Research Corner: one seminal paper, read with **guiding questions** and discussed in class. The purpose is not to master every detail, but to build the habit of going back to primary sources and asking why a technique was invented."),
   H2("3.2 Links to other courses in the program"),
   table(
-    ["Course", "Semester", "Connection used in IDB202"],
+    ["Course", "Semester", "Connection used in IDB201"],
     [
       ["MAD102 Discrete Mathematics", "S1 (same)", "Sets, relations, logic and proof techniques → Ch. 3, 4, 8"],
       ["PFP191 Programming Fundamentals with Python", "S1 (same)", "Python implementations of algebra, FD algorithms and serializability tests"],
@@ -284,7 +284,7 @@ children.push(
 // 7. Alignment with official description
 children.push(
   H1("7. Alignment with the official course description"),
-  P("Every topic in the official IDB201/IDB202 description (Appendix 2(d)) is covered, so the academic orientation adds depth without dropping required content."),
+  P("Every topic in the official IDB201 description (Appendix 2(d)) is covered, so the academic orientation adds depth without dropping required content."),
   table(
     ["Official topic (Appendix 2(d))", "Chapter(s)", "Sessions"],
     [
@@ -345,7 +345,6 @@ children.push(
 // 10. Open items
 children.push(
   H1("10. Items requiring a decision"),
-  N("**Course code:** the K22A curriculum lists **IDB201**; the proposal uses **IDB202**. The council should confirm the final code."),
   N("**CLO–PLO mapping:** the BCS_AD PLO list is needed to complete the mapping matrix in the syllabus template."),
   N("**Decision number and approval date** of the syllabus."),
   N("**Assessment weights:** approval of the proposed shift (practical exam 30% → 10%; research labs 10%; Assignment 2 20%) under the campus Course Implementation Plan."),
@@ -354,8 +353,8 @@ children.push(
 
 // ---- document -------------------------------------------------------------
 const doc = new Document({
-  creator: "IDB202 course team",
-  title: "IDB202 – Academic Emphasis Brief",
+  creator: "IDB201 course team",
+  title: "IDB201 – Academic Emphasis Brief",
   styles: {
     default: { document: { run: { font: FONT, size: 21 } } },
     paragraphStyles: [
@@ -380,7 +379,7 @@ const doc = new Document({
   sections: [{
     properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },
     footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER,
-      children: [new TextRun({ text: "IDB202 – Academic Emphasis Brief · Page ", size: 16, color: "808080" }),
+      children: [new TextRun({ text: "IDB201 – Academic Emphasis Brief · Page ", size: 16, color: "808080" }),
                  new TextRun({ children: [PageNumber.CURRENT], size: 16, color: "808080" })] })] }) },
     children,
   }],

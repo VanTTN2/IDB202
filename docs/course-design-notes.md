@@ -1,6 +1,6 @@
-# IDB202 – Course Design Notes
+# IDB201 – Course Design Notes
 
-This note records the design decisions for IDB202. It answers two questions from the program leadership:
+This note records the design decisions for IDB201. It answers two questions from the program leadership:
 
 1. Which content is **core for Computer Science (CS)** students, compared with other majors?
 2. How should the syllabus, materials, labs, and assignments lean towards **research** rather than application?
@@ -14,7 +14,7 @@ This note records the design decisions for IDB202. It answers two questions from
 | Program | Bachelor of Computer Science, specialization in AI and Data Science (BCS_AD), K22A |
 | Learners | **Talented-student (honors) classes**: first-year, semester-1 students selected for strong academic ability, with an **academic rather than applied orientation**. No prior database background |
 | Concurrent courses | MAD102 Discrete Mathematics, PFP191 Programming Fundamentals with Python, ICS102 Introduction to Computer Systems, CAL111 Calculus I |
-| Later courses that build on IDB202 | CSD203 (S2), DSI201 Data Science (S3), DAM311 Data Mining (S4), DPY391 Data Security and Privacy (S5), MLO401 Machine Learning Operations (S7) |
+| Later courses that build on IDB201 | CSD203 (S2), DSI201 Data Science (S3), DAM311 Data Mining (S4), DPY391 Data Security and Privacy (S5), MLO401 Machine Learning Operations (S7) |
 | Official course description (Appendix 2(d)) | ER model, relational data model, functional dependencies and normalization, relational algebra, SQL, **indexing, query optimization, transaction management**; "understand the internal mechanisms of storage and transaction control" |
 
 ---
@@ -32,7 +32,7 @@ A database course serves different purposes in different programs.
 
 ### 2.1 Core content for CS (must be taught in depth)
 
-| # | Topic | Why it is core for CS | Where it appears in IDB202 |
+| # | Topic | Why it is core for CS | Where it appears in IDB201 |
 |---|---|---|---|
 | C1 | **The relational model as mathematics:** relations as sets of tuples, keys, constraints as logical statements | Links directly to MAD102 (sets, relations, logic). This is the theory that makes declarative querying possible. | Ch. 3 |
 | C2 | **Formal query languages:** relational algebra, relational calculus, their equivalence (Codd's theorem), and the limits of their expressive power (no transitive closure) | Query languages are a CS topic in their own right: syntax, semantics, expressive power, and translation between languages. | Ch. 4 (+ §4.10 relational calculus) |
@@ -74,7 +74,7 @@ For first-year S1 students, "research-oriented" does **not** mean publishing pap
 
 These classes are made up of selected, academically strong students, so the course aims **above** a standard first-year database course. Rigor is raised in two ways, and the fact that the students are in semester 1 is taken into account:
 
-| Aspect | Standard class | IDB202 honors classes |
+| Aspect | Standard class | IDB201 honors classes |
 |---|---|---|
 | Proofs | Recognize and apply rules | **Write** short proofs: soundness of Armstrong's axioms, the lossless-join test, correctness of 2PL, equivalence rules |
 | Algorithms | Run them by hand | Run by hand, **implement in Python**, and argue correctness and complexity |
@@ -124,7 +124,7 @@ Things that remain in place because the students are in semester 1:
 
 ## 6. Open items for the course owner
 
-- [ ] **Course code:** the curriculum (Appendix 2(a), 2(d)) lists **IDB201**, while this repository uses **IDB202**. Decide which code is final.
+- [x] **Course code:** confirmed as **IDB201**, as in the curriculum (Appendix 2(a), 2(d)).
 - [ ] **PLO mapping:** the curriculum file does not list the BCS_AD PLOs. They are needed to fill the CLO–PLO matrix in the syllabus template.
 - [ ] **Decision number and approval date** for the syllabus template.
 - [ ] Confirm that the research-oriented assessment (two report-style assignments) is acceptable under the campus's Course Implementation Plan.

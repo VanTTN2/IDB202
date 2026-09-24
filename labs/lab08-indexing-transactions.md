@@ -35,7 +35,7 @@ WITH N AS (
 )
 INSERT INTO BigEnrollment (StudentID, CourseID, Semester, Grade, EnrollDate)
 SELECT 'ST' + RIGHT('000000' + CAST(n % 50000 AS VARCHAR(6)), 6),
-       CHOOSE(n % 8 + 1, 'PRF192','MAD101','CSD201','IDB202','PRO192','SWE201','ECO111','MAS291'),
+       CHOOSE(n % 8 + 1, 'PRF192','MAD101','CSD201','IDB201','PRO192','SWE201','ECO111','MAS291'),
        CHOOSE(n % 6 + 1, 'FA2023','SP2024','FA2024','SP2025','FA2025','SP2026'),
        CAST((n * 7919) % 1001 / 100.0 AS DECIMAL(4,2)),
        DATEADD(DAY, n % 1000, '2023-09-01')
@@ -50,8 +50,8 @@ Turn on **Include Actual Execution Plan** (Ctrl+M) and run `SET STATISTICS IO ON
 2. Create an index on `StudentID` and run the query again. Compare the operators and the logical reads. Explain the **Key Lookup** operator.
 3. Change the query to `SELECT StudentID, Grade FROM BigEnrollment WHERE StudentID = 'ST012345';`. Create a **covering index** that removes the Key Lookup, and prove that it does.
 4. Create a composite index on (`CourseID`, `Semester`). Which of these queries can **seek** on it? Explain using the left-most prefix rule.
-   - `WHERE CourseID = 'IDB202'`
-   - `WHERE CourseID = 'IDB202' AND Semester = 'SP2026'`
+   - `WHERE CourseID = 'IDB201'`
+   - `WHERE CourseID = 'IDB201' AND Semester = 'SP2026'`
    - `WHERE Semester = 'SP2026'`
 5. Compare `WHERE YEAR(EnrollDate) = 2024` with `WHERE EnrollDate >= '2024-01-01' AND EnrollDate < '2025-01-01'` after creating an index on `EnrollDate`. Which query can seek? Why?
 6. Measure how long it takes to insert 10,000 rows with no secondary indexes, and then with 4 secondary indexes. What does this show about the cost of indexes?

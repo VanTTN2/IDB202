@@ -1,4 +1,4 @@
-/* IDB202 – Lab 4 sample solution: LibraryDB */
+/* IDB201 – Lab 4 sample solution: LibraryDB */
 USE master;
 GO
 IF DB_ID(N'LibraryDB') IS NOT NULL

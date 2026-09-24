@@ -98,8 +98,8 @@ CREATE INDEX IX_Enrollment_SectionID ON Enrollment (SectionID);
 
 -- Composite index: column order matters (left-most prefix rule)
 CREATE INDEX IX_Section_Course_Semester ON Section (CourseID, Semester);
---   helps: WHERE CourseID = 'IDB202'
---   helps: WHERE CourseID = 'IDB202' AND Semester = 'SP2026'
+--   helps: WHERE CourseID = 'IDB201'
+--   helps: WHERE CourseID = 'IDB201' AND Semester = 'SP2026'
 --   does NOT help: WHERE Semester = 'SP2026'   (not a prefix)
 
 -- Covering index: INCLUDE extra columns so the table itself is not read
