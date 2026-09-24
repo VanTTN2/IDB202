@@ -126,5 +126,5 @@ Things that remain in place because the students are in semester 1:
 
 - [x] **Course code:** confirmed as **IDB201**, as in the curriculum (Appendix 2(a), 2(d)).
 - [x] **PLO mapping:** done with the 13 BCS_AD PLOs (see the CLO sheet of the syllabus and §4.7–4.9 of the council brief).
-- [ ] **Decision number and approval date** for the syllabus template.
+- The decision number and approval date are left blank on purpose: this syllabus is a draft for council review, not the issued version.
 - [ ] Confirm that the research-oriented assessment (two report-style assignments) is acceptable under the campus's Course Implementation Plan.

@@ -84,7 +84,7 @@ children.push(
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 },
     children: [new TextRun({ text: "Talented-student (honors) classes – Year 1, Semester 1 – 3 credits", size: 22 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 960 },
-    children: [new TextRun({ text: "Companion document to IDB201_Syllabus.xlsx", size: 22, italics: true })] }),
+    children: [new TextRun({ text: "Companion document to IDB201_Syllabus.xlsx – DRAFT for council review, not the issued version", size: 22, italics: true })] }),
   new Paragraph({ alignment: AlignmentType.CENTER,
     children: [new TextRun({ text: "How to read this brief: ", bold: true, size: 20 }),
                new TextRun({ text: "text marked like ", size: 20 }),
@@ -502,7 +502,6 @@ children.push(
 // 10. Open items
 children.push(
   H1("10. Items requiring a decision"),
-    N("**Decision number and approval date** of the syllabus."),
   N("**Assessment weights:** approval of the proposed shift (practical exam 30% → 10%; research labs 10%; Assignment 2 20%) under the campus Course Implementation Plan."),
   N("**Next step:** once the syllabus is approved, the detailed lecture materials, labs and assignment briefs will be developed to match it."),
 );
