@@ -140,6 +140,27 @@ erDiagram
 | `|{` | one or more |
 | `o{` | zero or more |
 
+
+## 2.8 Limits of the ER model
+
+The ER model is a *semi-formal* language. It cannot express many real constraints:
+
+- **Cross-entity constraints:** "an instructor may only advise students of their own department."
+- **Arithmetic or temporal constraints:** "the number of enrolled students must not exceed the section's capacity"; "a head must have worked in the department for at least 3 years."
+- **Some cardinality combinations in n-ary relationships:** the (min, max) of a ternary relationship does not determine the binary projections, and vice versa.
+
+These constraints must be written down separately as business rules. They are later enforced with `CHECK` constraints, assertions, triggers, or application code. Richer languages exist: UML/OCL, and description logics, which are the formal basis of ontologies (OWL) used in AI knowledge representation.
+
+## Research Corner
+
+**Paper.** Chen, P. P. "The Entity-Relationship Model—Toward a Unified View of Data." *ACM Transactions on Database Systems* 1(1), 1976, pp. 9–36.
+
+**Guiding questions**
+
+1. Chen describes four "levels of logical views of data." Map them to the ANSI/SPARC levels in Chapter 1.
+2. Chen claims the ER model can be translated into the relational, network, and entity-set models. Why was that "unifying" claim important in 1976?
+3. Find one constraint from the UniversityDB requirements that cannot be drawn in an ER diagram. How would you record it?
+
 ---
 
 ## Summary

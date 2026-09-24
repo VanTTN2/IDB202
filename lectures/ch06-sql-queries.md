@@ -280,6 +280,55 @@ SELECT FullName, DeptID, Salary,
 FROM   Instructor;
 ```
 
+
+## 6.9 Semantics of SQL
+
+### From SQL to relational algebra
+
+A basic query
+
+```sql
+SELECT DISTINCT A1, …, Ak
+FROM   R1, …, Rm
+WHERE  C
+```
+
+means `π A1,…,Ak ( σ C ( R1 × … × Rm ) )`. Without `DISTINCT`, the projection keeps duplicates: SQL works on **bags** (multisets), not sets.
+
+### Bag semantics
+
+| Operation | Set semantics | Bag semantics (SQL) |
+|---|---|---|
+| R ∪ S | each tuple once | `UNION` removes duplicates; `UNION ALL` gives count_R(t) + count_S(t) |
+| R ∩ S | | `INTERSECT` removes duplicates (the standard also has `INTERSECT ALL`: min of the counts) |
+| R − S | | `EXCEPT` removes duplicates (the standard also has `EXCEPT ALL`: max(count_R − count_S, 0)) |
+
+**Exercise.** Show that under bag semantics, `R ∪ R ≠ R` in general, while the equation always holds under set semantics. Which algebraic laws that you know from sets (MAD102) *fail* for bags?
+
+### Three-valued logic, formally
+
+SQL logic has the truth values {T, F, U} with the order F < U < T:
+
+- `x AND y = min(x, y)`, `x OR y = max(x, y)`, and NOT swaps T and F and leaves U unchanged.
+- `WHERE` keeps a row only if its condition is **T**.
+
+**Consequences worth proving:**
+
+1. `p OR NOT p` is not always true: it is U when p is U. The law of excluded middle fails.
+2. `x NOT IN (1, 2, NULL)` is never T.
+3. `SELECT COUNT(*) FROM T WHERE c` + `SELECT COUNT(*) FROM T WHERE NOT c` can be smaller than `SELECT COUNT(*) FROM T`.
+
+## Research Corner
+
+**Paper.** Chamberlin, D. D. and Boyce, R. F. "SEQUEL: A Structured English Query Language." *Proceedings of the ACM SIGFIDET Workshop*, 1974.
+
+**Further reading.** Guagliardo, P. and Libkin, L. "A Formal Semantics of SQL Queries, Its Validation, and Applications." *PVLDB* 11(1), 2017.
+
+**Guiding questions**
+
+1. SEQUEL was designed for "users who are not computer specialists." Which features of today's SQL come from that goal, and which features make SQL hard for specialists?
+2. Guagliardo and Libkin found that the formal semantics of SQL was not settled until 2017, more than 40 years after SQL was designed. Why is it hard to define SQL formally? (Hint: `NULL`, bags, and correlated subqueries.)
+
 ---
 
 ## Summary

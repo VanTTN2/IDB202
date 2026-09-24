@@ -111,6 +111,34 @@ Enrollment(StudentID)           ──► Student(StudentID)
 Enrollment(SectionID)           ──► Section(SectionID)
 ```
 
+
+## 3.6 The relational model as mathematics
+
+These definitions connect the chapter to MAD102 (Discrete Mathematics).
+
+- A **domain** D is a set of atomic values.
+- A **relation schema** R(A₁, …, Aₙ) assigns a domain dom(Aᵢ) to each attribute.
+- A **relation** r(R) is a *finite subset* of the Cartesian product dom(A₁) × … × dom(Aₙ). Since r is a set, it has no duplicates and no order. These properties come straight from set theory, not from convention.
+- A **key constraint** is a first-order logic sentence. For example, "StudentID is a key of Student" is
+  ∀t₁ ∀t₂ ( Student(t₁) ∧ Student(t₂) ∧ t₁[StudentID] = t₂[StudentID] → t₁ = t₂ ).
+- A **foreign key** is an *inclusion dependency*: π_DeptID(Student) ⊆ π_DeptID(Department).
+
+**Exercise (proof).** Prove that every relation has at least one candidate key. (Hint: the set of all attributes is a superkey. Why? Then argue that a minimal superkey exists because the set of attributes is finite.)
+
+**Exercise (counting).** A relation schema has n attributes. What is the largest possible number of candidate keys? (Hint: candidate keys form an *antichain* under ⊆. Sperner's theorem gives C(n, ⌊n/2⌋).)
+
+## Research Corner
+
+**Paper.** Codd, E. F. "A Relational Model of Data for Large Shared Data Banks." *Communications of the ACM* 13(6), 1970, pp. 377–387.
+
+**Guiding questions**
+
+1. Section 1.2 of the paper describes three kinds of *data dependence* in the systems of that time: ordering, indexing, and access path dependence. Explain each one with an example.
+2. Codd uses the term "relation" in its mathematical sense. How is his definition different from a "table" in a spreadsheet?
+3. Codd discusses redundancy and consistency in Section 2. Which later concept from this course grew out of that discussion?
+
+**Why this paper matters.** It won Codd the 1981 Turing Award and started a multi-billion-dollar industry. It is also short and readable. Read at least Section 1.
+
 ---
 
 ## Summary

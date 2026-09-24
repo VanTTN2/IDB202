@@ -160,6 +160,57 @@ The other two options are running the transaction at `SERIALIZABLE`, or relying 
 - A **checkpoint** limits how much of the log must be processed during recovery.
 - **Backups** (full, differential, and log backups) protect against losing the disk itself.
 
+
+## 10.11 More theory: recoverability and view serializability
+
+### Recoverable schedules
+
+Serializability is not enough. A schedule must also be safe with respect to **aborts**.
+
+| Property | Definition | Why it matters |
+|---|---|---|
+| **Recoverable** | If Tj reads a value written by Ti, then Ti commits before Tj commits | Otherwise a committed Tj depends on an aborted Ti |
+| **Cascadeless (ACA)** | Transactions read only values written by *committed* transactions | Avoids cascading aborts |
+| **Strict** | No transaction reads *or overwrites* an uncommitted value | Undo can simply restore before-images |
+
+Strict ⊂ cascadeless ⊂ recoverable. Strict 2PL produces strict schedules.
+
+**Example.** `w1(A) r2(A) c2 a1` is **not recoverable**: T2 committed after reading a value that T1 later aborted.
+
+### View serializability
+
+Two schedules are **view equivalent** if every read reads from the same write in both schedules and the final write of each item is the same. View serializability accepts *more* schedules than conflict serializability. The extra schedules contain **blind writes** (writes without a prior read).
+
+`r1(A) w2(A) w1(A) w3(A)` is view serializable (equivalent to T1 T2 T3), but it is not conflict serializable.
+
+**Complexity.** Testing conflict serializability takes polynomial time (cycle detection). Testing **view serializability is NP-complete** (Papadimitriou, 1979). This is why real systems use conflict serializability.
+
+### Proof sketch: 2PL guarantees conflict serializability
+
+Suppose the precedence graph of a 2PL schedule has a cycle T₁ → T₂ → … → Tₖ → T₁. An edge Ti → Tj means that Ti released a lock that Tj later acquired. Let ℓ(T) be the *lock point* of T, the moment it acquires its last lock. Along each edge, Ti releases a lock before Tj acquires a conflicting one, so ℓ(Ti) < ℓ(Tj). Following the cycle gives ℓ(T₁) < ℓ(T₁), a contradiction. So the graph is acyclic, and the transactions are equivalent to the serial order of their lock points. ∎
+
+### Snapshot isolation and write skew
+
+Under **snapshot isolation (SI)**, each transaction reads a consistent snapshot and commits only if no concurrent transaction wrote the same rows ("first committer wins"). SI prevents the anomalies in §10.8, but it allows **write skew**.
+
+> **Rule:** every department must keep at least one head, who may be one of two co-heads. T1 checks "the other co-head is present" and removes co-head A. At the same time, T2 checks "the other co-head is present" and removes co-head B. The two transactions write *different* rows, so both commit, and the department has no head.
+
+Serializable snapshot isolation (Cahill et al., 2008) detects this pattern. PostgreSQL implements it as its `SERIALIZABLE` level.
+
+## Research Corner
+
+**Papers.**
+
+1. Eswaran, K. P., Gray, J. N., Lorie, R. A., and Traiger, I. L. "The Notions of Consistency and Predicate Locks in a Database System." *CACM* 19(11), 1976.
+2. Berenson, H. et al. "A Critique of ANSI SQL Isolation Levels." *SIGMOD*, 1995.
+3. Gray, J. "The Transaction Concept: Virtues and Limitations." *VLDB*, 1981.
+
+**Guiding questions**
+
+1. (Eswaran et al.) Why are locks on individual rows not enough to prevent phantoms? What is a *predicate lock*?
+2. (Berenson et al.) The authors show that the ANSI definitions of the isolation levels in terms of three "phenomena" are ambiguous. Give one anomaly that is not in the ANSI table.
+3. (Gray) Which of the "limitations" Gray lists in 1981 are still problems in today's distributed systems?
+
 ---
 
 ## Summary

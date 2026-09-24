@@ -238,6 +238,70 @@ Every left-hand side is a key of its relation, so the result is also in BCNF.
 
 Sometimes a designer deliberately stores redundant data, for example a `TotalCredits` column or a reporting table, to make reads faster. The redundancy must then be kept consistent with triggers or batch jobs.
 
+
+## 8.10 Proofs
+
+This section shows how the theory is justified. Proof techniques come from MAD102.
+
+### Soundness of the transitivity rule
+
+**Claim.** If a relation r satisfies X → Y and Y → Z, then it satisfies X → Z.
+
+**Proof.** Take any two tuples t₁, t₂ in r with t₁[X] = t₂[X]. Since r satisfies X → Y, t₁[Y] = t₂[Y]. Since r satisfies Y → Z, t₁[Z] = t₂[Z]. So r satisfies X → Z. ∎
+
+### Correctness of the closure algorithm
+
+**Claim.** The algorithm in §8.3 computes exactly X⁺ = { A | F ⊨ X → A }.
+
+- *Everything it adds is in X⁺ (soundness):* by induction on the iterations. If A ⊆ X⁺ so far and A → B ∈ F, then X → A follows (by induction and the union rule) and X → B follows by transitivity.
+- *Everything in X⁺ is added (completeness):* let Y be the final result. Construct a two-tuple relation r whose tuples agree exactly on Y. Then r satisfies every FD in F (check it: an FD V → W with V ⊆ Y has W ⊆ Y, otherwise the algorithm would have continued), and r violates X → A for every A ∉ Y. So A ∉ X⁺.
+
+The same two-tuple construction proves that **Armstrong's axioms are complete**.
+
+**Running time.** A naive implementation takes O(|F|²·|R|) time. A careful implementation with counters runs in time linear in the size of F (Beeri and Bernstein, 1979).
+
+### The lossless-join test
+
+**Claim.** Decomposing R into R₁ and R₂ is lossless if (R₁ ∩ R₂) → R₁ (or → R₂).
+
+**Proof sketch.** Every tuple of r is in π_R₁(r) ⋈ π_R₂(r), so the join is never smaller than r. Now take a tuple t in the join. It comes from some t₁ ∈ r and t₂ ∈ r that agree on R₁ ∩ R₂. Since (R₁ ∩ R₂) → R₁, t₁ and t₂ also agree on R₁. Then t = t₂ on R₂ and t = t₁ = t₂ on R₁, so t = t₂ ∈ r. ∎
+
+## 8.11 Computational complexity
+
+| Problem | Complexity |
+|---|---|
+| Compute X⁺ | Linear time |
+| Test whether X is a superkey | Linear time (compute X⁺) |
+| Find **one** candidate key | Polynomial time (start from R and remove attributes greedily) |
+| List **all** candidate keys | Output can be exponential (Sperner's theorem, §3.6) |
+| Test whether an attribute is **prime** | **NP-complete** (Lucchesi and Osborn, 1978) |
+| Test whether R is in **3NF** | NP-complete (it needs primality) |
+| Test whether R is in **BCNF** | Polynomial for R itself; **coNP-complete** for a sub-schema Rᵢ with projected FDs |
+
+So the simple-looking definitions of normal forms hide hard computational problems. This is a good example of why theory matters in practice.
+
+## 8.12 Beyond BCNF: multivalued dependencies and 4NF
+
+`CourseInfo(Course, Instructor, Textbook)`: every instructor of a course uses every textbook of the course. No non-trivial FD holds, so the relation is in BCNF, yet the data is highly redundant.
+
+A **multivalued dependency** (MVD) X ↠ Y says: the set of Y-values associated with an X-value is independent of the other attributes. Here Course ↠ Instructor and Course ↠ Textbook.
+
+**4NF:** for every non-trivial MVD X ↠ Y, X is a superkey. Decompose into (Course, Instructor) and (Course, Textbook).
+
+## Research Corner
+
+**Papers.**
+
+- Codd, E. F. "Further Normalization of the Data Base Relational Model." In R. Rustin (ed.), *Data Base Systems*, Prentice-Hall, 1972. This paper introduced 2NF and 3NF.
+- Armstrong, W. W. "Dependency Structures of Data Base Relationships." *Proc. IFIP Congress*, 1974.
+- Kent, W. "A Simple Guide to Five Normal Forms in Relational Database Theory." *CACM* 26(2), 1983. It is short and very readable.
+
+**Guiding questions**
+
+1. According to Kent, what is the single idea behind all the normal forms?
+2. Armstrong's axioms have a counterpart in propositional logic: an FD X → Y behaves like the implication ⋀X ⇒ ⋀Y between Horn clauses. Check that reflexivity, augmentation, and transitivity hold for this implication. (This correspondence was proved by Fagin in 1977.)
+3. **Connection to data science:** automatically *discovering* the FDs that hold in a dataset (*FD discovery*, e.g. the TANE algorithm) is used for data cleaning and profiling. Why is the number of candidate FDs exponential in the number of columns?
+
 ---
 
 ## Summary

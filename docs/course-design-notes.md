@@ -12,7 +12,7 @@ This note records the design decisions for IDB202. It answers two questions from
 | Item | Value |
 |---|---|
 | Program | Bachelor of Computer Science, specialization in AI and Data Science (BCS_AD), K22A |
-| Semester | S1: first-year students with no prior database or programming background |
+| Learners | **Talented-student (honors) classes**: first-year, semester-1 students selected for strong academic ability, with an **academic rather than applied orientation**. No prior database background |
 | Concurrent courses | MAD102 Discrete Mathematics, PFP191 Programming Fundamentals with Python, ICS102 Introduction to Computer Systems, CAL111 Calculus I |
 | Later courses that build on IDB202 | CSD203 (S2), DSI201 Data Science (S3), DAM311 Data Mining (S4), DPY391 Data Security and Privacy (S5), MLO401 Machine Learning Operations (S7) |
 | Official course description (Appendix 2(d)) | ER model, relational data model, functional dependencies and normalization, relational algebra, SQL, **indexing, query optimization, transaction management**; "understand the internal mechanisms of storage and transaction control" |
@@ -70,12 +70,25 @@ For first-year S1 students, "research-oriented" does **not** mean publishing pap
 6. **Write like a researcher.** Assignments are written as short technical reports or papers (IEEE two-column template), with citations, method, results, and threats to validity.
 7. **Keep it reproducible.** Code, data-generation scripts, and measurements go in a repository so that someone else can rerun them.
 
-### Keeping it feasible for semester-1 students
+### Calibrating rigor for talented first-year students
 
-- The proofs are short and guided (fill-in-the-step, then prove-it-yourself).
-- The Python tasks use only lists, sets, dictionaries, and functions, which PFP191 covers in its first half. The instructor provides starter code.
-- The papers are read with **guiding questions**. Students are not expected to understand every detail.
-- Research tasks are **scaffolded**: in Assignment 1 the instructor provides the experimental design, and in Assignment 2 students design their own.
+These classes are made up of selected, academically strong students, so the course aims **above** a standard first-year database course. Rigor is raised in two ways, and the fact that the students are in semester 1 is taken into account:
+
+| Aspect | Standard class | IDB202 honors classes |
+|---|---|---|
+| Proofs | Recognize and apply rules | **Write** short proofs: soundness of Armstrong's axioms, the lossless-join test, correctness of 2PL, equivalence rules |
+| Algorithms | Run them by hand | Run by hand, **implement in Python**, and argue correctness and complexity |
+| Query languages | Relational algebra | Relational algebra **and** relational calculus, with expressive-power arguments (why transitive closure needs recursion) |
+| Experiments | Follow the given steps | Given steps in Assignment 1; **own hypothesis and design** in Assignment 2 |
+| Readings | Textbook | Textbook **plus** one seminal paper per chapter, discussed in class |
+| Exams | Recall and apply | Apply, **analyze, and justify** (at least 30% of final-exam items at the Analyze level or above) |
+
+Things that remain in place because the students are in semester 1:
+
+- The Python tasks use only core language features that PFP191 covers early (lists, sets, dictionaries, functions). Starter code with tests is provided.
+- Papers come with guiding questions, and students are not expected to follow every technical detail.
+- Proofs are introduced with a worked example first. MAD102 (Discrete Mathematics, same semester) teaches proof techniques, and the chapters point to it.
+- Every research task has a *minimum* version that every student can complete and an *extension* for the strongest students.
 
 ---
 

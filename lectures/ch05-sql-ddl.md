@@ -147,6 +147,31 @@ GRANT SELECT, UPDATE (Grade) ON dbo.Enrollment TO ta_user;
 REVOKE UPDATE ON dbo.Enrollment FROM ta_user;
 ```
 
+
+## 5.10 Constraints: what SQL can and cannot declare
+
+The SQL standard defines `CREATE ASSERTION`, a constraint over the whole database:
+
+```sql
+-- Standard SQL (not supported by SQL Server, PostgreSQL, MySQL, or Oracle)
+CREATE ASSERTION SectionNotOverfull CHECK (
+    NOT EXISTS (SELECT 1 FROM Section s
+                WHERE s.Capacity < (SELECT COUNT(*) FROM Enrollment e WHERE e.SectionID = s.SectionID)));
+```
+
+Almost no DBMS implements assertions. Checking an arbitrary assertion efficiently after every update is a hard problem, known as *incremental view maintenance* or *integrity checking*, and it is still a research topic. In practice, such rules are enforced with triggers or in the application.
+
+**Question.** Why is checking a `CHECK` constraint on one row cheap, while checking an assertion can be expensive? Think about which rows must be read after one `INSERT INTO Enrollment`.
+
+## Research Corner
+
+**Reading.** Silberschatz et al., *Database System Concepts*, 7th ed., §4.4 (integrity constraints) and the bibliographical notes of Chapter 4.
+
+**Guiding questions**
+
+1. What is the difference between *declarative* and *procedural* enforcement of an integrity rule? List two advantages of each.
+2. Referential actions such as `CASCADE` can form chains. Construct a schema in which one `DELETE` would cascade through three tables. Why does SQL Server refuse some cascade graphs?
+
 ---
 
 ## Summary

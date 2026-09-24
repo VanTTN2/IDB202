@@ -200,6 +200,22 @@ The query becomes `... WHERE StudentID = 'x' OR '1'='1'` and returns **every** s
 
 Views change how data *looks* to users. They do not make queries faster. Speed comes from **indexes**, which Chapter 9 covers together with storage and query processing.
 
+
+## 7.9 Views and query rewriting
+
+When a query uses a view, the DBMS **substitutes** the view's definition into the query (*view expansion* or *unfolding*) and then optimizes the result as one query. A view therefore normally costs nothing extra.
+
+**The view-update problem.** An update through a view must be translated into updates of the base tables. The translation can be **ambiguous**. For example, deleting a row from a join view could be done by deleting from either base table. It can also be **impossible**: an update of an aggregate such as `SET GPA = 10` has no unique translation. Deciding when a view update has a unique, side-effect-free translation is a classic research problem (Bancilhon and Spyratos, 1981; Dayal and Bernstein, 1982). SQL takes a conservative, syntactic approach: a view is updatable only if it satisfies the rules in §7.6.
+
+## Research Corner
+
+**Paper.** Bancilhon, F. and Spyratos, N. "Update Semantics of Relational Views." *ACM TODS* 6(4), 1981.
+
+**Guiding questions**
+
+1. What is a *complement* of a view, according to the paper?
+2. Use a small example to show that deleting one row from `vw_Transcript` could be translated in two different ways. Which translation has fewer side effects?
+
 ---
 
 ## Summary

@@ -130,6 +130,19 @@ SQL is **declarative**: you state *what* data you want, and the DBMS decides *ho
 
 A DBMS adds cost for hardware, software, training, and processing overhead. A simple file may be better when the data is small and simple, when it will not change, when it has only one user, or when there are hard real-time requirements that a DBMS cannot meet.
 
+
+## Research Corner
+
+**Paper.** Stonebraker, M. and Pavlo, A. "What Goes Around Comes Around… And Around…" *ACM SIGMOD Record* 53(2), 2024. It updates Stonebraker and Hellerstein's 2005 essay of the same name.
+
+**Guiding questions**
+
+1. The authors look at data models proposed over 50 years (hierarchical, network, object-oriented, XML, document, key–value, graph, vector…). Which ones do they say "came back" to the relational model, and why?
+2. What is the authors' argument for why SQL and the relational model keep absorbing new ideas?
+3. Choose one NoSQL system you have heard of. According to the paper, what problem did it try to solve, and what did it give up?
+
+**Discussion prompt.** Codd separated the *logical* view from the *physical* storage. Give an example from outside databases where that kind of separation made a technology successful (hint: think of ICS102 and virtual memory).
+
 ---
 
 ## Summary

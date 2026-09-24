@@ -189,6 +189,62 @@ SELECT * FROM Enrollment WHERE SectionID = 12;
 
 Compare the number of logical reads before and after creating `IX_Enrollment_SectionID`. On the small sample database the difference is tiny, but on a table with millions of rows it is the difference between milliseconds and minutes. Lab 8 uses a larger generated table so that you can see the difference.
 
+
+## 9.6 Cost formulas
+
+Notation: b_R is the number of pages of R, n_R is the number of tuples of R, M is the number of buffer pages available, and F is the fan-out of a B+-tree.
+
+| Operation | Cost in page I/Os (approximate) |
+|---|---|
+| Full scan of R | b_R |
+| B+-tree equality search on a key | h + 1, where h = ⌈log_F n_R⌉ (the height) |
+| B+-tree range search returning m matching pages | h + m (clustered); h + number of matching *tuples* (non-clustered, worst case) |
+| External merge sort of R | 2·b_R·(1 + ⌈log_{M−1}⌈b_R / M⌉⌉) |
+| Block nested-loops join R ⋈ S (R outer) | b_R + ⌈b_R / (M − 2)⌉·b_S |
+| Index nested-loops join | b_R + n_R·(cost of one index lookup in S) |
+| Sort-merge join | cost to sort R and S + b_R + b_S |
+| Hash join (enough memory) | 3·(b_R + b_S) |
+
+**Worked example.** Enrollment has 1,000,000 rows in 10,000 pages, and Student has 50,000 rows in 1,000 pages. With M = 102 buffer pages:
+
+- Block nested loops with Student as the outer relation: 1,000 + ⌈1,000/100⌉·10,000 = 101,000 I/Os.
+- Hash join: 3·(1,000 + 10,000) = 33,000 I/Os.
+- At about 0.1 ms per I/O on an SSD, that is roughly 10 s against 3 s.
+
+**Why a clustered index matters.** A range query that matches 10,000 tuples on 100 pages costs about 100 I/Os with a clustered index. With a non-clustered index it can cost up to 10,000 I/Os, one per tuple. At that point a full scan can be cheaper, and the optimizer will choose it.
+
+## 9.7 Join ordering
+
+For n relations there are many possible join orders: the number of *left-deep* trees alone is n!, and bushy trees make it even larger. The System R optimizer (Selinger et al., 1979) introduced **dynamic programming** over subsets of relations:
+
+```
+for each single relation Ri:       best[{Ri}] = cheapest access path for Ri
+for size = 2 … n:
+    for each subset S of size |S| = size:
+        best[S] = min over Ri in S of  cost(best[S − {Ri}] ⋈ Ri)
+return best[{R1, …, Rn}]
+```
+
+This runs in O(n·2ⁿ) time instead of O(n!), and it is still the core of most commercial optimizers.
+
+**Where optimizers go wrong.** Cost estimates depend on *cardinality estimates*, which rely on assumptions such as uniform value distributions and independence between columns. Errors multiply through joins. Leis et al. (2015) showed that estimation errors, not the cost model, cause most bad plans.
+
+## Research Corner
+
+**Papers.**
+
+1. Bayer, R. and McCreight, E. "Organization and Maintenance of Large Ordered Indexes." *Acta Informatica* 1, 1972.
+2. Selinger, P. G. et al. "Access Path Selection in a Relational Database Management System." *SIGMOD*, 1979.
+3. Leis, V. et al. "How Good Are Query Optimizers, Really?" *PVLDB* 9(3), 2015.
+4. Kraska, T. et al. "The Case for Learned Index Structures." *SIGMOD*, 2018.
+
+**Guiding questions**
+
+1. (Bayer and McCreight) Why is a B-tree node the size of a disk page instead of holding a single key, as in a binary search tree? Compare the height of a binary search tree and a B+-tree for 10⁹ keys.
+2. (Selinger) What is an "interesting order", and why does the optimizer keep plans that are not the cheapest?
+3. (Leis) Which part of the optimizer causes the most bad plans, according to the experiments?
+4. (Kraska) The paper views an index as a *model* that predicts the position of a key. How does this connect to the machine-learning courses in your program (AIL303m)? What are the weaknesses of learned indexes for workloads with frequent inserts?
+
 ---
 
 ## Summary

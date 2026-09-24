@@ -191,6 +191,70 @@ I2 ← ρ I2(ID2, N2, E2, S2, H2, D2) (Instructor)
 π N1, N2 (I1 ⋈ D1 = D2 ∧ ID1 < ID2 I2)
 ```
 
+
+## 4.10 Relational calculus
+
+Relational algebra is **procedural**: an expression says which operations to apply and in what order. **Relational calculus** is **declarative**: it describes *which* tuples the result contains, using first-order logic.
+
+### Tuple relational calculus (TRC)
+
+A query has the form `{ t | P(t) }`: the set of tuples t for which the formula P is true.
+
+```
+-- Instructors earning more than 90,000
+{ t | t ∈ Instructor ∧ t.Salary > 90000 }
+
+-- Names of students enrolled in section 5
+{ t.FullName | t ∈ Student ∧ ∃e ( e ∈ Enrollment ∧ e.StudentID = t.StudentID ∧ e.SectionID = 5 ) }
+
+-- Students enrolled in every FA2025 section (division, written with ∀)
+{ s.StudentID | s ∈ Student ∧
+    ∀x ( x ∈ Section ∧ x.Semester = 'FA2025' →
+          ∃e ( e ∈ Enrollment ∧ e.StudentID = s.StudentID ∧ e.SectionID = x.SectionID ) ) }
+```
+
+Useful equivalences: `∀x P(x) ≡ ¬∃x ¬P(x)` and `P → Q ≡ ¬P ∨ Q`. The SQL "double `NOT EXISTS`" pattern for division (Chapter 6) is exactly this rewriting.
+
+### Domain relational calculus (DRC)
+
+Variables range over **attribute values** instead of tuples:
+
+```
+{ ⟨n⟩ | ∃i ∃e ∃s ∃h ∃d ( Instructor(i, n, e, s, h, d) ∧ d = 'CS' ) }
+```
+
+DRC is the basis of Query-By-Example (QBE) interfaces and of Datalog.
+
+### Safety
+
+The query `{ t | ¬(t ∈ Student) }` asks for "every tuple that is not a student", which is an *infinite* set. A calculus expression is **safe** if its result is guaranteed to use only values from the database (its *active domain*) and the constants in the query. Only safe expressions are allowed.
+
+### Codd's theorem
+
+> Relational algebra and **safe** relational calculus (TRC and DRC) have **exactly the same expressive power**.
+
+A query language that can express every query of relational algebra is called **relationally complete**. SQL is relationally complete. With aggregation, bags, and recursion (`WITH RECURSIVE`), it is actually more expressive.
+
+## 4.11 Limits of expressive power
+
+Relational algebra **cannot** express the **transitive closure** of a relation. For example, it cannot express "all direct *and indirect* prerequisites of SWP391" when the chain can have any length.
+
+*Intuition.* Each algebra expression has a fixed size, so it can follow at most a fixed number k of joins along a chain. A prerequisite chain of length k + 1 then gives a wrong answer. The formal proof uses locality arguments from finite model theory, which is beyond this course.
+
+This is why SQL:1999 added **recursive common table expressions**, and why the logic language **Datalog** (algebra plus recursion) is studied in database theory and used in program analysis and knowledge graphs.
+
+## Research Corner
+
+**Paper.** Codd, E. F. "Relational Completeness of Data Base Sublanguages." In R. Rustin (ed.), *Data Base Systems*, Prentice-Hall, 1972, pp. 65–98.
+
+**Guiding questions**
+
+1. How does Codd define relational completeness?
+2. Codd shows how to translate any calculus query into algebra. Outline, in your own words, the steps for a query with one ∃.
+3. Why is safety needed for the equivalence to hold?
+
+**Extension (for the strongest students).** Look up Datalog. Write the Datalog program for all prerequisites of a course, and compare it with the recursive CTE in Lab 5, question 32.
+
 ---
 
 ## Summary
