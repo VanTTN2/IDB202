@@ -19,6 +19,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
   - [DSC] Silberschatz, Korth & Sudarshan, *Database System Concepts*, 7th ed., 2020;
   - [DMS] Ramakrishnan & Gehrke, *Database Management Systems*, 3rd ed., 2003.
 - Syllabus deliverables must follow the university template `syllabus/template/Syllabus_Temp.xlsx`.
+- **Textbook PDFs:** the user owns copies of the textbooks and allows Claude to **read** them when writing course materials. The user uploads them to the session when needed; they are not stored on GitHub. If you place one in `docs/sources/textbooks/`, that folder is git-ignored. **Never commit a textbook PDF** or large verbatim extracts. Paraphrase, and cite by chapter, section and page. Status: DSC (7th ed.) is kept on the user's PC and will be uploaded when content work starts; the user will send DMS (3rd ed.) later.
 - The user reviews documents in Word or Excel. Send deliverables as files, and push every change to the branch.
 
 ## Current phase

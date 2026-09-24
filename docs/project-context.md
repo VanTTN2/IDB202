@@ -54,6 +54,7 @@ IDB201 is the entry point of the program skill set "Data Handling, Databases and
 | D10 | Each chapter has a "Research Corner" (seminal paper + guiding questions); each lab has an "Investigate" part; 33 constructivist questions | Research orientation |
 | D11 | The syllabus is a **draft for council review**; decision number and approval date left blank on purpose | User |
 | D12 | **Phase gate:** no detailed lecture content or labs until the council approves the syllabus | User |
+| D13 | The user allows Claude to read the user's textbook PDFs when writing materials. PDFs are uploaded per session, never committed (`docs/sources/textbooks/` is git-ignored). Page numbers for the syllabus schedule will be taken from them | User |
 
 ---
 
@@ -117,7 +118,7 @@ The PLO texts (Vietnamese, official) are in `docs/sources/BCS_AD_13_PLO.xlsx`. T
 | Phase | Content | Status |
 |---|---|---|
 | 1 | Syllabus (xlsx in the template), council brief (docx), design notes | **Done – awaiting council review** |
-| 1b | Revise the syllabus after council feedback | Next: wait for the user's feedback |
+| 1b | Revise the syllabus after council feedback; add page references from the textbooks' tables of contents | Next: wait for the council feedback and the textbook PDFs (DSC first, DMS later) |
 | 2 | Detailed lecture notes per chapter (revise the drafts in `lectures/`) | Not started (drafts exist, on hold) |
 | 3 | Slides per chapter | Not started |
 | 4 | Labs with Investigate parts, starter code and solutions (revise the drafts in `labs/`) | Not started (drafts exist, on hold) |
