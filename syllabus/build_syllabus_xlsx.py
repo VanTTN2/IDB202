@@ -152,7 +152,7 @@ CLOS = [
              "the results in an academic paper and presentation."),
 ]
 
-# CLO -> PLO mapping for the 13 PLOs of BCS_AD (source: syllabus/template/BCS_AD_13_PLO.xlsx)
+# CLO -> PLO mapping for the 13 PLOs of BCS_AD (source: docs/sources/BCS_AD_13_PLO.xlsx)
 PLO_COUNT = 13
 PLO_MAP = {
     "CLO1": [2],

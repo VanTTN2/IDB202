@@ -2,6 +2,8 @@
 
 Course materials for **IDB201 – Introduction to Databases**, taught to talented-student (honors) classes of the Bachelor of Computer Science, AI and Data Science specialization (BCS_AD, K22A), in Year 1, Semester 1. The course is academic and research-oriented. All content is in English.
 
+> **Continuing this project?** Read [`CLAUDE.md`](CLAUDE.md) and [`docs/project-context.md`](docs/project-context.md) first.
+
 ## Status
 
 | Deliverable | Status |
@@ -16,7 +18,8 @@ Course materials for **IDB201 – Introduction to Databases**, taught to talente
 | Folder | Contents |
 |---|---|
 | [`syllabus/`](syllabus/) | The syllabus workbook, its generator script, and the official template |
-| [`docs/`](docs/) | Design notes and the council brief (with its generator script) |
+| [`docs/`](docs/) | Design notes, the council brief (with its generator script), and the project context record |
+| [`docs/sources/`](docs/sources/) | Source files from the course owner: curriculum and PLOs |
 | [`lectures/`](lectures/) | Draft lecture notes (Chapters 1–10, Appendix A) |
 | [`labs/`](labs/) | Draft labs, the `UniversityDB` sample database, Python starter tests, and solutions |
 
