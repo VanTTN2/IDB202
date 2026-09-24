@@ -125,6 +125,6 @@ Things that remain in place because the students are in semester 1:
 ## 6. Open items for the course owner
 
 - [x] **Course code:** confirmed as **IDB201**, as in the curriculum (Appendix 2(a), 2(d)).
-- [ ] **PLO mapping:** the curriculum file does not list the BCS_AD PLOs. They are needed to fill the CLO–PLO matrix in the syllabus template.
+- [x] **PLO mapping:** done with the 13 BCS_AD PLOs (see the CLO sheet of the syllabus and §4.7–4.9 of the council brief).
 - [ ] **Decision number and approval date** for the syllabus template.
 - [ ] Confirm that the research-oriented assessment (two report-style assignments) is acceptable under the campus's Course Implementation Plan.

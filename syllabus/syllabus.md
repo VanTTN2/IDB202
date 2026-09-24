@@ -55,6 +55,19 @@ This course gives a rigorous, research-oriented introduction to database systems
 | CLO7 | Analyze concurrent executions for conflict serializability and recoverability, and justify concurrency-control and recovery mechanisms (two-phase locking, isolation levels, write-ahead logging). |
 | CLO8 | Conduct a small, reproducible research study on a database topic: review primary literature, formulate a research question or hypothesis, design and carry out an experiment or implementation, and report the results in an academic paper and presentation. |
 
+### CLO–PLO mapping (BCS_AD, 13 PLOs)
+
+| CLO | PLO1 | PLO2 | PLO3 | PLO4 | PLO5 | PLO6 | PLO7 | PLO8 | PLO9 | PLO10 | PLO11 | PLO12 | PLO13 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CLO1 |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
+| CLO2 |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |
+| CLO3 |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |
+| CLO4 |  | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |
+| CLO5 |  | ✓ |  |  | ✓ |  |  | ✓ |  |  |  |  |  |
+| CLO6 |  | ✓ |  |  | ✓ |  |  |  | ✓ |  |  |  |  |
+| CLO7 |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
+| CLO8 |  |  |  |  | ✓ |  | ✓ |  |  | ✓ | ✓ |  |  |
+
 ## 6. Learning materials
 
 | # | Material | Purpose | Type | Author | Publisher | Year | Edition | Note |

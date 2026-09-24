@@ -152,6 +152,19 @@ CLOS = [
              "the results in an academic paper and presentation."),
 ]
 
+# CLO -> PLO mapping for the 13 PLOs of BCS_AD (source: syllabus/template/BCS_AD_13_PLO.xlsx)
+PLO_COUNT = 13
+PLO_MAP = {
+    "CLO1": [2],
+    "CLO2": [2, 5],
+    "CLO3": [2, 5],
+    "CLO4": [2, 8],
+    "CLO5": [2, 5, 8],
+    "CLO6": [2, 5, 9],
+    "CLO7": [2],
+    "CLO8": [5, 7, 10, 11],
+}
+
 # ---------------------------------------------------------------------------
 # 4. Schedule: (topic, CLO, ITU, student's materials, lecturer's materials, student's task, lecturer's task)
 #    ITU: I = Introduce, T = Teach, U = Utilize
@@ -409,15 +422,18 @@ def fill_materials(ws):
 
 
 def fill_clo(ws):
+    from openpyxl.styles import Font
     for i, (name, desc) in enumerate(CLOS):
         row = 2 + i
         put(ws, row, 1, i + 1, style_from=2)
         put(ws, row, 2, name, style_from=2)
         put(ws, row, 3, desc, style_from=2)
         ws.row_dimensions[row].height = 45
-    ws.cell(row=11, column=1).value = ("Mapping of CLOs to PLOs of Curriculum BCS_AD (K22A) – to be completed "
-                                      "when the program PLO list is confirmed")
-    # Clear the example ticks from the template and list every CLO in the matrix.
+    ws.cell(row=11, column=1).value = "Mapping of CLOs to PLOs of Curriculum BCS_AD (K22A, 13 PLOs)"
+    # Keep only the program's PLO columns in the header (template provides 17).
+    for p in range(1, 18):
+        ws.cell(row=13, column=1 + p).value = f"PLO{p}" if p <= PLO_COUNT else None
+    tick_font = copy(ws["K14"].font)          # template tick: "ü" in Wingdings = check mark
     for i, (name, _) in enumerate(CLOS):
         row = 14 + i
         put(ws, row, 1, name, style_from=14)
@@ -425,6 +441,10 @@ def fill_clo(ws):
             c = ws.cell(row=row, column=col)
             c.value = None
             copy_style(ws.cell(row=14, column=col), c)
+        for p in PLO_MAP[name]:
+            c = ws.cell(row=row, column=1 + p, value="ü")
+            c.font = copy(tick_font)
+            c.alignment = Alignment(horizontal="center", vertical="center")
 
 
 def fill_cq(ws):
@@ -495,6 +515,11 @@ def build_markdown(path=ROOT / "syllabus.md"):
           "## 4. Tools", "", GENERAL["Tools"], "",
           "## 5. Course learning outcomes", "", "| CLO | Description |", "|---|---|"]
     L += [f"| {n} | {esc(d)} |" for n, d in CLOS]
+    L += ["", "### CLO–PLO mapping (BCS_AD, 13 PLOs)", "",
+          "| CLO | " + " | ".join(f"PLO{p}" for p in range(1, PLO_COUNT + 1)) + " |",
+          "|---|" + "---|" * PLO_COUNT]
+    for n, _ in CLOS:
+        L.append(f"| {n} | " + " | ".join("✓" if p in PLO_MAP[n] else "" for p in range(1, PLO_COUNT + 1)) + " |")
     L += ["", "## 6. Learning materials", "",
           "| # | Material | Purpose | Type | Author | Publisher | Year | Edition | Note |", "|---|---|---|---|---|---|---|---|---|"]
     for i, (desc, purpose, isbn, typ, note, author, pub, year, ed) in enumerate(MATERIALS, 1):
