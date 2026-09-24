@@ -14,7 +14,7 @@ This note records the design decisions for IDB201. It answers two questions from
 | Program | Bachelor of Computer Science, specialization in AI and Data Science (BCS_AD), K22A |
 | Learners | **Talented-student (honors) classes**: first-year, semester-1 students selected for strong academic ability, with an **academic rather than applied orientation**. No prior database background |
 | Concurrent courses | MAD102 Discrete Mathematics, PFP191 Programming Fundamentals with Python, ICS102 Introduction to Computer Systems, CAL111 Calculus I |
-| Later courses that build on IDB201 | CSD203 (S2), DSI201 Data Science (S3), DAM311 Data Mining (S4), DPY391 Data Security and Privacy (S5), MLO401 Machine Learning Operations (S7) |
+| Later courses that build on IDB201 | CSD203 (S2), DSI201 Data Science (S3), DAM311 Data Mining (S4), DPY391 Data Security and Privacy (S5), MLO401 Machine Learning Operations (S8) |
 | Official course description (Appendix 2(d)) | ER model, relational data model, functional dependencies and normalization, relational algebra, SQL, **indexing, query optimization, transaction management**; "understand the internal mechanisms of storage and transaction control" |
 
 ---

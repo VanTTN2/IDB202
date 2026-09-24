@@ -1,6 +1,6 @@
 # Chapter 10 – Transactions and Concurrency Control
 
-**Learning outcomes:** CLO8
+**Learning outcomes:** CLO7
 
 After studying this chapter, you should be able to:
 

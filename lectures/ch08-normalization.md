@@ -1,6 +1,6 @@
 # Chapter 8 – Functional Dependencies and Normalization
 
-**Learning outcomes:** CLO6
+**Learning outcomes:** CLO5
 
 After studying this chapter, you should be able to:
 

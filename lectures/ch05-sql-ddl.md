@@ -1,6 +1,6 @@
 # Chapter 5 – SQL: Data Definition and Constraints
 
-**Learning outcomes:** CLO3, CLO5
+**Learning outcomes:** CLO2, CLO4
 
 After studying this chapter, you should be able to:
 

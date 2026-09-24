@@ -46,15 +46,14 @@ This course gives a rigorous, research-oriented introduction to database systems
 
 | CLO | Description |
 |---|---|
-| CLO1 | Explain the fundamental concepts of database systems (data models, schemas, the three-schema architecture, data independence) and trace how they arose from the research literature. |
-| CLO2 | Design Entity-Relationship models from requirements, compare design alternatives, and identify constraints that the ER model cannot express. |
-| CLO3 | Map ER models to relational schemas and state keys, foreign keys and other integrity constraints precisely, including as logical statements. |
-| CLO4 | Express queries in relational algebra and relational calculus, prove simple equivalences, and reason about the expressive power of query languages. |
-| CLO5 | Write SQL to define, modify and query databases (joins, aggregation, subqueries, views, access from Python) and explain its semantics (bags, three-valued logic) by translation to algebra. |
-| CLO6 | Apply functional dependency theory: compute closures, keys and minimal covers, prove properties, normalize to 3NF/BCNF, verify lossless-join and dependency preservation, and implement these algorithms in Python. |
-| CLO7 | Analyze storage, indexing, query processing and optimization with I/O cost models, and evaluate index and plan choices experimentally. |
-| CLO8 | Analyze schedules for conflict serializability and recoverability, explain locking, isolation levels and logging-based recovery, and justify the correctness of two-phase locking. |
-| CLO9 | Conduct a small research study in databases: read primary literature, formulate a question or hypothesis, design a reproducible experiment or implementation, and report the results in an academic format. |
+| CLO1 | Explain the fundamental concepts of database systems (data models, schemas and instances, the three-schema architecture, data independence, DBMS components) and relate them to the research contributions that introduced them. |
+| CLO2 | Design a database from requirements: build an Entity-Relationship model, justify design alternatives, and map it to a relational schema whose keys and integrity constraints are specified precisely, including as logical statements. |
+| CLO3 | Formulate queries in relational algebra and relational calculus, prove simple equivalences between expressions, and explain the limits of their expressive power. |
+| CLO4 | Use SQL to define, populate, modify and query relational databases (joins, aggregation, subqueries, views, access from Python) and explain query results through SQL semantics (bag semantics, three-valued logic). |
+| CLO5 | Analyze and improve relational schemas with functional dependency theory: compute closures, candidate keys and minimal covers, prove basic properties, decompose to 3NF/BCNF with lossless-join and dependency-preservation guarantees, and implement these algorithms in Python. |
+| CLO6 | Evaluate physical design and query execution choices (storage organization, indexes, join algorithms, execution plans) using I/O cost models and controlled experiments. |
+| CLO7 | Analyze concurrent executions for conflict serializability and recoverability, and justify concurrency-control and recovery mechanisms (two-phase locking, isolation levels, write-ahead logging). |
+| CLO8 | Conduct a small, reproducible research study on a database topic: review primary literature, formulate a research question or hypothesis, design and carry out an experiment or implementation, and report the results in an academic paper and presentation. |
 
 ## 6. Learning materials
 
@@ -77,12 +76,12 @@ This course gives a rigorous, research-oriented introduction to database systems
 | # | Component | Weight | Duration | CLOs | Format | Scope |
 |---|---|---|---|---|---|---|
 | 1 | Research labs | 10% | In lab sessions | CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8 | Lab exercises, Python implementations with tests, 'Investigate' mini-reports | Labs 1–8 (Chapters 1–10) |
-| 2 | Progress test 1 | 10% | 30' | CLO1, CLO2, CLO3, CLO4 | Multiple choices (marked by computer) + short written reasoning | - cover content 1, 2, 3, 4<br>- written items: one ER design or mapping task, one relational algebra/calculus proof or query |
-| 3 | Progress test 2 | 10% | 30' | CLO5, CLO6 | Multiple choices (marked by computer) + short written reasoning | - cover content 5, 6, 7, 8<br>- written items: one SQL semantics question (NULL/bags), one FD proof or normalization task |
-| 4 | Assignment 1 | 10% | Take-home, 3 weeks + 5' oral defense | CLO2, CLO3, CLO4, CLO9 | Individual technical report (4–6 pages) + oral defense | - cover content 2, 3, 4, 5, 6<br>- design and theory report: ER model with justified alternatives, formal relational schema, constraints as logic, algebra/calculus/SQL queries with correctness arguments, one guided experiment |
-| 5 | Assignment 2 | 20% | Take-home, 4 weeks + 15' presentation | CLO6, CLO7, CLO8, CLO9 | Group mini research project (2–3 students): short paper (IEEE format, 4–6 pages), reproducible code, presentation | - cover content 6–10 and the Research Corner papers<br>- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing a result from a paper |
-| 6 | Practical exam | 10% | 60' | CLO5 | Practical questions on computer | - cover content 5, 6, 7<br>- create a schema with constraints from a specification; write SQL queries (joins, aggregation, subqueries, views) |
-| 7 | Final exam | 30% | 60' | CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8 | Multiple choices<br>Marked by Computer | concepts, proofs, algorithms and analysis; all studied chapters; at least 30% of items at the Analyze level or above |
+| 2 | Progress test 1 | 10% | 30' | CLO1, CLO2, CLO3 | Multiple choices (marked by computer) + short written reasoning | - cover content 1, 2, 3, 4<br>- written items: one ER design or mapping task, one relational algebra/calculus proof or query |
+| 3 | Progress test 2 | 10% | 30' | CLO4, CLO5 | Multiple choices (marked by computer) + short written reasoning | - cover content 5, 6, 7, 8<br>- written items: one SQL semantics question (NULL/bags), one FD proof or normalization task |
+| 4 | Assignment 1 | 10% | Take-home, 3 weeks + 5' oral defense | CLO2, CLO3, CLO8 | Individual technical report (4–6 pages) + oral defense | - cover content 2, 3, 4, 5, 6<br>- design and theory report: ER model with justified alternatives, formal relational schema, constraints as logic, algebra/calculus/SQL queries with correctness arguments, one guided experiment |
+| 5 | Assignment 2 | 20% | Take-home, 4 weeks + 15' presentation | CLO5, CLO6, CLO7, CLO8 | Group mini research project (2–3 students): short paper (IEEE format, 4–6 pages), reproducible code, presentation | - cover content 6–10 and the Research Corner papers<br>- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing a result from a paper |
+| 6 | Practical exam | 10% | 60' | CLO4 | Practical questions on computer | - cover content 5, 6, 7<br>- create a schema with constraints from a specification; write SQL queries (joins, aggregation, subqueries, views) |
+| 7 | Final exam | 30% | 60' | CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7 | Multiple choices<br>Marked by Computer | concepts, proofs, algorithms and analysis; all studied chapters; at least 30% of items at the Analyze level or above |
 
 **Completion criteria:** every on-going component > 0; practical exam > 0; final exam ≥ 4; final result ≥ 5.
 
@@ -98,58 +97,58 @@ This course gives a rigorous, research-oriented introduction to database systems
 | 6 | 2.4 Weak entity types<br>2.5 Design guidelines and choices (binary vs. ternary) | CLO2 | T | Read Chapter 2 ([DSC] 6.5–6.6, 6.8; [DMS] 2.4–2.5) before class; prepare the constructivist questions |
 | 7 | 2.6 Worked example: UniversityDB<br>2.7 Crow's-foot notation<br>2.8 Limits of the ER model<br>Research Corner: Chen (1976) | CLO2 | T<br>U | Read Chapter 2 ([DSC] 6.1–6.8; [DMS] Ch. 2; Chen (1976)) before class; prepare the constructivist questions |
 | 8 | Lab 2 (part A): ER design – bookstore, hospital, design critique | CLO2 | U | Do Lab 2; submit before the end of the session |
-| 9 | 3.1 Relational model concepts<br>3.2 Keys: superkey, candidate key, primary key, foreign key | CLO3 | T | Read Chapter 3 ([DSC] 2.1–2.3; [DMS] 3.1) before class; prepare the constructivist questions |
-| 10 | 3.3 Integrity constraints and their violations<br>3.6 The relational model as mathematics (relations as sets, constraints as logic) | CLO3 | T | Read Chapter 3 ([DSC] 2.3–2.4; [DMS] 3.2–3.3) before class; prepare the constructivist questions |
-| 11 | 3.4 ER-to-relational mapping, steps 1–4 (strong and weak entities, 1:1, 1:N) | CLO3 | T | Read Chapter 3 ([DSC] 6.7; [DMS] 3.5) before class; prepare the constructivist questions |
-| 12 | 3.4 Mapping steps 5–7 (M:N, multivalued, n-ary); 3.5 Worked example<br>Research Corner: Codd (1970) | CLO3 | T | Read Chapter 3 ([DSC] 6.7; [DMS] 3.5; Codd (1970)) before class; prepare the constructivist questions |
-| 13 | Lab 2 (part B): ER-to-relational mapping; reverse engineering UniversityDB<br>Assignment 1 released | CLO2, CLO3 | U | Do Lab 2 (part B); read the Assignment 1 brief |
-| 14 | 4.1 Relational algebra overview<br>4.2 Selection, projection, rename<br>4.3 Set operations and Cartesian product | CLO4 | T | Read Chapter 4 ([DSC] 2.5–2.6; [DMS] 4.1–4.2) before class; prepare the constructivist questions |
-| 15 | 4.4 Joins: theta, equi, natural, outer, semi-join | CLO4 | T | Read Chapter 4 ([DSC] 2.6; [DMS] 4.2) before class; prepare the constructivist questions |
-| 16 | 4.5 Division<br>4.6 Aggregation<br>4.7 Complete set of operators<br>4.8–4.9 Translation to SQL; worked examples | CLO4 | T | Read Chapter 4 ([DSC] 2.6; [DMS] 4.2) before class; prepare the constructivist questions |
-| 17 | 4.10 Relational calculus (TRC, DRC), safety, Codd's theorem<br>4.11 Limits of expressive power (transitive closure)<br>Research Corner: Codd (1972) | CLO4 | T | Read Chapter 4 ([DMS] 4.3–4.4; Codd (1972)) before class; prepare the constructivist questions |
-| 18 | Lab 3: Relational algebra and calculus; Python mini relational-algebra evaluator | CLO4 | U | Do Lab 3; submit before the end of the session |
-| 19 | Progress test 1 (Chapters 1–4)<br>Review exercises | CLO1, CLO2, CLO3, CLO4 | U | Review Chapters 1–4; take Progress test 1 |
-| 20 | 5.1 SQL overview<br>5.2 Databases and schemas<br>5.3 SQL Server data types | CLO5 | T | Read Chapter 5 ([DSC] 3.1–3.2; [DMS] 5.1) before class; prepare the constructivist questions |
-| 21 | 5.4 CREATE TABLE<br>5.5 Constraints and referential actions; IDENTITY | CLO5 | T | Read Chapter 5 ([DSC] 4.4–4.5; [DMS] 3.2–3.3) before class; prepare the constructivist questions |
-| 22 | 5.6–5.9 ALTER/DROP, creation order, catalog, DCL<br>5.10 Assertions and the cost of integrity checking | CLO5 | T | Read Chapter 5 ([DSC] 4.4–4.7; [DMS] 3.3, 5.7) before class; prepare the constructivist questions |
-| 23 | Lab 4 (part 1): LibraryDB – tables and constraints | CLO3, CLO5 | U | Do Lab 4; submit before the end of the session |
-| 24 | Lab 4 (part 2): testing constraints, ALTER TABLE, reflection<br>Assignment 1 consultation | CLO3, CLO5 | U | Do Lab 4; submit before the end of the session |
-| 25 | 6.1 The SELECT statement and logical processing order<br>6.2 Single-table queries, predicates, built-in functions | CLO5 | T | Read Chapter 6 ([DSC] 3.3–3.4; [DMS] 5.2) before class; prepare the constructivist questions |
-| 26 | 6.3 NULL and three-valued logic<br>6.9 Semantics of SQL: translation to algebra, bag semantics | CLO5 | T | Read Chapter 6 ([DSC] 3.6; [DMS] 5.6) before class; prepare the constructivist questions |
-| 27 | 6.4 Joins: inner, outer, self, anti-join | CLO5 | T | Read Chapter 6 ([DSC] 4.1; [DMS] 5.6) before class; prepare the constructivist questions |
-| 28 | Lab 5 (part A): single-table queries and joins | CLO5 | U | Do Lab 5; submit before the end of the session |
-| 29 | 6.5 Aggregation: GROUP BY, HAVING | CLO5 | T | Read Chapter 6 ([DSC] 3.7; [DMS] 5.5) before class; prepare the constructivist questions |
-| 30 | 6.6 Subqueries: scalar, IN/ANY/ALL, correlated, EXISTS, division in SQL | CLO5 | T | Read Chapter 6 ([DSC] 3.8; [DMS] 5.4) before class; prepare the constructivist questions |
-| 31 | 6.6–6.8 CTEs, set operations, window functions<br>Research Corner: Chamberlin & Boyce (1974); Guagliardo & Libkin (2017) | CLO5 | T | Read Chapter 6 ([DSC] 3.5, 3.8, 5.5; [DMS] 5.3) before class; prepare the constructivist questions |
-| 32 | Lab 5 (part B): aggregation, subqueries, set operations | CLO5 | U | Do Lab 5; submit before the end of the session |
-| 33 | Lab 5 (part B, challenge): recursive CTE and expressive power | CLO4, CLO5 | U | Do Lab 5; submit before the end of the session |
-| 34 | 7.1–7.5 INSERT, UPDATE, DELETE, TRUNCATE, MERGE, OUTPUT | CLO5 | T | Read Chapter 7 ([DSC] 3.9; [DMS] 3.6) before class; prepare the constructivist questions |
-| 35 | 7.6 Views: definition, updatability, WITH CHECK OPTION<br>7.9 View expansion and the view-update problem | CLO5 | T | Read Chapter 7 ([DSC] 4.2; [DMS] 3.6; Bancilhon & Spyratos (1981)) before class; prepare the constructivist questions |
-| 36 | 7.7 Using the database from Python (pyodbc, pandas); SQL injection | CLO5 | T | Read Chapter 7 ([DSC] 5.1; [DMS] 6.1–6.2) before class; prepare the constructivist questions |
-| 37 | Lab 6: data modification, views, and SQL from Python | CLO5 | U | Do Lab 6; submit before the end of the session |
-| 38 | Assignment 1: submission and oral defense | CLO2, CLO3, CLO4, CLO9 | U | Submit the report; defend it orally (5 minutes) |
-| 39 | 8.1 Anomalies<br>8.2 Functional dependencies; Armstrong's axioms | CLO6 | T | Read Chapter 8 ([DSC] 7.1–7.2; [DMS] 19.1–19.3) before class; prepare the constructivist questions |
-| 40 | 8.3 Attribute closure; finding candidate keys | CLO6 | T | Read Chapter 8 ([DSC] 7.4; [DMS] 19.3) before class; prepare the constructivist questions |
-| 41 | 8.4 Minimal cover<br>8.10 Proofs: soundness, correctness of the closure algorithm | CLO6 | T | Read Chapter 8 ([DSC] 7.4; [DMS] 19.3) before class; prepare the constructivist questions |
-| 42 | 8.5 Normal forms: 1NF, 2NF, 3NF, BCNF | CLO6 | T | Read Chapter 8 ([DSC] 7.3; [DMS] 19.4) before class; prepare the constructivist questions |
-| 43 | 8.6–8.8 Lossless join and dependency preservation; 3NF synthesis and BCNF decomposition; worked example | CLO6 | T | Read Chapter 8 ([DSC] 7.5; [DMS] 19.5–19.6) before class; prepare the constructivist questions |
-| 44 | 8.11 Computational complexity of normalization<br>8.12 MVDs and 4NF<br>Research Corner: Kent (1983); Armstrong (1974) | CLO6 | T | Read Chapter 8 ([DSC] 7.6; [DMS] 19.8; Kent (1983)) before class; prepare the constructivist questions |
-| 45 | Lab 7: FD theory on paper; Python FD toolkit (closure, keys, minimal cover, BCNF, chase) | CLO6 | U | Do Lab 7; submit before the end of the session |
-| 46 | Progress test 2 (Chapters 5–8)<br>Review exercises | CLO5, CLO6 | U | Review Chapters 5–8; take Progress test 2 |
-| 47 | 9.1 Why storage matters<br>9.2 Pages, records, file organizations, the buffer pool | CLO7 | T | Read Chapter 9 ([DSC] 13.1–13.3; [DMS] 8.1–8.2, 9.1–9.4) before class; prepare the constructivist questions |
-| 48 | 9.3 Indexes: B+-trees, hash indexes, clustered vs. non-clustered, choosing indexes | CLO7 | T | Read Chapter 9 ([DSC] 14.1–14.5; [DMS] 8.3–8.5, 10.1–10.3) before class; prepare the constructivist questions |
-| 49 | 9.4 Query processing; selection and join algorithms<br>9.6 Cost formulas | CLO7 | T | Read Chapter 9 ([DSC] 15.1–15.5; [DMS] 12.1–12.4, 14.4) before class; prepare the constructivist questions |
-| 50 | 9.5 Reading execution plans<br>9.7 Query optimization and join ordering<br>Research Corner: Selinger et al. (1979); Leis et al. (2015); Kraska et al. (2018) | CLO7 | T | Read Chapter 9 ([DSC] 16.1–16.4; [DMS] 12.1–12.4, 15.1–15.4) before class; prepare the constructivist questions |
-| 51 | Lab 8 (part A): indexing experiments and execution plans<br>Assignment 2 released (research topics) | CLO7, CLO9 | U | Do Lab 8; submit before the end of the session |
-| 52 | 10.1 Transactions<br>10.2 ACID properties<br>10.3 Transactions in T-SQL<br>10.4 Transaction states | CLO8 | T | Read Chapter 10 ([DSC] 17.1–17.4; [DMS] 16.1–16.3) before class; prepare the constructivist questions |
-| 53 | 10.5 Concurrency anomalies<br>10.6 Schedules and conflict serializability; precedence graphs | CLO8 | T | Read Chapter 10 ([DSC] 17.5–17.6; [DMS] 16.3) before class; prepare the constructivist questions |
-| 54 | 10.7 Locking, two-phase locking, deadlocks<br>10.8 Isolation levels<br>10.9 Fixing a race condition | CLO8 | T | Read Chapter 10 ([DSC] 18.1–18.2, 17.8; [DMS] 16.4–16.6, 17.1–17.2) before class; prepare the constructivist questions |
-| 55 | 10.10 Recovery (WAL, ARIES overview)<br>10.11 Recoverability, view serializability, proof that 2PL is correct, snapshot isolation and write skew<br>Research Corner: Eswaran et al. (1976); Berenson et al. (1995) | CLO8 | T | Read Chapter 10 ([DSC] 17.7, 18.8, 19.1–19.4; [DMS] 16.7, 18.1) before class; prepare the constructivist questions |
-| 56 | Lab 8 (part B): concurrency experiments with two sessions; Python serializability tester | CLO8 | U | Do Lab 8; submit before the end of the session |
-| 57 | Assignment 2: research progress meeting (question, method, preliminary results) | CLO9 | U | Present progress; revise the method |
-| 58 | Assignment 2: paper presentations (part 1) | CLO7, CLO8, CLO9 | U | Present the paper (10 minutes + 5 minutes Q&A) |
-| 59 | Assignment 2: paper presentations (part 2) | CLO7, CLO8, CLO9 | U | Present the paper; submit the final paper and code |
-| 60 | Course review: key results and open research questions<br>Practical exam preparation | CLO1–CLO9 | U | Review all chapters; practice SQL |
+| 9 | 3.1 Relational model concepts<br>3.2 Keys: superkey, candidate key, primary key, foreign key | CLO2 | T | Read Chapter 3 ([DSC] 2.1–2.3; [DMS] 3.1) before class; prepare the constructivist questions |
+| 10 | 3.3 Integrity constraints and their violations<br>3.6 The relational model as mathematics (relations as sets, constraints as logic) | CLO2 | T | Read Chapter 3 ([DSC] 2.3–2.4; [DMS] 3.2–3.3) before class; prepare the constructivist questions |
+| 11 | 3.4 ER-to-relational mapping, steps 1–4 (strong and weak entities, 1:1, 1:N) | CLO2 | T | Read Chapter 3 ([DSC] 6.7; [DMS] 3.5) before class; prepare the constructivist questions |
+| 12 | 3.4 Mapping steps 5–7 (M:N, multivalued, n-ary); 3.5 Worked example<br>Research Corner: Codd (1970) | CLO2 | T | Read Chapter 3 ([DSC] 6.7; [DMS] 3.5; Codd (1970)) before class; prepare the constructivist questions |
+| 13 | Lab 2 (part B): ER-to-relational mapping; reverse engineering UniversityDB<br>Assignment 1 released | CLO2 | U | Do Lab 2 (part B); read the Assignment 1 brief |
+| 14 | 4.1 Relational algebra overview<br>4.2 Selection, projection, rename<br>4.3 Set operations and Cartesian product | CLO3 | T | Read Chapter 4 ([DSC] 2.5–2.6; [DMS] 4.1–4.2) before class; prepare the constructivist questions |
+| 15 | 4.4 Joins: theta, equi, natural, outer, semi-join | CLO3 | T | Read Chapter 4 ([DSC] 2.6; [DMS] 4.2) before class; prepare the constructivist questions |
+| 16 | 4.5 Division<br>4.6 Aggregation<br>4.7 Complete set of operators<br>4.8–4.9 Translation to SQL; worked examples | CLO3 | T | Read Chapter 4 ([DSC] 2.6; [DMS] 4.2) before class; prepare the constructivist questions |
+| 17 | 4.10 Relational calculus (TRC, DRC), safety, Codd's theorem<br>4.11 Limits of expressive power (transitive closure)<br>Research Corner: Codd (1972) | CLO3 | T | Read Chapter 4 ([DMS] 4.3–4.4; Codd (1972)) before class; prepare the constructivist questions |
+| 18 | Lab 3: Relational algebra and calculus; Python mini relational-algebra evaluator | CLO3 | U | Do Lab 3; submit before the end of the session |
+| 19 | Progress test 1 (Chapters 1–4)<br>Review exercises | CLO1, CLO2, CLO3 | U | Review Chapters 1–4; take Progress test 1 |
+| 20 | 5.1 SQL overview<br>5.2 Databases and schemas<br>5.3 SQL Server data types | CLO4 | T | Read Chapter 5 ([DSC] 3.1–3.2; [DMS] 5.1) before class; prepare the constructivist questions |
+| 21 | 5.4 CREATE TABLE<br>5.5 Constraints and referential actions; IDENTITY | CLO4 | T | Read Chapter 5 ([DSC] 4.4–4.5; [DMS] 3.2–3.3) before class; prepare the constructivist questions |
+| 22 | 5.6–5.9 ALTER/DROP, creation order, catalog, DCL<br>5.10 Assertions and the cost of integrity checking | CLO4 | T | Read Chapter 5 ([DSC] 4.4–4.7; [DMS] 3.3, 5.7) before class; prepare the constructivist questions |
+| 23 | Lab 4 (part 1): LibraryDB – tables and constraints | CLO2, CLO4 | U | Do Lab 4; submit before the end of the session |
+| 24 | Lab 4 (part 2): testing constraints, ALTER TABLE, reflection<br>Assignment 1 consultation | CLO2, CLO4 | U | Do Lab 4; submit before the end of the session |
+| 25 | 6.1 The SELECT statement and logical processing order<br>6.2 Single-table queries, predicates, built-in functions | CLO4 | T | Read Chapter 6 ([DSC] 3.3–3.4; [DMS] 5.2) before class; prepare the constructivist questions |
+| 26 | 6.3 NULL and three-valued logic<br>6.9 Semantics of SQL: translation to algebra, bag semantics | CLO4 | T | Read Chapter 6 ([DSC] 3.6; [DMS] 5.6) before class; prepare the constructivist questions |
+| 27 | 6.4 Joins: inner, outer, self, anti-join | CLO4 | T | Read Chapter 6 ([DSC] 4.1; [DMS] 5.6) before class; prepare the constructivist questions |
+| 28 | Lab 5 (part A): single-table queries and joins | CLO4 | U | Do Lab 5; submit before the end of the session |
+| 29 | 6.5 Aggregation: GROUP BY, HAVING | CLO4 | T | Read Chapter 6 ([DSC] 3.7; [DMS] 5.5) before class; prepare the constructivist questions |
+| 30 | 6.6 Subqueries: scalar, IN/ANY/ALL, correlated, EXISTS, division in SQL | CLO4 | T | Read Chapter 6 ([DSC] 3.8; [DMS] 5.4) before class; prepare the constructivist questions |
+| 31 | 6.6–6.8 CTEs, set operations, window functions<br>Research Corner: Chamberlin & Boyce (1974); Guagliardo & Libkin (2017) | CLO4 | T | Read Chapter 6 ([DSC] 3.5, 3.8, 5.5; [DMS] 5.3) before class; prepare the constructivist questions |
+| 32 | Lab 5 (part B): aggregation, subqueries, set operations | CLO4 | U | Do Lab 5; submit before the end of the session |
+| 33 | Lab 5 (part B, challenge): recursive CTE and expressive power | CLO3, CLO4 | U | Do Lab 5; submit before the end of the session |
+| 34 | 7.1–7.5 INSERT, UPDATE, DELETE, TRUNCATE, MERGE, OUTPUT | CLO4 | T | Read Chapter 7 ([DSC] 3.9; [DMS] 3.6) before class; prepare the constructivist questions |
+| 35 | 7.6 Views: definition, updatability, WITH CHECK OPTION<br>7.9 View expansion and the view-update problem | CLO4 | T | Read Chapter 7 ([DSC] 4.2; [DMS] 3.6; Bancilhon & Spyratos (1981)) before class; prepare the constructivist questions |
+| 36 | 7.7 Using the database from Python (pyodbc, pandas); SQL injection | CLO4 | T | Read Chapter 7 ([DSC] 5.1; [DMS] 6.1–6.2) before class; prepare the constructivist questions |
+| 37 | Lab 6: data modification, views, and SQL from Python | CLO4 | U | Do Lab 6; submit before the end of the session |
+| 38 | Assignment 1: submission and oral defense | CLO2, CLO3, CLO8 | U | Submit the report; defend it orally (5 minutes) |
+| 39 | 8.1 Anomalies<br>8.2 Functional dependencies; Armstrong's axioms | CLO5 | T | Read Chapter 8 ([DSC] 7.1–7.2; [DMS] 19.1–19.3) before class; prepare the constructivist questions |
+| 40 | 8.3 Attribute closure; finding candidate keys | CLO5 | T | Read Chapter 8 ([DSC] 7.4; [DMS] 19.3) before class; prepare the constructivist questions |
+| 41 | 8.4 Minimal cover<br>8.10 Proofs: soundness, correctness of the closure algorithm | CLO5 | T | Read Chapter 8 ([DSC] 7.4; [DMS] 19.3) before class; prepare the constructivist questions |
+| 42 | 8.5 Normal forms: 1NF, 2NF, 3NF, BCNF | CLO5 | T | Read Chapter 8 ([DSC] 7.3; [DMS] 19.4) before class; prepare the constructivist questions |
+| 43 | 8.6–8.8 Lossless join and dependency preservation; 3NF synthesis and BCNF decomposition; worked example | CLO5 | T | Read Chapter 8 ([DSC] 7.5; [DMS] 19.5–19.6) before class; prepare the constructivist questions |
+| 44 | 8.11 Computational complexity of normalization<br>8.12 MVDs and 4NF<br>Research Corner: Kent (1983); Armstrong (1974) | CLO5 | T | Read Chapter 8 ([DSC] 7.6; [DMS] 19.8; Kent (1983)) before class; prepare the constructivist questions |
+| 45 | Lab 7: FD theory on paper; Python FD toolkit (closure, keys, minimal cover, BCNF, chase) | CLO5 | U | Do Lab 7; submit before the end of the session |
+| 46 | Progress test 2 (Chapters 5–8)<br>Review exercises | CLO4, CLO5 | U | Review Chapters 5–8; take Progress test 2 |
+| 47 | 9.1 Why storage matters<br>9.2 Pages, records, file organizations, the buffer pool | CLO6 | T | Read Chapter 9 ([DSC] 13.1–13.3; [DMS] 8.1–8.2, 9.1–9.4) before class; prepare the constructivist questions |
+| 48 | 9.3 Indexes: B+-trees, hash indexes, clustered vs. non-clustered, choosing indexes | CLO6 | T | Read Chapter 9 ([DSC] 14.1–14.5; [DMS] 8.3–8.5, 10.1–10.3) before class; prepare the constructivist questions |
+| 49 | 9.4 Query processing; selection and join algorithms<br>9.6 Cost formulas | CLO6 | T | Read Chapter 9 ([DSC] 15.1–15.5; [DMS] 12.1–12.4, 14.4) before class; prepare the constructivist questions |
+| 50 | 9.5 Reading execution plans<br>9.7 Query optimization and join ordering<br>Research Corner: Selinger et al. (1979); Leis et al. (2015); Kraska et al. (2018) | CLO6 | T | Read Chapter 9 ([DSC] 16.1–16.4; [DMS] 12.1–12.4, 15.1–15.4) before class; prepare the constructivist questions |
+| 51 | Lab 8 (part A): indexing experiments and execution plans<br>Assignment 2 released (research topics) | CLO6, CLO8 | U | Do Lab 8; submit before the end of the session |
+| 52 | 10.1 Transactions<br>10.2 ACID properties<br>10.3 Transactions in T-SQL<br>10.4 Transaction states | CLO7 | T | Read Chapter 10 ([DSC] 17.1–17.4; [DMS] 16.1–16.3) before class; prepare the constructivist questions |
+| 53 | 10.5 Concurrency anomalies<br>10.6 Schedules and conflict serializability; precedence graphs | CLO7 | T | Read Chapter 10 ([DSC] 17.5–17.6; [DMS] 16.3) before class; prepare the constructivist questions |
+| 54 | 10.7 Locking, two-phase locking, deadlocks<br>10.8 Isolation levels<br>10.9 Fixing a race condition | CLO7 | T | Read Chapter 10 ([DSC] 18.1–18.2, 17.8; [DMS] 16.4–16.6, 17.1–17.2) before class; prepare the constructivist questions |
+| 55 | 10.10 Recovery (WAL, ARIES overview)<br>10.11 Recoverability, view serializability, proof that 2PL is correct, snapshot isolation and write skew<br>Research Corner: Eswaran et al. (1976); Berenson et al. (1995) | CLO7 | T | Read Chapter 10 ([DSC] 17.7, 18.8, 19.1–19.4; [DMS] 16.7, 18.1) before class; prepare the constructivist questions |
+| 56 | Lab 8 (part B): concurrency experiments with two sessions; Python serializability tester | CLO7 | U | Do Lab 8; submit before the end of the session |
+| 57 | Assignment 2: research progress meeting (question, method, preliminary results) | CLO8 | U | Present progress; revise the method |
+| 58 | Assignment 2: paper presentations (part 1) | CLO6, CLO7, CLO8 | U | Present the paper (10 minutes + 5 minutes Q&A) |
+| 59 | Assignment 2: paper presentations (part 2) | CLO6, CLO7, CLO8 | U | Present the paper; submit the final paper and code |
+| 60 | Course review: key results and open research questions<br>Practical exam preparation | CLO1–CLO8 | U | Review all chapters; practice SQL |
 
 ITU: I = Introduce, T = Teach, U = Utilize.
 

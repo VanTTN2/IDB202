@@ -1,6 +1,6 @@
 # Chapter 9 – Storage, Indexing, and Query Processing
 
-**Learning outcomes:** CLO7
+**Learning outcomes:** CLO6
 
 After studying this chapter, you should be able to:
 

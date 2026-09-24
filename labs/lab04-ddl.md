@@ -1,6 +1,6 @@
 # Lab 4 – SQL DDL and Integrity Constraints
 
-**Chapter:** 5 · **Duration:** 3 hours · **CLOs:** CLO3, CLO5
+**Chapter:** 5 · **Duration:** 3 hours · **CLOs:** CLO2, CLO4
 
 ## Objectives
 

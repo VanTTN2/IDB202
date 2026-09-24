@@ -1,6 +1,6 @@
 # Chapter 3 – The Relational Model and ER-to-Relational Mapping
 
-**Learning outcomes:** CLO1, CLO3
+**Learning outcomes:** CLO1, CLO2
 
 After studying this chapter, you should be able to:
 

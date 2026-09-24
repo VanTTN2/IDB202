@@ -1,6 +1,6 @@
 # Lab 7 – Functional Dependencies and Normalization
 
-**Chapter:** 8 · **Duration:** 1 lab session · **CLOs:** CLO6
+**Chapter:** 8 · **Duration:** 1 lab session · **CLOs:** CLO5
 
 ## Objectives
 

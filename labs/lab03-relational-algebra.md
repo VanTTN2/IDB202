@@ -1,6 +1,6 @@
 # Lab 3 – Relational Algebra
 
-**Chapter:** 4 · **Duration:** 3 hours · **CLOs:** CLO4
+**Chapter:** 4 · **Duration:** 3 hours · **CLOs:** CLO3
 
 ## Objectives
 

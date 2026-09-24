@@ -1,6 +1,6 @@
 # Lab 6 – Data Modification, Views, and SQL from Python
 
-**Chapter:** 7 · **Duration:** 1 lab session · **CLOs:** CLO5
+**Chapter:** 7 · **Duration:** 1 lab session · **CLOs:** CLO4
 
 ## Objectives
 

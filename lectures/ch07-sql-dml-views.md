@@ -1,6 +1,6 @@
 # Chapter 7 – SQL: Data Modification and Views
 
-**Learning outcomes:** CLO5
+**Learning outcomes:** CLO4
 
 After studying this chapter, you should be able to:
 

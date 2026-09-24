@@ -1,6 +1,6 @@
 # Lab 5 – SQL Queries
 
-**Chapter:** 6 · **Duration:** 2 lab sessions · **CLOs:** CLO5
+**Chapter:** 6 · **Duration:** 2 lab sessions · **CLOs:** CLO4
 
 ## Objectives
 

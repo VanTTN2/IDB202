@@ -1,6 +1,6 @@
 # Lab 8 – Indexing, Query Plans, and Transactions
 
-**Chapters:** 9, 10 · **Duration:** 2 lab sessions · **CLOs:** CLO7, CLO8
+**Chapters:** 9, 10 · **Duration:** 2 lab sessions · **CLOs:** CLO6, CLO7
 
 ## Objectives
 

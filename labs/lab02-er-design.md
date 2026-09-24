@@ -1,6 +1,6 @@
 # Lab 2 – ER Design and Mapping to Relations
 
-**Chapters:** 2, 3 · **Duration:** 2 sessions × 3 hours · **CLOs:** CLO2, CLO3
+**Chapters:** 2, 3 · **Duration:** 2 sessions × 3 hours · **CLOs:** CLO2
 
 ## Objectives
 

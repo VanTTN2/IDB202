@@ -1,6 +1,6 @@
 # Chapter 4 – Relational Algebra
 
-**Learning outcomes:** CLO4
+**Learning outcomes:** CLO3
 
 After studying this chapter, you should be able to:
 

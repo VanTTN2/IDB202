@@ -1,6 +1,6 @@
 # Chapter 6 – SQL: Queries
 
-**Learning outcomes:** CLO5
+**Learning outcomes:** CLO4
 
 After studying this chapter, you should be able to:
 
