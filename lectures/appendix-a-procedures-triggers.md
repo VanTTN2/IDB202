@@ -1,6 +1,6 @@
-# Chapter 9 – Stored Procedures, Functions, and Triggers
+# Appendix A – Stored Procedures, Functions, and Triggers (Optional)
 
-**Learning outcomes:** CLO7
+**Status:** optional enrichment. This material is not part of the official course description and is not assessed in the exams. It is useful for the group project.
 
 After studying this chapter, you should be able to:
 
@@ -12,7 +12,7 @@ After studying this chapter, you should be able to:
 
 **Readings:** [DSC] Ch. 5 (5.2–5.3); [DMS] Ch. 5 (5.8–5.9), Ch. 6 (6.5)
 
-> **Note for first-year students:** this chapter is your first taste of programming *inside* the database. You only need the basic ideas of variables, `IF`, and loops. Every example is short and builds on SQL you already know.
+> **Note for first-year students:** this appendix is your first taste of programming *inside* the database. You only need the basic ideas of variables, `IF`, and loops. Every example is short and builds on SQL you already know.
 
 ---
 

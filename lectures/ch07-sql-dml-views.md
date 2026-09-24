@@ -1,4 +1,4 @@
-# Chapter 7 – SQL: Data Modification, Views, and Indexes
+# Chapter 7 – SQL: Data Modification and Views
 
 **Learning outcomes:** CLO5
 
@@ -7,9 +7,9 @@ After studying this chapter, you should be able to:
 - insert, update, and delete data, including with subqueries and joins;
 - explain how constraints affect DML statements;
 - create and use views, and state when a view is updatable;
-- explain what an index is and when to create one.
+- use SQL from a Python program safely, with parameters.
 
-**Readings:** [DSC] Ch. 3 (3.9), Ch. 4 (4.2), Ch. 14 (14.1–14.2, 14.9); [DMS] Ch. 3 (3.6), Ch. 8
+**Readings:** [DSC] Ch. 3 (3.9), Ch. 4 (4.2), Ch. 9 (9.2); [DMS] Ch. 3 (3.6), Ch. 6 (6.1–6.2)
 
 ---
 
@@ -152,33 +152,53 @@ DROP VIEW IF EXISTS vw_CSStudents;
 
 **Materialized views** store the query result physically. In SQL Server they are called *indexed views* (`WITH SCHEMABINDING` plus a unique clustered index).
 
-## 7.7 Indexes
+## 7.7 Using the database from Python
 
-An **index** is an auxiliary structure, usually a **B+-tree**, that speeds up finding rows by the values of certain columns. Indexes play the same role as the index at the back of a book.
+You are learning Python in PFP191 this semester, and later courses (DSI201 Data Science, DAM311 Data Mining) read their data from databases. A Python program talks to SQL Server through a **driver**, here `pyodbc`.
 
-| Type (SQL Server) | Description |
-|---|---|
-| **Clustered** | The table's rows are stored in the index key order. There can be only **one** per table. Created automatically for the `PRIMARY KEY` by default. |
-| **Non-clustered** | A separate structure that holds the key and a pointer to the row. Up to 999 per table. Created automatically for `UNIQUE` constraints. |
-| **Composite** | Built on several columns. Column order matters (the left-most prefix rule). |
-| **Covering** | Includes every column a query needs (`INCLUDE (...)`), so the table itself is not read. |
+```python
+# pip install pyodbc pandas
+import pyodbc
+import pandas as pd
 
-```sql
-CREATE INDEX IX_Student_DeptID ON Student (DeptID);
-CREATE INDEX IX_Enrollment_Section ON Enrollment (SectionID) INCLUDE (Grade);
-CREATE UNIQUE INDEX UX_Instructor_Email ON Instructor (Email);
-DROP INDEX IX_Student_DeptID ON Student;
+conn = pyodbc.connect(
+    "DRIVER={ODBC Driver 18 for SQL Server};SERVER=localhost;"
+    "DATABASE=UniversityDB;UID=sa;PWD=YourStr0ng!Pass;TrustServerCertificate=yes"
+)
+cur = conn.cursor()
+
+# Parameterized query: the ? placeholders are filled in safely by the driver
+dept = "CS"
+cur.execute("SELECT StudentID, FullName FROM Student WHERE DeptID = ?", dept)
+for student_id, name in cur.fetchall():
+    print(student_id, name)
+
+# Modify data inside a transaction (pyodbc turns autocommit off by default)
+cur.execute("UPDATE Enrollment SET Grade = ? WHERE StudentID = ? AND SectionID = ?",
+            8.5, "SE170001", 11)
+conn.commit()          # or conn.rollback()
+
+# Load a query result into a pandas DataFrame for analysis
+df = pd.read_sql("SELECT * FROM vw_Transcript", conn)
+print(df.groupby("Semester")["Grade"].mean())
+
+conn.close()
 ```
 
-### When to create an index
+### SQL injection
 
-| Good candidates | Poor candidates |
-|---|---|
-| FK columns used in joins | Small tables |
-| Columns used often in `WHERE`, `ORDER BY`, and `GROUP BY` | Columns with very few distinct values, such as `Gender` |
-| Selective columns (many distinct values) | Tables with heavy `INSERT`/`UPDATE` traffic and few reads |
+**Never** build SQL by joining strings with user input:
 
-Indexes make **reads faster** but make **writes slower** and **use storage**. Use SSMS's *Include Actual Execution Plan* (Ctrl+M) to see whether a query does an *Index Seek* or a *Table/Index Scan*.
+```python
+sid = input("Student ID: ")         # the user types:  x' OR '1'='1
+cur.execute("SELECT * FROM Student WHERE StudentID = '" + sid + "'")   # DANGEROUS
+```
+
+The query becomes `... WHERE StudentID = 'x' OR '1'='1'` and returns **every** student. With parameters (`?`), the driver sends the value separately from the SQL text, so it can never change the meaning of the query. You will study this attack in more depth in DPY391 (Data Security and Privacy).
+
+## 7.8 Looking ahead: indexes
+
+Views change how data *looks* to users. They do not make queries faster. Speed comes from **indexes**, which Chapter 9 covers together with storage and query processing.
 
 ---
 
@@ -186,7 +206,7 @@ Indexes make **reads faster** but make **writes slower** and **use storage**. Us
 
 - `INSERT`, `UPDATE`, `DELETE`, and `MERGE` modify data, and every constraint is checked on each statement.
 - Views are stored queries that provide simplicity, security, and independence.
-- Indexes speed up searches at the cost of slower writes and extra storage.
+- Python programs send SQL to the database through a driver. Always pass values as parameters, never by building strings.
 
 ## Review questions
 
@@ -194,4 +214,4 @@ Indexes make **reads faster** but make **writes slower** and **use storage**. Us
 2. Explain the difference between `DELETE FROM T` and `TRUNCATE TABLE T`.
 3. Is `vw_Transcript` updatable? Which column could you update through it?
 4. What does `WITH CHECK OPTION` prevent? Give an example.
-5. Why can a table have only one clustered index?
+5. Why is `"SELECT * FROM Student WHERE StudentID = '" + sid + "'"` dangerous in a Python program? How do you fix it?
