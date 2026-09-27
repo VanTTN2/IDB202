@@ -1,3 +1,11 @@
-# IDB201 – Course introduction (short)
+# IDB201 – Course objectives (short)
 
-Almost every system we use today, from a banking app to a machine-learning pipeline, depends on data that must be stored safely and found again quickly. Introduction to Databases explains how this works and, more importantly, why it works. Students learn to model real-world information, design relational schemas, and write precise queries in relational algebra and SQL. They then look inside the database system itself: how data is laid out on disk, how indexes speed up search, how queries are optimized, and how transactions stay correct when many users act at once. Along the way, students read classic research papers, prove key results, and run small experiments of their own.
+This course aims to help students:
+
+- understand the basic concepts of database systems and the relational model;
+- design databases with the Entity-Relationship model and convert them into relational schemas;
+- write queries in relational algebra, relational calculus and SQL;
+- use functional dependencies to evaluate and normalize a database design;
+- explain how a DBMS stores data, uses indexes and processes queries;
+- explain how transactions, concurrency control and recovery keep data correct;
+- read research papers and carry out small experiments on database topics.
