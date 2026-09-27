@@ -24,7 +24,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 
 ## Current phase
 
-**Phase 1 (syllabus) is complete and awaiting council review.** The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
+**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
 
 ## Key files
 

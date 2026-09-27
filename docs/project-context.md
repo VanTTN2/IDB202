@@ -94,24 +94,27 @@ The PLO texts (Vietnamese, official) are in `docs/sources/BCS_AD_13_PLO.xlsx`. T
 
 ---
 
-## 5. Chapter structure (from the syllabus schedule)
+## 5. Chapter structure (DSC-based, current)
 
-| Ch. | Topic | Sessions |
-|---|---|---|
-| 1 | Introduction to database systems | 1–3 |
-| 2 | Entity–Relationship model | 4–8 |
-| 3 | Relational model and ER-to-relational mapping | 9–13 |
-| 4 | Relational algebra and calculus | 14–18; Progress test 1 in 19 |
-| 5 | SQL: data definition and constraints | 20–24 |
-| 6 | SQL: queries and semantics | 25–33 |
-| 7 | Data modification, views, SQL from Python | 34–37; Assignment 1 defense in 38 |
-| 8 | Functional dependencies and normalization | 39–45; Progress test 2 in 46 |
-| 9 | Storage, indexing and query processing | 47–51 |
-| 10 | Transactions, concurrency, recovery | 52–56 |
-| – | Assignment 2 progress (57), presentations (58–59), review (60) | 57–60 |
-| App. A | Stored procedures, functions, triggers (optional, not assessed) | – |
+Since 2026-09-27 the course follows the chapter order of [DSC] (Database System Concepts, 7th ed.). Every session cites sections and pages. Abstract, hard-to-experiment material is guided self-study.
 
----
+| Course ch. | Topic | DSC | Sessions |
+|---|---|---|---|
+| C1 | Introduction | Ch. 1 | 1–3 (Lab 1 in 3) |
+| C2 | Relational model and relational algebra | Ch. 2; online Ch. 27 (relational calculus) = self-study | 4–8 (Lab 2 in 7; worksheet review in 8) |
+| C3 | Introduction to SQL | Ch. 3 | 9–14 (Lab 3 in 13–14) |
+| C4 | Intermediate and advanced SQL | Ch. 4, §5.1, §5.4 | 15–19 (Lab 4 in 19); Progress test 1 in 20 |
+| C5 | E-R model | Ch. 6 | 21–25 (Lab 5 in 25; Assignment 1 released) |
+| C6 | Relational database design | Ch. 7 | 26–32 (Lab 6 in 32); Assignment 1 defense in 33; Progress test 2 in 34 |
+| C7 | Storage and indexing | Ch. 12 (self-study), 13, 14 | 35–40 (guided exercises in 39, Lab 7 in 40) |
+| C8 | Query processing and optimization | Ch. 15, 16 (§16.3 self-study) | 41–46 (Lab 8 and Assignment 2 release in 46) |
+| C9 | Transactions and concurrency control | Ch. 17, 18 | 47–53 (Lab 9 in 53) |
+| C10 | Recovery (mainly self-study) | Ch. 19 | 54 (overview only) |
+| – | Assignment 2 progress, presentations; review; PE preparation | – | 55–60 |
+
+Stored procedures, functions and triggers (DSC §5.2–5.3) are optional reading. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
+
+Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 = C5–C6 (CLO2, CLO5); PE = C3–C5; 9 labs.
 
 ## 6. Phases and next steps
 
@@ -146,3 +149,4 @@ The PLO texts (Vietnamese, official) are in `docs/sources/BCS_AD_13_PLO.xlsx`. T
 | 2026-09-24 (later) | Stored every uploaded source file in `docs/sources/` (curriculum, PLOs, course-name screenshot, reference links); the template is in `syllabus/template/`. Declined to download the textbooks from the third-party links because of copyright. Agreed that Claude may read the user's own textbook PDFs, uploaded per session and never committed (D13). **Waiting for:** council feedback on the syllabus; the DSC PDF (or its table of contents) and later the DMS PDF. |
 | 2026-09-27 | Received the DSC 7th-ed. table of contents (10 screenshots in index.docx; not stored). Built `docs/IDB201_DSC_Reading_Plan.xlsx` (script `docs/build_reading_plan.py`): in class / self-study / optional / later-course decision for every chapter and section with page ranges, plus a session-load analysis. Finding: IDB201 Ch. 9 (DSC 13–16, about 121 in-class pages) has only 4 theory sessions; proposed moving 2 sessions from SQL to Ch. 9 (pending the user's decision). Wrote a ~110-word course introduction (`docs/course-introduction.md`). |
 | 2026-09-27 | Replaced the syllabus Description (sheet "Syllabus", C12) with the short list of course objectives chosen by the user (`docs/course-introduction.md`). Pending decision: move 2 sessions from SQL to Ch. 9 and add page numbers to the schedule. |
+| 2026-09-27 | Rebuilt the whole syllabus on the chapter order of DSC 7th ed. (the user re-sent the same table of contents). 60 sessions with section and page citations; 9 labs; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, most of Ch. 19, and others). Updated the grading scopes, materials (DSC main, DMS secondary), constructivist questions (30), the reading plan and the council brief (chapter table, new §3.2 self-study, CLO coverage and matrix, labs, alignment). |

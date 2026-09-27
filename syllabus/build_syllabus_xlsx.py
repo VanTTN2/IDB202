@@ -50,10 +50,13 @@ GENERAL = {
         "- Students must attend at least 80% of contact slots in order to be accepted to the final examination.\n"
         "- Read the assigned textbook sections and the Research Corner paper BEFORE each theory session, and "
         "prepare answers to the constructivist questions.\n"
-        "- Complete all 8 research labs, including the 'Investigate' part and the Python implementation tasks, "
+        "- Complete all 9 research labs, including the 'Investigate' part and the Python implementation tasks, "
         "and submit them on time.\n"
         "- Complete Assignment 1 (individual technical report) and Assignment 2 (group mini research project: "
         "short paper, reproducible code and presentation).\n"
+        "- Complete the guided self-study readings listed in the schedule (abstract topics such as relational "
+        "calculus, statistics estimation and recovery algorithms); they are assessed in the progress tests and the "
+        "final exam.\n"
         "- Keep all code, scripts and measurements in a version-controlled repository so that results are "
         "reproducible.\n"
         "- Disclose any use of generative AI tools in submitted work; undisclosed use is treated as a breach of "
@@ -72,7 +75,7 @@ GENERAL = {
     ),
     "Note": (
         "1) On-going Assessment\n"
-        "- 8 Research labs:                        10%\n"
+        "- 9 Research labs:                        10%\n"
         "- 2 Progress tests:                        20%\n"
         "- Assignment 1 (technical report):   10%\n"
         "- Assignment 2 (research project):  20%\n"
@@ -99,25 +102,29 @@ GENERAL = {
 # (description, purpose, ISBN, type, note, author, publisher, published date, edition)
 MATERIALS = [
     ("Database System Concepts", "textbook", "978-0-07-802215-9", "hardcopy",
-     "[DSC] Main textbook", "Abraham Silberschatz, Henry F. Korth, S. Sudarshan", "McGraw-Hill Education", "2020", "7th"),
-    ("Database Management Systems", "textbook", "978-0-07-246563-1", "hardcopy",
-     "[DMS] Main textbook", "Raghu Ramakrishnan, Johannes Gehrke", "McGraw-Hill", "2003", "3rd"),
-    ("A Relational Model of Data for Large Shared Data Banks", "reference", "", "online",
-     "Research Corner Ch. 3. Communications of the ACM 13(6):377–387", "E. F. Codd", "ACM", "1970", ""),
-    ("The Entity-Relationship Model—Toward a Unified View of Data", "reference", "", "online",
-     "Research Corner Ch. 2. ACM TODS 1(1):9–36", "Peter P. Chen", "ACM", "1976", ""),
-    ("Relational Completeness of Data Base Sublanguages", "reference", "", "online",
-     "Research Corner Ch. 4. In R. Rustin (ed.), Data Base Systems, pp. 65–98", "E. F. Codd", "Prentice-Hall", "1972", ""),
-    ("A Simple Guide to Five Normal Forms in Relational Database Theory", "reference", "", "online",
-     "Research Corner Ch. 8. Communications of the ACM 26(2):120–125", "William Kent", "ACM", "1983", ""),
-    ("Access Path Selection in a Relational Database Management System", "reference", "", "online",
-     "Research Corner Ch. 9. Proc. ACM SIGMOD", "P. G. Selinger et al.", "ACM", "1979", ""),
-    ("The Case for Learned Index Structures", "reference", "", "online",
-     "Research Corner Ch. 9. Proc. ACM SIGMOD", "T. Kraska, A. Beutel, E. H. Chi, J. Dean, N. Polyzotis", "ACM", "2018", ""),
-    ("A Critique of ANSI SQL Isolation Levels", "reference", "", "online",
-     "Research Corner Ch. 10. Proc. ACM SIGMOD", "H. Berenson et al.", "ACM", "1995", ""),
+     "[DSC] Main textbook. The schedule follows its chapters and cites sections and pages; Ch. 27 (online) is used for self-study",
+     "Abraham Silberschatz, Henry F. Korth, S. Sudarshan", "McGraw-Hill Education", "2020", "7th"),
+    ("Database Management Systems", "reference", "978-0-07-246563-1", "hardcopy",
+     "[DMS] Secondary textbook for alternative explanations and extra exercises", "Raghu Ramakrishnan, Johannes Gehrke",
+     "McGraw-Hill", "2003", "3rd"),
     ("What Goes Around Comes Around… And Around…", "reference", "", "online",
-     "Research Corner Ch. 1. ACM SIGMOD Record 53(2)", "Michael Stonebraker, Andrew Pavlo", "ACM", "2024", ""),
+     "Research Corner, Chapter 1. ACM SIGMOD Record 53(2)", "Michael Stonebraker, Andrew Pavlo", "ACM", "2024", ""),
+    ("A Relational Model of Data for Large Shared Data Banks", "reference", "", "online",
+     "Research Corner, Chapter 2. Communications of the ACM 13(6):377–387", "E. F. Codd", "ACM", "1970", ""),
+    ("SEQUEL: A Structured English Query Language", "reference", "", "online",
+     "Research Corner, Chapter 3. Proc. ACM SIGFIDET Workshop", "Donald D. Chamberlin, Raymond F. Boyce", "ACM", "1974", ""),
+    ("The Entity-Relationship Model—Toward a Unified View of Data", "reference", "", "online",
+     "Research Corner, Chapter 5. ACM TODS 1(1):9–36", "Peter P. Chen", "ACM", "1976", ""),
+    ("A Simple Guide to Five Normal Forms in Relational Database Theory", "reference", "", "online",
+     "Research Corner, Chapter 6. Communications of the ACM 26(2):120–125", "William Kent", "ACM", "1983", ""),
+    ("Organization and Maintenance of Large Ordered Indexes", "reference", "", "online",
+     "Research Corner, Chapter 7. Acta Informatica 1:173–189", "Rudolf Bayer, Edward McCreight", "Springer", "1972", ""),
+    ("The Case for Learned Index Structures", "reference", "", "online",
+     "Research Corner, Chapter 7. Proc. ACM SIGMOD", "T. Kraska, A. Beutel, E. H. Chi, J. Dean, N. Polyzotis", "ACM", "2018", ""),
+    ("Access Path Selection in a Relational Database Management System", "reference", "", "online",
+     "Research Corner, Chapter 8. Proc. ACM SIGMOD", "P. G. Selinger et al.", "ACM", "1979", ""),
+    ("A Critique of ANSI SQL Isolation Levels", "reference", "", "online",
+     "Research Corner, Chapter 9. Proc. ACM SIGMOD", "H. Berenson et al.", "ACM", "1995", ""),
     ("Transact-SQL reference", "reference", "", "online",
      "https://learn.microsoft.com/sql/t-sql/", "Microsoft", "Microsoft", "", ""),
 ]
@@ -165,113 +172,233 @@ PLO_MAP = {
 # ---------------------------------------------------------------------------
 # 4. Schedule: (topic, CLO, ITU, student's materials, lecturer's materials, student's task, lecturer's task)
 #    ITU: I = Introduce, T = Teach, U = Utilize
+#    The course follows the chapter order of the main textbook [DSC]:
+#    Silberschatz, Korth & Sudarshan, Database System Concepts, 7th ed., 2020.
+#    Page numbers come from the book's table of contents.
+#    Course chapters (C1–C10) and their DSC chapters:
+#      C1 Introduction ............................ DSC 1
+#      C2 Relational model and relational algebra . DSC 2 (+ online Ch. 27, self-study)
+#      C3 Introduction to SQL ..................... DSC 3
+#      C4 Intermediate and advanced SQL ........... DSC 4, 5.1, 5.4
+#      C5 Database design with the E-R model ...... DSC 6
+#      C6 Relational database design .............. DSC 7
+#      C7 Storage and indexing .................... DSC 12, 13, 14
+#      C8 Query processing and optimization ....... DSC 15, 16
+#      C9 Transactions and concurrency control .... DSC 17, 18
+#      C10 Recovery system (mainly self-study) .... DSC 19
 # ---------------------------------------------------------------------------
 def S(topic, clo, itu, smat, lmat, stask, ltask):
     return (topic, clo, itu, smat, lmat, stask, ltask)
 
 
-def theory(topic, clo, itu, ch, reading):
+def theory(topic, clo, itu, ch, reading, self_study=""):
+    task = f"Read {reading} before class; prepare the constructivist questions"
+    if self_study:
+        task += f"\nSelf-study: {self_study}"
     return S(topic, clo, itu,
-             f"- Lecture notes & slides: Chapter {ch}\n- Textbook: {reading}",
-             f"- Syllabus IDB201\n- Slides: Chapter {ch}\n- Textbooks [DSC], [DMS]",
-             f"Read Chapter {ch} ({reading}) before class; prepare the constructivist questions",
+             f"- Slides: Chapter {ch}\n- Textbook: {reading}",
+             f"- Syllabus IDB201\n- Slides: Chapter {ch}\n- Textbook [DSC]",
+             task,
              f"Teach Chapter {ch}; lead the discussion of the constructivist questions")
 
 
-def lab(topic, clo, n, extra=""):
+def lab(topic, clo, n, reading, extra=""):
     return S(topic, clo, "U",
-             f"- Lab {n} handout{extra}",
+             f"- Lab {n} handout{extra}\n- Textbook: {reading}",
              f"- Lab {n} handout and sample solution",
              f"Do Lab {n}; submit before the end of the session",
              f"Guide Lab {n}; review and grade submissions")
 
 
+def review(topic, clo, smat, lmat, stask, ltask):
+    return S(topic, clo, "U", smat, lmat, stask, ltask)
+
+
 SCHEDULE = [
-    # Chapter 1
-    theory("Course introduction (syllabus, assessment, research orientation)\n1.1 Basic definitions\n1.2 The file-based approach and its problems",
-           "CLO1", "I", 1, "[DSC] Ch. 1; [DMS] Ch. 1"),
-    theory("1.3 Characteristics of the database approach\n1.4 Data models; schema vs. instance\n1.5 Three-schema architecture; data independence\n1.6 Database languages",
-           "CLO1", "T", 1, "[DSC] Ch. 1; [DMS] Ch. 1"),
-    S("1.7–1.10 Users, DBMS components, architectures\nResearch Corner: Stonebraker & Pavlo (2024)\nLab 1: Install SQL Server, load UniversityDB",
-      "CLO1", "T\nU", "- Slides: Chapter 1\n- Paper: Stonebraker & Pavlo (2024)\n- Lab 1 handout", "- Slides: Chapter 1\n- Lab 1 handout",
+    # ---- C1 Introduction (DSC Ch. 1) -------------------------------------------------------------
+    theory("Course introduction: syllabus, assessment, research orientation\n"
+           "1.1 Database-system applications\n1.2 Purpose of database systems\n1.3 View of data",
+           "CLO1", "I", 1, "DSC Ch. 1, §1.1–1.3, pp. 1–12"),
+    theory("1.4 Database languages\n1.5 Database design\n1.6 Database engine\n1.7 Database and application architecture",
+           "CLO1", "T", 1, "DSC Ch. 1, §1.4–1.7, pp. 13–23",
+           "DSC §1.8–1.9 (users and administrators; history of database systems), pp. 24–28"),
+    S("Research Corner: history of data models (Stonebraker & Pavlo, 2024)\nLab 1: install SQL Server; load the sample university database",
+      "CLO1", "T\nU", "- Slides: Chapter 1\n- Paper: Stonebraker & Pavlo (2024)\n- Lab 1 handout\n- Textbook: DSC Appendix A, pp. 1287–1298",
+      "- Slides: Chapter 1\n- Lab 1 handout",
       "Read the paper with the guiding questions; do Lab 1", "Lead the paper discussion; guide Lab 1"),
-    # Chapter 2
-    theory("2.1 The database design process\n2.2 Entities and attributes (simple, composite, multivalued, derived, key)", "CLO2", "T", 2, "[DSC] 6.1–6.3; [DMS] 2.1–2.3"),
-    theory("2.3 Relationships: degree, cardinality ratio, participation, (min, max) notation, relationship attributes, recursive relationships", "CLO2", "T", 2, "[DSC] 6.2–6.4; [DMS] 2.4–2.5"),
-    theory("2.4 Weak entity types\n2.5 Design guidelines and choices (binary vs. ternary)", "CLO2", "T", 2, "[DSC] 6.5–6.6, 6.8; [DMS] 2.4–2.5"),
-    theory("2.6 Worked example: UniversityDB\n2.7 Crow's-foot notation\n2.8 Limits of the ER model\nResearch Corner: Chen (1976)", "CLO2", "T\nU", 2, "[DSC] 6.1–6.8; [DMS] Ch. 2; Chen (1976)"),
-    lab("Lab 2 (part A): ER design – bookstore, hospital, design critique", "CLO2", 2),
-    # Chapter 3
-    theory("3.1 Relational model concepts\n3.2 Keys: superkey, candidate key, primary key, foreign key", "CLO2", "T", 3, "[DSC] 2.1–2.3; [DMS] 3.1"),
-    theory("3.3 Integrity constraints and their violations\n3.6 The relational model as mathematics (relations as sets, constraints as logic)", "CLO2", "T", 3, "[DSC] 2.3–2.4; [DMS] 3.2–3.3"),
-    theory("3.4 ER-to-relational mapping, steps 1–4 (strong and weak entities, 1:1, 1:N)", "CLO2", "T", 3, "[DSC] 6.7; [DMS] 3.5"),
-    theory("3.4 Mapping steps 5–7 (M:N, multivalued, n-ary); 3.5 Worked example\nResearch Corner: Codd (1970)", "CLO2", "T", 3, "[DSC] 6.7; [DMS] 3.5; Codd (1970)"),
-    S("Lab 2 (part B): ER-to-relational mapping; reverse engineering UniversityDB\nAssignment 1 released",
-      "CLO2", "U", "- Lab 2 handout\n- Assignment 1 brief", "- Lab 2 sample solution\n- Assignment 1 brief and rubric",
-      "Do Lab 2 (part B); read the Assignment 1 brief", "Guide Lab 2; present Assignment 1"),
-    # Chapter 4
-    theory("4.1 Relational algebra overview\n4.2 Selection, projection, rename\n4.3 Set operations and Cartesian product", "CLO3", "T", 4, "[DSC] 2.5–2.6; [DMS] 4.1–4.2"),
-    theory("4.4 Joins: theta, equi, natural, outer, semi-join", "CLO3", "T", 4, "[DSC] 2.6; [DMS] 4.2"),
-    theory("4.5 Division\n4.6 Aggregation\n4.7 Complete set of operators\n4.8–4.9 Translation to SQL; worked examples", "CLO3", "T", 4, "[DSC] 2.6; [DMS] 4.2"),
-    theory("4.10 Relational calculus (TRC, DRC), safety, Codd's theorem\n4.11 Limits of expressive power (transitive closure)\nResearch Corner: Codd (1972)", "CLO3", "T", 4, "[DMS] 4.3–4.4; Codd (1972)"),
-    lab("Lab 3: Relational algebra and calculus; Python mini relational-algebra evaluator", "CLO3", 3, "\n- Python starter code labs/python (ra.py)"),
-    S("Progress test 1 (Chapters 1–4)\nReview exercises", "CLO1, CLO2, CLO3", "U",
-      "- Slides: Chapters 1–4", "- Progress test 1", "Review Chapters 1–4; take Progress test 1", "Run and grade Progress test 1; review the answers"),
-    # Chapter 5
-    theory("5.1 SQL overview\n5.2 Databases and schemas\n5.3 SQL Server data types", "CLO4", "T", 5, "[DSC] 3.1–3.2; [DMS] 5.1"),
-    theory("5.4 CREATE TABLE\n5.5 Constraints and referential actions; IDENTITY", "CLO4", "T", 5, "[DSC] 4.4–4.5; [DMS] 3.2–3.3"),
-    theory("5.6–5.9 ALTER/DROP, creation order, catalog, DCL\n5.10 Assertions and the cost of integrity checking", "CLO4", "T", 5, "[DSC] 4.4–4.7; [DMS] 3.3, 5.7"),
-    lab("Lab 4 (part 1): LibraryDB – tables and constraints", "CLO2, CLO4", 4),
-    lab("Lab 4 (part 2): testing constraints, ALTER TABLE, reflection\nAssignment 1 consultation", "CLO2, CLO4", 4),
-    # Chapter 6
-    theory("6.1 The SELECT statement and logical processing order\n6.2 Single-table queries, predicates, built-in functions", "CLO4", "T", 6, "[DSC] 3.3–3.4; [DMS] 5.2"),
-    theory("6.3 NULL and three-valued logic\n6.9 Semantics of SQL: translation to algebra, bag semantics", "CLO4", "T", 6, "[DSC] 3.6; [DMS] 5.6"),
-    theory("6.4 Joins: inner, outer, self, anti-join", "CLO4", "T", 6, "[DSC] 4.1; [DMS] 5.6"),
-    lab("Lab 5 (part A): single-table queries and joins", "CLO4", 5),
-    theory("6.5 Aggregation: GROUP BY, HAVING", "CLO4", "T", 6, "[DSC] 3.7; [DMS] 5.5"),
-    theory("6.6 Subqueries: scalar, IN/ANY/ALL, correlated, EXISTS, division in SQL", "CLO4", "T", 6, "[DSC] 3.8; [DMS] 5.4"),
-    theory("6.6–6.8 CTEs, set operations, window functions\nResearch Corner: Chamberlin & Boyce (1974); Guagliardo & Libkin (2017)", "CLO4", "T", 6, "[DSC] 3.5, 3.8, 5.5; [DMS] 5.3"),
-    lab("Lab 5 (part B): aggregation, subqueries, set operations", "CLO4", 5),
-    lab("Lab 5 (part B, challenge): recursive CTE and expressive power", "CLO3, CLO4", 5),
-    # Chapter 7
-    theory("7.1–7.5 INSERT, UPDATE, DELETE, TRUNCATE, MERGE, OUTPUT", "CLO4", "T", 7, "[DSC] 3.9; [DMS] 3.6"),
-    theory("7.6 Views: definition, updatability, WITH CHECK OPTION\n7.9 View expansion and the view-update problem", "CLO4", "T", 7, "[DSC] 4.2; [DMS] 3.6; Bancilhon & Spyratos (1981)"),
-    theory("7.7 Using the database from Python (pyodbc, pandas); SQL injection", "CLO4", "T", 7, "[DSC] 5.1; [DMS] 6.1–6.2"),
-    lab("Lab 6: data modification, views, and SQL from Python", "CLO4", 6),
+    # ---- C2 Relational model and relational algebra (DSC Ch. 2; online Ch. 27) ------------------
+    theory("2.1 Structure of relational databases\n2.2 Database schema\n2.3 Keys\n2.4 Schema diagrams\n"
+           "The relational model as mathematics: relations as sets, keys and constraints as logic",
+           "CLO2, CLO3", "T", 2, "DSC Ch. 2, §2.1–2.4, pp. 37–46"),
+    theory("2.5 Relational query languages\n2.6 The relational algebra: select, project, union, set difference, "
+           "Cartesian product, rename",
+           "CLO3", "T", 2, "DSC Ch. 2, §2.5–2.6, pp. 47–57"),
+    theory("2.6 The relational algebra (cont.): joins, intersection, assignment, equivalent queries; "
+           "division and aggregation as extended operators\nResearch Corner: Codd (1970)",
+           "CLO3", "T", 2, "DSC Ch. 2, §2.6, pp. 48–57; Codd (1970)",
+           "Relational calculus (tuple and domain) and Codd's theorem, DSC online Ch. 27 – guided reading with worksheet"),
+    lab("Lab 2: relational algebra exercises; Python mini relational-algebra evaluator", "CLO3", 2,
+        "DSC §2.6, pp. 48–57; Exercises, pp. 60–62", "\n- Python starter code (ra.py)"),
+    review("Guided exercises: algebra and calculus proofs; review of the relational-calculus self-study worksheet",
+           "CLO3", "- Slides: Chapter 2\n- Relational-calculus worksheet (DSC online Ch. 27)",
+           "- Worksheet solutions", "Submit the self-study worksheet; solve the proof exercises",
+           "Check the worksheet; discuss common mistakes"),
+    # ---- C3 Introduction to SQL (DSC Ch. 3) ------------------------------------------------------
+    theory("3.1 Overview of SQL\n3.2 SQL data definition\n3.3 Basic structure of SQL queries",
+           "CLO4", "T", 3, "DSC Ch. 3, §3.1–3.3, pp. 65–78"),
+    theory("3.4 Additional basic operations\n3.5 Set operations\n3.6 Null values and three-valued logic",
+           "CLO4", "T", 3, "DSC Ch. 3, §3.4–3.6, pp. 79–90"),
+    theory("3.7 Aggregate functions\n3.8 Nested subqueries",
+           "CLO4", "T", 3, "DSC Ch. 3, §3.7–3.8, pp. 91–107"),
+    theory("3.9 Modification of the database\nSemantics of SQL: bag semantics and translation to relational algebra\n"
+           "Research Corner: Chamberlin & Boyce (1974)",
+           "CLO3, CLO4", "T", 3, "DSC Ch. 3, §3.9, pp. 108–113; Chamberlin & Boyce (1974)"),
+    lab("Lab 3 (part 1): single-table queries, joins, NULL behaviour", "CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
+    lab("Lab 3 (part 2): aggregation, subqueries, set operations; equivalent formulations of the same query",
+        "CLO3, CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
+    # ---- C4 Intermediate and advanced SQL (DSC Ch. 4, §5.1, §5.4) -------------------------------
+    theory("4.1 Join expressions\n4.2 Views", "CLO4", "T", 4, "DSC Ch. 4, §4.1–4.2, pp. 125–142"),
+    theory("4.3 Transactions (preview)\n4.4 Integrity constraints\n4.5 SQL data types and schemas",
+           "CLO2, CLO4", "T", 4, "DSC Ch. 4, §4.3–4.5, pp. 143–163",
+           "DSC §4.7 Authorization, pp. 165–172"),
+    theory("4.6 Index definition in SQL\n5.4 Recursive queries: transitive closure and the limits of relational algebra",
+           "CLO3, CLO4", "T", 4, "DSC §4.6, p. 164; §5.4, pp. 213–218",
+           "DSC §5.5 Advanced aggregation features (ranking, windowing), pp. 219–230"),
+    theory("5.1 Accessing SQL from a programming language (Python)\nSQL injection and parameterized queries",
+           "CLO4", "T", 4, "DSC §5.1, pp. 183–197",
+           "DSC §9.8 Application security, pp. 437–446; optional: §5.2–5.3 functions, procedures, triggers, pp. 198–212"),
+    lab("Lab 4: DDL, integrity constraints, views, and SQL from Python", "CLO2, CLO4", 4,
+        "DSC Ch. 4 Exercises, pp. 176–179; §5.1"),
+    review("Progress test 1 (Chapters 1–4)\nReview exercises", "CLO1, CLO2, CLO3, CLO4",
+           "- Slides: Chapters 1–4\n- DSC Ch. 1–4", "- Progress test 1",
+           "Review Chapters 1–4; take Progress test 1", "Run and grade Progress test 1; review the answers"),
+    # ---- C5 Database design with the E-R model (DSC Ch. 6) --------------------------------------
+    theory("6.1 Overview of the design process\n6.2 The Entity-Relationship model\n6.3 Complex attributes",
+           "CLO2", "T", 5, "DSC Ch. 6, §6.1–6.3, pp. 241–251"),
+    theory("6.4 Mapping cardinalities\n6.5 Primary key\n6.6 Removing redundant attributes in entity sets",
+           "CLO2", "T", 5, "DSC Ch. 6, §6.4–6.6, pp. 252–263"),
+    theory("6.7 Reducing E-R diagrams to relational schemas", "CLO2", "T", 5, "DSC Ch. 6, §6.7, pp. 264–270",
+           "DSC §6.8 Extended E-R features, pp. 271–278"),
+    theory("6.9 Entity-relationship design issues; limits of the E-R model\nResearch Corner: Chen (1976)",
+           "CLO2", "T", 5, "DSC Ch. 6, §6.9, pp. 279–284; Chen (1976)",
+           "DSC §6.10–6.11 Alternative notations (crow's foot, UML) and other aspects of design, pp. 285–291"),
+    S("Lab 5: E-R design and reduction to relational schemas\nAssignment 1 released", "CLO2", "U",
+      "- Lab 5 handout\n- Assignment 1 brief\n- Textbook: DSC Ch. 6 Exercises, pp. 294–299",
+      "- Lab 5 sample solution\n- Assignment 1 brief and rubric",
+      "Do Lab 5; read the Assignment 1 brief", "Guide Lab 5; present Assignment 1"),
+    # ---- C6 Relational database design (DSC Ch. 7) ----------------------------------------------
+    theory("7.1 Features of good relational designs: redundancy and anomalies\n7.2 Decomposition using functional dependencies",
+           "CLO5", "T", 6, "DSC Ch. 7, §7.1–7.2, pp. 303–312"),
+    theory("7.3 Normal forms: BCNF and 3NF", "CLO5", "T", 6, "DSC Ch. 7, §7.3, pp. 313–319"),
+    theory("7.4 Functional-dependency theory: closure of a set of FDs, Armstrong's axioms, attribute closure",
+           "CLO5", "T", 6, "DSC Ch. 7, §7.4, pp. 320–329"),
+    theory("7.4 Functional-dependency theory (cont.): canonical cover, lossless decomposition, dependency preservation; "
+           "proofs of soundness", "CLO5", "T", 6, "DSC Ch. 7, §7.4, pp. 320–329"),
+    theory("7.5 Algorithms for decomposition: BCNF decomposition and 3NF synthesis", "CLO5", "T", 6,
+           "DSC Ch. 7, §7.5, pp. 330–335"),
+    theory("7.6 Decomposition using multivalued dependencies (4NF, overview)\n7.8 Atomic domains and first normal form\n"
+           "Research Corner: Kent (1983)", "CLO5", "T", 6, "DSC Ch. 7, §7.6, §7.8, pp. 336–340, 342",
+           "DSC §7.7 More normal forms, p. 341; §7.9 Database-design process, pp. 343–346"),
+    lab("Lab 6: FD theory on paper; Python FD toolkit (closure, keys, canonical cover, BCNF, lossless-join test)",
+        "CLO5", 6, "DSC Ch. 7 Exercises, pp. 353–359", "\n- Python starter code (fd.py)"),
     S("Assignment 1: submission and oral defense", "CLO2, CLO3, CLO8", "U",
-      "- Assignment 1 brief and rubric", "- Assignment 1 rubric", "Submit the report; defend it orally (5 minutes)", "Assess reports and oral defenses"),
-    # Chapter 8
-    theory("8.1 Anomalies\n8.2 Functional dependencies; Armstrong's axioms", "CLO5", "T", 8, "[DSC] 7.1–7.2; [DMS] 19.1–19.3"),
-    theory("8.3 Attribute closure; finding candidate keys", "CLO5", "T", 8, "[DSC] 7.4; [DMS] 19.3"),
-    theory("8.4 Minimal cover\n8.10 Proofs: soundness, correctness of the closure algorithm", "CLO5", "T", 8, "[DSC] 7.4; [DMS] 19.3"),
-    theory("8.5 Normal forms: 1NF, 2NF, 3NF, BCNF", "CLO5", "T", 8, "[DSC] 7.3; [DMS] 19.4"),
-    theory("8.6–8.8 Lossless join and dependency preservation; 3NF synthesis and BCNF decomposition; worked example", "CLO5", "T", 8, "[DSC] 7.5; [DMS] 19.5–19.6"),
-    theory("8.11 Computational complexity of normalization\n8.12 MVDs and 4NF\nResearch Corner: Kent (1983); Armstrong (1974)", "CLO5", "T", 8, "[DSC] 7.6; [DMS] 19.8; Kent (1983)"),
-    lab("Lab 7: FD theory on paper; Python FD toolkit (closure, keys, minimal cover, BCNF, chase)", "CLO5", 7, "\n- Python starter code labs/python (fd.py)"),
-    S("Progress test 2 (Chapters 5–8)\nReview exercises", "CLO4, CLO5", "U",
-      "- Slides: Chapters 5–8", "- Progress test 2", "Review Chapters 5–8; take Progress test 2", "Run and grade Progress test 2; review the answers"),
-    # Chapter 9
-    theory("9.1 Why storage matters\n9.2 Pages, records, file organizations, the buffer pool", "CLO6", "T", 9, "[DSC] 13.1–13.3; [DMS] 8.1–8.2, 9.1–9.4"),
-    theory("9.3 Indexes: B+-trees, hash indexes, clustered vs. non-clustered, choosing indexes", "CLO6", "T", 9, "[DSC] 14.1–14.5; [DMS] 8.3–8.5, 10.1–10.3"),
-    theory("9.4 Query processing; selection and join algorithms\n9.6 Cost formulas", "CLO6", "T", 9, "[DSC] 15.1–15.5; [DMS] 12.1–12.4, 14.4"),
-    theory("9.5 Reading execution plans\n9.7 Query optimization and join ordering\nResearch Corner: Selinger et al. (1979); Leis et al. (2015); Kraska et al. (2018)", "CLO6", "T", 9, "[DSC] 16.1–16.4; [DMS] 12.1–12.4, 15.1–15.4"),
-    lab("Lab 8 (part A): indexing experiments and execution plans\nAssignment 2 released (research topics)", "CLO6, CLO8", 8, "\n- Assignment 2 brief"),
-    # Chapter 10
-    theory("10.1 Transactions\n10.2 ACID properties\n10.3 Transactions in T-SQL\n10.4 Transaction states", "CLO7", "T", 10, "[DSC] 17.1–17.4; [DMS] 16.1–16.3"),
-    theory("10.5 Concurrency anomalies\n10.6 Schedules and conflict serializability; precedence graphs", "CLO7", "T", 10, "[DSC] 17.5–17.6; [DMS] 16.3"),
-    theory("10.7 Locking, two-phase locking, deadlocks\n10.8 Isolation levels\n10.9 Fixing a race condition", "CLO7", "T", 10, "[DSC] 18.1–18.2, 17.8; [DMS] 16.4–16.6, 17.1–17.2"),
-    theory("10.10 Recovery (WAL, ARIES overview)\n10.11 Recoverability, view serializability, proof that 2PL is correct, snapshot isolation and write skew\nResearch Corner: Eswaran et al. (1976); Berenson et al. (1995)", "CLO7", "T", 10, "[DSC] 17.7, 18.8, 19.1–19.4; [DMS] 16.7, 18.1"),
-    lab("Lab 8 (part B): concurrency experiments with two sessions; Python serializability tester", "CLO7", 8, "\n- Python starter code labs/python (schedule.py)"),
+      "- Assignment 1 brief and rubric", "- Assignment 1 rubric",
+      "Submit the report; defend it orally (5 minutes)", "Assess reports and oral defenses"),
+    review("Progress test 2 (Chapters 5–6)\nReview exercises", "CLO2, CLO5",
+           "- Slides: Chapters 5–6\n- DSC Ch. 6–7", "- Progress test 2",
+           "Review Chapters 5–6; take Progress test 2", "Run and grade Progress test 2; review the answers"),
+    # ---- C7 Storage and indexing (DSC Ch. 12–14) ------------------------------------------------
+    theory("13.1 Database storage architecture\n13.2 File organization\n13.3 Organization of records in files",
+           "CLO6", "T", 7, "DSC Ch. 13, §13.1–13.3, pp. 587–601",
+           "DSC §12.1 Physical storage media, pp. 559–561; §12.6 Disk-block access, pp. 577–579"),
+    theory("13.5 Database buffer\n14.1 Indexing: basic concepts\n14.2 Ordered indices", "CLO6", "T", 7,
+           "DSC §13.5, pp. 604–610; Ch. 14, §14.1–14.2, pp. 623–633",
+           "DSC §13.4 Data-dictionary storage, pp. 602–603"),
+    theory("14.3 B+-tree index files: structure, search, insertion, deletion; height analysis", "CLO6", "T", 7,
+           "DSC Ch. 14, §14.3, pp. 634–649", "DSC §14.4 B+-tree extensions, pp. 650–657"),
+    theory("14.5 Hash indices\n14.6 Multiple-key access\n14.7 Creation of indices\n"
+           "Research Corner: Bayer & McCreight (1972); Kraska et al. (2018)", "CLO6", "T", 7,
+           "DSC Ch. 14, §14.5–14.7, pp. 658–664",
+           "Optional: §13.6 Column-oriented storage, pp. 611–614; §14.8 Write-optimized index structures (LSM), pp. 665–669"),
+    review("Guided exercises: B+-tree insertion and deletion by hand; hashing; I/O cost of index lookups versus table scans",
+           "CLO6", "- Slides: Chapter 7\n- Textbook: DSC Ch. 14 Exercises, pp. 679–682", "- Exercise solutions",
+           "Solve the exercises; compare hand-computed costs with the formulas", "Guide the exercises; discuss solutions"),
+    lab("Lab 7: indexing experiments on a large table; execution plans and logical reads (Investigate)", "CLO6, CLO8", 7,
+        "DSC Ch. 14 Exercises, pp. 679–682"),
+    # ---- C8 Query processing and optimization (DSC Ch. 15–16) -----------------------------------
+    theory("15.1 Overview of query processing\n15.2 Measures of query cost\n15.3 Selection operation", "CLO6", "T", 8,
+           "DSC Ch. 15, §15.1–15.3, pp. 689–700"),
+    theory("15.4 Sorting (external merge sort)\n15.5 Join operation: nested-loop and block nested-loop joins", "CLO6", "T", 8,
+           "DSC Ch. 15, §15.4, pp. 701–703; §15.5, pp. 704–718"),
+    theory("15.5 Join operation (cont.): indexed nested-loop, merge join, hash join; cost comparison", "CLO6", "T", 8,
+           "DSC Ch. 15, §15.5, pp. 704–718",
+           "DSC §15.6 Other operations, pp. 719–723; §15.7 Evaluation of expressions (pipelining), pp. 724–730"),
+    theory("16.1 Overview of query optimization\n16.2 Transformation of relational expressions: equivalence rules", "CLO6", "T", 8,
+           "DSC Ch. 16, §16.1–16.2, pp. 743–756"),
+    theory("16.4 Choice of evaluation plans: cost-based join ordering (dynamic programming)\n"
+           "Research Corner: Selinger et al. (1979)", "CLO6", "T", 8, "DSC Ch. 16, §16.4, pp. 766–777",
+           "DSC §16.3 Estimating statistics of expression results, pp. 757–765"),
+    lab("Lab 8: reading execution plans; comparing join algorithms and equivalent queries (Investigate)\n"
+        "Assignment 2 released (research topics)", "CLO6, CLO8", 8, "DSC Ch. 15–16 Exercises, pp. 736–739, 789–793",
+        "\n- Assignment 2 brief"),
+    # ---- C9 Transactions and concurrency control (DSC Ch. 17–18) --------------------------------
+    theory("17.1 Transaction concept\n17.2 A simple transaction model\n17.3 Storage structure\n"
+           "17.4 Transaction atomicity and durability", "CLO7", "T", 9, "DSC Ch. 17, §17.1–17.4, pp. 799–806"),
+    theory("17.5 Transaction isolation\n17.6 Serializability: conflict serializability and precedence graphs", "CLO7", "T", 9,
+           "DSC Ch. 17, §17.5–17.6, pp. 807–818"),
+    theory("17.7 Transaction isolation and atomicity: recoverable and cascadeless schedules\n"
+           "17.8 Transaction isolation levels\n17.9 Implementation of isolation levels\n17.10 Transactions as SQL statements",
+           "CLO7", "T", 9, "DSC Ch. 17, §17.7–17.10, pp. 819–827"),
+    theory("18.1 Lock-based protocols: two-phase locking and why it guarantees serializability", "CLO7", "T", 9,
+           "DSC Ch. 18, §18.1, pp. 835–848", "DSC §18.3 Multiple granularity, pp. 853–856"),
+    theory("18.2 Deadlock handling\n18.4 Insert operations, delete operations and predicate reads (phantoms)", "CLO7", "T", 9,
+           "DSC Ch. 18, §18.2, pp. 849–852; §18.4, pp. 857–860",
+           "DSC §18.5 Timestamp-based protocols, pp. 861–865; §18.7 Multiversion schemes, pp. 869–871"),
+    theory("18.8 Snapshot isolation and write skew\nResearch Corner: Berenson et al. (1995)", "CLO7", "T", 9,
+           "DSC Ch. 18, §18.8, pp. 872–879; Berenson et al. (1995)",
+           "DSC §18.9 Weak levels of consistency in practice, pp. 880–882"),
+    lab("Lab 9: concurrency experiments with two sessions (isolation levels, deadlocks); Python serializability tester",
+        "CLO7", 9, "DSC Ch. 17–18 Exercises, pp. 831–833, 899–903", "\n- Python starter code (schedule.py)"),
+    # ---- C10 Recovery system (DSC Ch. 19, mainly self-study) ------------------------------------
+    theory("Recovery system (overview): 19.1 Failure classification, 19.3 Recovery and atomicity (write-ahead logging), "
+           "19.4 Recovery algorithm (main ideas)\nBriefing for the self-study of Chapter 19",
+           "CLO7", "T", 10, "DSC Ch. 19, §19.1, §19.3, pp. 907, 912–921",
+           "DSC §19.2 Storage, pp. 908–911; §19.4 Recovery algorithm, pp. 922–925; §19.5–19.6, pp. 926–930; "
+           "optional §19.9 ARIES, pp. 941–946"),
+    # ---- Assignment 2, review ------------------------------------------------------------------------
     S("Assignment 2: research progress meeting (question, method, preliminary results)", "CLO8", "U",
-      "- Assignment 2 brief and rubric", "- Assignment 2 rubric", "Present progress; revise the method", "Give feedback on each group's method"),
-    S("Assignment 2: paper presentations (part 1)", "CLO6, CLO7, CLO8", "U",
-      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper (10 minutes + 5 minutes Q&A)", "Assess presentations and papers"),
-    S("Assignment 2: paper presentations (part 2)", "CLO6, CLO7, CLO8", "U",
-      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper; submit the final paper and code", "Assess presentations and papers"),
-    S("Course review: key results and open research questions\nPractical exam preparation", "CLO1–CLO8", "U",
-      "- Slides: all chapters\n- Question bank", "- Slides: all chapters\n- Question bank", "Review all chapters; practice SQL", "Review; answer questions"),
+      "- Assignment 2 brief and rubric", "- Assignment 2 rubric", "Present progress; revise the method",
+      "Give feedback on each group's method"),
+    S("Assignment 2: paper presentations (part 1)", "CLO5, CLO6, CLO7, CLO8", "U",
+      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper (10 minutes + 5 minutes Q&A)",
+      "Assess presentations and papers"),
+    S("Assignment 2: paper presentations (part 2)", "CLO5, CLO6, CLO7, CLO8", "U",
+      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper; submit the final paper and code",
+      "Assess presentations and papers"),
+    review("Course review (part 1): Chapters 1–6, including the self-study readings", "CLO1, CLO2, CLO3, CLO4, CLO5",
+           "- Slides: Chapters 1–6\n- Self-study reading list", "- Review questions",
+           "Review Chapters 1–6 and the self-study readings", "Answer questions; review key results"),
+    review("Course review (part 2): Chapters 7–10, including the self-study of recovery", "CLO6, CLO7",
+           "- Slides: Chapters 7–10\n- Self-study reading list", "- Review questions",
+           "Review Chapters 7–10 and the self-study readings", "Answer questions; review key results"),
+    review("Practical exam preparation: SQL practice on the computer", "CLO4",
+           "- Practice problems (DDL and queries)", "- Practice problems and solutions",
+           "Practise SQL under exam conditions", "Guide the practice; clarify the exam rules"),
 ]
 assert len(SCHEDULE) == 60, len(SCHEDULE)
+
+# Self-study plan (guided reading, checked by labs, tests and the final exam)
+SELF_STUDY = [
+    ("C1", "DSC §1.8–1.9, pp. 24–28", "Users and administrators; history of database systems"),
+    ("C2", "DSC online Ch. 27 (tuple and domain relational calculus)", "Abstract; studied with a worksheet reviewed in session 8"),
+    ("C4", "DSC §4.7, pp. 165–172; §5.5, pp. 219–230; §9.8, pp. 437–446", "Authorization; ranking and windowing; application security"),
+    ("C5", "DSC §6.8, pp. 271–278; §6.10–6.11, pp. 285–291", "Extended E-R features; alternative notations"),
+    ("C6", "DSC §7.7, p. 341; §7.9, pp. 343–346", "More normal forms; the design process"),
+    ("C7", "DSC §12.1, §12.6, §13.4, §14.4", "Storage media and disk-block access; data dictionary; B+-tree extensions"),
+    ("C8", "DSC §15.6–15.7, pp. 719–730; §16.3, pp. 757–765", "Other operations and pipelining; statistics estimation (abstract, hard to observe directly)"),
+    ("C9", "DSC §18.3, §18.5, §18.7, §18.9", "Multiple granularity; timestamp and multiversion protocols; weak consistency"),
+    ("C10", "DSC Ch. 19, §19.2, §19.4–19.6, pp. 908–911, 922–930", "Recovery algorithms: abstract and hard to reproduce in a lab"),
+]
 
 # ---------------------------------------------------------------------------
 # 5. Constructivist questions: (session, name, question)
@@ -280,36 +407,33 @@ CQ = [
     (3, "CQ1", "Codd separated the logical view of data from its physical storage. What would be lost if applications had to know how and where each record is stored?"),
     (3, "CQ2", "Why do new data models (XML, document, graph, vector) keep appearing, and why do many of them end up adding SQL-like features?"),
     (3, "CQ3", "When is a database system NOT the right tool? Give a concrete example and justify it."),
-    (7, "CQ1", "Why is Grade an attribute of the enrollment relationship and not of STUDENT or SECTION? What goes wrong if it is placed on either entity?"),
-    (7, "CQ2", "Is a ternary relationship always equivalent to three binary relationships? Construct a counterexample."),
-    (7, "CQ3", "Give a business rule of UniversityDB that cannot be drawn in an ER diagram. How should a designer record and enforce it?"),
-    (12, "CQ1", "What would break if relations were allowed to contain duplicate tuples? Consider keys, projection and the meaning of a fact."),
-    (12, "CQ2", "Why is NULL allowed in a foreign key but not in a primary key? Argue from what each constraint means."),
-    (12, "CQ3", "A 1:1 relationship can be mapped with a foreign key on either side, or by merging the two relations. How would you decide, and what evidence would you use?"),
-    (17, "CQ1", "Why does projection remove duplicates in relational algebra while SELECT in SQL does not? What are the costs and benefits of each choice?"),
-    (17, "CQ2", "Division expresses 'for all' queries. Why is there no basic 'for all' operator, and how does calculus express the same idea?"),
-    (17, "CQ3", "Relational algebra cannot compute the transitive closure of a relation. Why does a fixed-size expression limit what a language can express?"),
-    (22, "CQ1", "Why should integrity rules be declared in the database rather than checked in application code? When is the opposite true?"),
-    (22, "CQ2", "Why do almost no DBMSs implement CREATE ASSERTION, although it is in the SQL standard?"),
-    (22, "CQ3", "ON DELETE CASCADE is convenient. What risks does it create, and how could a cascade chain surprise a user?"),
-    (26, "CQ1", "Under three-valued logic, 'p OR NOT p' is not always true. Which everyday query mistakes follow from this?"),
-    (26, "CQ2", "Why does 'x NOT IN (subquery)' return no rows when the subquery contains NULL, while NOT EXISTS behaves differently?"),
-    (26, "CQ3", "Which algebraic laws that hold for sets fail for bags? Why did SQL choose bag semantics anyway?"),
-    (31, "CQ1", "A correlated subquery is evaluated 'once per outer row' in the textbook model. How could a DBMS evaluate it more efficiently?"),
-    (31, "CQ2", "The same query can often be written with a join, a subquery or a set operation. Should the choice affect performance? Why or why not?"),
-    (31, "CQ3", "Why did it take until 2017 to give SQL a complete formal semantics?"),
-    (35, "CQ1", "Deleting a row through a join view can be translated in more than one way. Which translation should the DBMS choose, and why?"),
-    (35, "CQ2", "A view costs nothing extra at run time. How is that possible?"),
-    (35, "CQ3", "Why do parameterized queries prevent SQL injection, while escaping user input is considered fragile?"),
-    (44, "CQ1", "Every normal form can be seen as removing one kind of redundancy. What single idea unifies them?"),
-    (44, "CQ2", "BCNF decomposition may lose a dependency. When would you accept 3NF instead, and what do you gain?"),
-    (44, "CQ3", "Testing whether an attribute is prime is NP-complete. What does this mean for automatic schema design tools?"),
-    (50, "CQ1", "Why is a B-tree node the size of a disk page instead of holding a single key as in a binary search tree?"),
-    (50, "CQ2", "The optimizer relies on estimates. What happens when the estimates are wrong, and where do the errors come from?"),
-    (50, "CQ3", "Could a machine-learning model replace an index? What would you need to measure to decide?"),
-    (55, "CQ1", "Why is serializability the accepted correctness criterion for concurrent transactions? What weaker criteria do real systems use, and why?"),
-    (55, "CQ2", "Why does two-phase locking guarantee serializability? Explain the idea of the lock point."),
-    (55, "CQ3", "Snapshot isolation prevents dirty reads, non-repeatable reads and phantoms. Why is it still not serializable?"),
+    (8, "CQ1", "What would break if relations were allowed to contain duplicate tuples? Consider keys, projection and the meaning of a fact."),
+    (8, "CQ2", "Division expresses 'for all' queries. Why is there no basic 'for all' operator, and how does relational calculus express the same idea?"),
+    (8, "CQ3", "Relational algebra cannot compute the transitive closure of a relation. Why does a fixed-size expression limit what a language can express?"),
+    (12, "CQ1", "Under three-valued logic, 'p OR NOT p' is not always true. Which everyday query mistakes follow from this?"),
+    (12, "CQ2", "Why does 'x NOT IN (subquery)' return no rows when the subquery contains NULL, while NOT EXISTS behaves differently?"),
+    (12, "CQ3", "Which algebraic laws that hold for sets fail for bags? Why did SQL choose bag semantics anyway?"),
+    (18, "CQ1", "Why should integrity rules be declared in the database rather than checked in application code? When is the opposite true?"),
+    (18, "CQ2", "A view costs nothing extra at run time. How is that possible, and when would a materialized view be better?"),
+    (18, "CQ3", "Why do parameterized queries prevent SQL injection, while escaping user input is considered fragile?"),
+    (24, "CQ1", "Why is a grade an attribute of the enrollment relationship and not of STUDENT or SECTION? What goes wrong if it is placed on either entity?"),
+    (24, "CQ2", "Is a ternary relationship always equivalent to three binary relationships? Construct a counterexample."),
+    (24, "CQ3", "Give a business rule of the university database that cannot be drawn in an E-R diagram. How should a designer record and enforce it?"),
+    (31, "CQ1", "Every normal form can be seen as removing one kind of redundancy. What single idea unifies them?"),
+    (31, "CQ2", "BCNF decomposition may lose a dependency. When would you accept 3NF instead, and what do you gain?"),
+    (31, "CQ3", "Testing whether an attribute is prime is NP-complete. What does this mean for automatic schema design tools?"),
+    (39, "CQ1", "Why is a B+-tree node the size of a disk block instead of holding a single key as in a binary search tree?"),
+    (39, "CQ2", "When can a full table scan be cheaper than using an index? Design an experiment that shows it."),
+    (39, "CQ3", "Could a machine-learning model replace an index? What would you need to measure to decide?"),
+    (45, "CQ1", "The optimizer relies on estimates. What happens when the estimates are wrong, and where do the errors come from?"),
+    (45, "CQ2", "The same query can often be written with a join, a subquery or a set operation. Should the choice affect performance? Why or why not?"),
+    (45, "CQ3", "Why does the number of possible join orders grow so quickly, and how does dynamic programming keep the search manageable?"),
+    (52, "CQ1", "Why is serializability the accepted correctness criterion for concurrent transactions? What weaker criteria do real systems use, and why?"),
+    (52, "CQ2", "Why does two-phase locking guarantee serializability? Explain the idea of the lock point."),
+    (52, "CQ3", "Snapshot isolation prevents dirty reads, non-repeatable reads and phantoms. Why is it still not serializable?"),
+    (54, "CQ1", "Why must a log record reach stable storage before the data page it describes (write-ahead logging)?"),
+    (54, "CQ2", "What would a DBMS lose, in performance and in safety, if it forced every modified page to disk at commit?"),
+    (54, "CQ3", "Why is recovery hard to test in a lab, and how could you still gain evidence that a recovery algorithm is correct?"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -317,44 +441,44 @@ CQ = [
 # (component, type, weight, part, min, duration, CLO, question type, number, scope, how, note, reference)
 # ---------------------------------------------------------------------------
 GRADING = [
-    ("Research labs", "on-going", 10, 8, 0.0001, "In lab sessions", "CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
-     "Lab exercises, Python implementations with tests, 'Investigate' mini-reports", 8,
-     "Labs 1–8 (Chapters 1–10)", "in class, by instructor",
-     "Each lab is worth 1.25%. The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark. Python tasks are graded by the provided unit tests and by code review.",
+    ("Research labs", "on-going", 10, 9, 0.0001, "In lab sessions", "CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
+     "Lab exercises, Python implementations with tests, 'Investigate' mini-reports", 9,
+     "Labs 1–9 (Chapters 1–9)", "in class, by instructor",
+     "Each lab is worth about 1.1% (10% / 9). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark. Python tasks are graded by the provided unit tests and by code review.",
      "Lab"),
-    ("Progress test 1", "on-going", 10, 1, 0.0001, "30'", "CLO1, CLO2, CLO3",
+    ("Progress test 1", "on-going", 10, 1, 0.0001, "30'", "CLO1, CLO2, CLO3, CLO4",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
-     "- cover content 1, 2, 3, 4\n- written items: one ER design or mapping task, one relational algebra/calculus proof or query",
+     "- cover Chapters 1–4 (DSC Ch. 1–4, §5.1, §5.4) and the self-study of relational calculus (DSC online Ch. 27)\n- written items: one relational algebra/calculus proof or query, one SQL semantics question (NULL, bags)",
      "in class, by instructor",
      "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded.",
      "Progress test"),
-    ("Progress test 2", "on-going", 10, 1, 0.0001, "30'", "CLO4, CLO5",
+    ("Progress test 2", "on-going", 10, 1, 0.0001, "30'", "CLO2, CLO5",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
-     "- cover content 5, 6, 7, 8\n- written items: one SQL semantics question (NULL/bags), one FD proof or normalization task",
+     "- cover Chapters 5–6 (DSC Ch. 6–7) and their self-study sections\n- written items: one E-R design and reduction task, one FD proof or normalization task",
      "in class, by instructor",
      "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded.",
      "Progress test"),
     ("Assignment 1", "on-going", 10, 1, 0.0001, "Take-home, 3 weeks + 5' oral defense", "CLO2, CLO3, CLO8",
      "Individual technical report (4–6 pages) + oral defense", 1,
-     "- cover content 2, 3, 4, 5, 6\n- design and theory report: ER model with justified alternatives, formal relational schema, constraints as logic, algebra/calculus/SQL queries with correctness arguments, one guided experiment",
-     "take-home, submitted in session 38, graded by instructor with rubric",
+     "- cover Chapters 2–6 (DSC Ch. 2–4, 6–7)\n- design and theory report: ER model with justified alternatives, formal relational schema, constraints as logic, algebra/calculus/SQL queries with correctness arguments, one guided experiment",
+     "take-home; released in session 25, submitted and defended in session 33; graded by instructor with rubric",
      "Instructor has responsibility to review the assignment for students after graded. Plagiarism or undisclosed AI-generated content leads to a score of 0.",
      "Assignment"),
     ("Assignment 2", "on-going", 20, 1, 0.0001, "Take-home, 4 weeks + 15' presentation", "CLO5, CLO6, CLO7, CLO8",
      "Group mini research project (2–3 students): short paper (IEEE format, 4–6 pages), reproducible code, presentation", 1,
-     "- cover content 6–10 and the Research Corner papers\n- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing a result from a paper",
-     "take-home; progress meeting in session 57; presentations in sessions 58–59; graded by instructor with rubric",
+     "- cover Chapters 6–10 (DSC Ch. 7, 12–19) and the Research Corner papers\n- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing a result from a paper",
+     "take-home; released in session 46; progress meeting in session 55; presentations in sessions 56–57; graded by instructor with rubric",
      "Paper 50% (question, method, results, discussion, related work), reproducibility of code and data 20%, presentation and Q&A 20%, peer evaluation 10%. Individual marks may differ within a group based on contribution logs.",
      "Assignment"),
     ("Practical exam", "on-going", 10, 1, 0.0001, "60'", "CLO4",
      "Practical questions on computer", 2,
-     "- cover content 5, 6, 7\n- create a schema with constraints from a specification; write SQL queries (joins, aggregation, subqueries, views)",
+     "- cover Chapters 3–5 (DSC Ch. 3, 4, 6)\n- create a schema with constraints from a specification; write SQL queries (joins, aggregation, subqueries, views)",
      "by exam board, using computer",
      "The exam questions must be updated or different at least 70% to the previous ones.",
      "on-going"),
     ("Final exam", "final exam", 30, 1, 4, "60'", "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7",
      "Multiple choices\nMarked by Computer", 50,
-     "concepts, proofs, algorithms and analysis; all studied chapters; at least 30% of items at the Analyze level or above",
+     "concepts, proofs, algorithms and analysis; all chapters, including the self-study readings (about 20% of items); at least 30% of items at the Analyze level or above",
      "by exam board, using computer",
      "The exam questions must be updated or different at least 70% to the previous ones.",
      "Final exam"),
