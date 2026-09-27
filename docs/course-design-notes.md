@@ -94,6 +94,8 @@ Things that remain in place because the students are in semester 1:
 
 ## 4. Seminal readings (Research Corner)
 
+> **Superseded (2026-09-27):** the Research Corner (one seminal paper per chapter) was dropped at the course owner's request to avoid overloading students. The research score now comes from short written answers to the constructivist questions (one per chapter, 150–200 words, 4% of the grade) together with the labs and assignments. The papers below are kept only as background for instructors.
+
 | Chapter | Paper | Guiding focus |
 |---|---|---|
 | 1 | Stonebraker, M. and Hellerstein, J. M. "What Goes Around Comes Around." In *Readings in Database Systems*, 4th ed., MIT Press, 2005. Also: Stonebraker, M. and Pavlo, A. "What Goes Around Comes Around… And Around…" *ACM SIGMOD Record* 53(2), 2024. | Why do data models keep returning to the relational model? |

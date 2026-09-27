@@ -44,13 +44,15 @@ GENERAL = {
         "- use functional dependencies to evaluate and normalize a database design;\n"
         "- explain how a DBMS stores data, uses indexes and processes queries;\n"
         "- explain how transactions, concurrency control and recovery keep data correct;\n"
-        "- read research papers and carry out small experiments on database topics."
+        "- answer research-style questions and carry out small experiments on database topics."
     ),
     "Student's tasks": (
         "- Students must attend at least 80% of contact slots in order to be accepted to the final examination.\n"
-        "- Read the assigned textbook sections and the Research Corner paper BEFORE each theory session, and "
-        "prepare answers to the constructivist questions.\n"
-        "- Complete all 9 research labs, including the 'Investigate' part and the Python implementation tasks, "
+        "- Read the assigned textbook sections BEFORE each theory session.\n"
+        "- For each chapter, choose ONE of its three constructivist questions and submit a short written answer "
+        "(150–200 words) on the LMS within one week of the discussion session. The answers are graded as part "
+        "of the research score (4% in total).\n"
+        "- Complete all 9 labs, including the 'Investigate' part and the Python implementation tasks, "
         "and submit them on time.\n"
         "- Complete Assignment 1 (individual technical report) and Assignment 2 (group mini research project: "
         "short paper, reproducible code and presentation).\n"
@@ -75,7 +77,7 @@ GENERAL = {
     ),
     "Note": (
         "1) On-going Assessment\n"
-        "- 9 Research labs:                        10%\n"
+        "- 9 labs + 10 CQ answers:              10%\n"
         "- 2 Progress tests:                        20%\n"
         "- Assignment 1 (technical report):   10%\n"
         "- Assignment 2 (research project):  20%\n"
@@ -87,7 +89,7 @@ GENERAL = {
         "2) Practical Exam > 0\n"
         "3) Final Exam Score >= 4 & Final Result >= 5\n"
         "Rationale: the course serves talented students on an academic track, so 40% of the grade rewards "
-        "research work (labs, report, research project), 60% rewards individual mastery of theory and skills "
+        "research work (labs, constructivist questions, report, research project), 60% rewards individual mastery of theory and skills "
         "(progress tests, practical exam, final exam), and the final exam includes at least 30% "
         "analysis-level items."
     ),
@@ -107,24 +109,6 @@ MATERIALS = [
     ("Database Management Systems", "reference", "978-0-07-246563-1", "hardcopy",
      "[DMS] Secondary textbook for alternative explanations and extra exercises", "Raghu Ramakrishnan, Johannes Gehrke",
      "McGraw-Hill", "2003", "3rd"),
-    ("What Goes Around Comes Around… And Around…", "reference", "", "online",
-     "Research Corner, Chapter 1. ACM SIGMOD Record 53(2)", "Michael Stonebraker, Andrew Pavlo", "ACM", "2024", ""),
-    ("A Relational Model of Data for Large Shared Data Banks", "reference", "", "online",
-     "Research Corner, Chapter 2. Communications of the ACM 13(6):377–387", "E. F. Codd", "ACM", "1970", ""),
-    ("SEQUEL: A Structured English Query Language", "reference", "", "online",
-     "Research Corner, Chapter 3. Proc. ACM SIGFIDET Workshop", "Donald D. Chamberlin, Raymond F. Boyce", "ACM", "1974", ""),
-    ("The Entity-Relationship Model—Toward a Unified View of Data", "reference", "", "online",
-     "Research Corner, Chapter 5. ACM TODS 1(1):9–36", "Peter P. Chen", "ACM", "1976", ""),
-    ("A Simple Guide to Five Normal Forms in Relational Database Theory", "reference", "", "online",
-     "Research Corner, Chapter 6. Communications of the ACM 26(2):120–125", "William Kent", "ACM", "1983", ""),
-    ("Organization and Maintenance of Large Ordered Indexes", "reference", "", "online",
-     "Research Corner, Chapter 7. Acta Informatica 1:173–189", "Rudolf Bayer, Edward McCreight", "Springer", "1972", ""),
-    ("The Case for Learned Index Structures", "reference", "", "online",
-     "Research Corner, Chapter 7. Proc. ACM SIGMOD", "T. Kraska, A. Beutel, E. H. Chi, J. Dean, N. Polyzotis", "ACM", "2018", ""),
-    ("Access Path Selection in a Relational Database Management System", "reference", "", "online",
-     "Research Corner, Chapter 8. Proc. ACM SIGMOD", "P. G. Selinger et al.", "ACM", "1979", ""),
-    ("A Critique of ANSI SQL Isolation Levels", "reference", "", "online",
-     "Research Corner, Chapter 9. Proc. ACM SIGMOD", "H. Berenson et al.", "ACM", "1995", ""),
     ("Transact-SQL reference", "reference", "", "online",
      "https://learn.microsoft.com/sql/t-sql/", "Microsoft", "Microsoft", "", ""),
 ]
@@ -192,14 +176,14 @@ def S(topic, clo, itu, smat, lmat, stask, ltask):
 
 
 def theory(topic, clo, itu, ch, reading, self_study=""):
-    task = f"Read {reading} before class; prepare the constructivist questions"
+    task = f"Read {reading} before class"
     if self_study:
         task += f"\nSelf-study: {self_study}"
     return S(topic, clo, itu,
              f"- Slides: Chapter {ch}\n- Textbook: {reading}",
              f"- Syllabus IDB201\n- Slides: Chapter {ch}\n- Textbook [DSC]",
              task,
-             f"Teach Chapter {ch}; lead the discussion of the constructivist questions")
+             f"Teach Chapter {ch}")
 
 
 def lab(topic, clo, n, reading, extra=""):
@@ -222,10 +206,10 @@ SCHEDULE = [
     theory("1.4 Database languages\n1.5 Database design\n1.6 Database engine\n1.7 Database and application architecture",
            "CLO1", "T", 1, "DSC Ch. 1, §1.4–1.7, pp. 13–23",
            "DSC §1.8–1.9 (users and administrators; history of database systems), pp. 24–28"),
-    S("Research Corner: history of data models (Stonebraker & Pavlo, 2024)\nLab 1: install SQL Server; load the sample university database",
-      "CLO1", "T\nU", "- Slides: Chapter 1\n- Paper: Stonebraker & Pavlo (2024)\n- Lab 1 handout\n- Textbook: DSC Appendix A, pp. 1287–1298",
+    S("Discussion of the Chapter 1 constructivist questions\nLab 1: install SQL Server; load the sample university database",
+      "CLO1", "T\nU", "- Slides: Chapter 1\n- Lab 1 handout\n- Textbook: DSC Appendix A, pp. 1287–1298",
       "- Slides: Chapter 1\n- Lab 1 handout",
-      "Read the paper with the guiding questions; do Lab 1", "Lead the paper discussion; guide Lab 1"),
+      "Discuss the Chapter 1 constructivist questions; choose one and submit a 150–200-word answer within one week\nDo Lab 1", "Lead the discussion; guide Lab 1"),
     # ---- C2 Relational model and relational algebra (DSC Ch. 2; online Ch. 27) ------------------
     theory("2.1 Structure of relational databases\n2.2 Database schema\n2.3 Keys\n2.4 Schema diagrams\n"
            "The relational model as mathematics: relations as sets, keys and constraints as logic",
@@ -234,8 +218,8 @@ SCHEDULE = [
            "Cartesian product, rename",
            "CLO3", "T", 2, "DSC Ch. 2, §2.5–2.6, pp. 47–57"),
     theory("2.6 The relational algebra (cont.): joins, intersection, assignment, equivalent queries; "
-           "division and aggregation as extended operators\nResearch Corner: Codd (1970)",
-           "CLO3", "T", 2, "DSC Ch. 2, §2.6, pp. 48–57; Codd (1970)",
+           "division and aggregation as extended operators",
+           "CLO3", "T", 2, "DSC Ch. 2, §2.6, pp. 48–57",
            "Relational calculus (tuple and domain) and Codd's theorem, DSC online Ch. 27 – guided reading with worksheet"),
     lab("Lab 2: relational algebra exercises; Python mini relational-algebra evaluator", "CLO3", 2,
         "DSC §2.6, pp. 48–57; Exercises, pp. 60–62", "\n- Python starter code (ra.py)"),
@@ -250,9 +234,8 @@ SCHEDULE = [
            "CLO4", "T", 3, "DSC Ch. 3, §3.4–3.6, pp. 79–90"),
     theory("3.7 Aggregate functions\n3.8 Nested subqueries",
            "CLO4", "T", 3, "DSC Ch. 3, §3.7–3.8, pp. 91–107"),
-    theory("3.9 Modification of the database\nSemantics of SQL: bag semantics and translation to relational algebra\n"
-           "Research Corner: Chamberlin & Boyce (1974)",
-           "CLO3, CLO4", "T", 3, "DSC Ch. 3, §3.9, pp. 108–113; Chamberlin & Boyce (1974)"),
+    theory("3.9 Modification of the database\nSemantics of SQL: bag semantics and translation to relational algebra",
+           "CLO3, CLO4", "T", 3, "DSC Ch. 3, §3.9, pp. 108–113"),
     lab("Lab 3 (part 1): single-table queries, joins, NULL behaviour", "CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
     lab("Lab 3 (part 2): aggregation, subqueries, set operations; equivalent formulations of the same query",
         "CLO3, CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
@@ -279,8 +262,8 @@ SCHEDULE = [
            "CLO2", "T", 5, "DSC Ch. 6, §6.4–6.6, pp. 252–263"),
     theory("6.7 Reducing E-R diagrams to relational schemas", "CLO2", "T", 5, "DSC Ch. 6, §6.7, pp. 264–270",
            "DSC §6.8 Extended E-R features, pp. 271–278"),
-    theory("6.9 Entity-relationship design issues; limits of the E-R model\nResearch Corner: Chen (1976)",
-           "CLO2", "T", 5, "DSC Ch. 6, §6.9, pp. 279–284; Chen (1976)",
+    theory("6.9 Entity-relationship design issues; limits of the E-R model",
+           "CLO2", "T", 5, "DSC Ch. 6, §6.9, pp. 279–284",
            "DSC §6.10–6.11 Alternative notations (crow's foot, UML) and other aspects of design, pp. 285–291"),
     S("Lab 5: E-R design and reduction to relational schemas\nAssignment 1 released", "CLO2", "U",
       "- Lab 5 handout\n- Assignment 1 brief\n- Textbook: DSC Ch. 6 Exercises, pp. 294–299",
@@ -296,8 +279,7 @@ SCHEDULE = [
            "proofs of soundness", "CLO5", "T", 6, "DSC Ch. 7, §7.4, pp. 320–329"),
     theory("7.5 Algorithms for decomposition: BCNF decomposition and 3NF synthesis", "CLO5", "T", 6,
            "DSC Ch. 7, §7.5, pp. 330–335"),
-    theory("7.6 Decomposition using multivalued dependencies (4NF, overview)\n7.8 Atomic domains and first normal form\n"
-           "Research Corner: Kent (1983)", "CLO5", "T", 6, "DSC Ch. 7, §7.6, §7.8, pp. 336–340, 342",
+    theory("7.6 Decomposition using multivalued dependencies (4NF, overview)\n7.8 Atomic domains and first normal form", "CLO5", "T", 6, "DSC Ch. 7, §7.6, §7.8, pp. 336–340, 342",
            "DSC §7.7 More normal forms, p. 341; §7.9 Database-design process, pp. 343–346"),
     lab("Lab 6: FD theory on paper; Python FD toolkit (closure, keys, canonical cover, BCNF, lossless-join test)",
         "CLO5", 6, "DSC Ch. 7 Exercises, pp. 353–359", "\n- Python starter code (fd.py)"),
@@ -316,8 +298,7 @@ SCHEDULE = [
            "DSC §13.4 Data-dictionary storage, pp. 602–603"),
     theory("14.3 B+-tree index files: structure, search, insertion, deletion; height analysis", "CLO6", "T", 7,
            "DSC Ch. 14, §14.3, pp. 634–649", "DSC §14.4 B+-tree extensions, pp. 650–657"),
-    theory("14.5 Hash indices\n14.6 Multiple-key access\n14.7 Creation of indices\n"
-           "Research Corner: Bayer & McCreight (1972); Kraska et al. (2018)", "CLO6", "T", 7,
+    theory("14.5 Hash indices\n14.6 Multiple-key access\n14.7 Creation of indices", "CLO6", "T", 7,
            "DSC Ch. 14, §14.5–14.7, pp. 658–664",
            "Optional: §13.6 Column-oriented storage, pp. 611–614; §14.8 Write-optimized index structures (LSM), pp. 665–669"),
     review("Guided exercises: B+-tree insertion and deletion by hand; hashing; I/O cost of index lookups versus table scans",
@@ -335,8 +316,7 @@ SCHEDULE = [
            "DSC §15.6 Other operations, pp. 719–723; §15.7 Evaluation of expressions (pipelining), pp. 724–730"),
     theory("16.1 Overview of query optimization\n16.2 Transformation of relational expressions: equivalence rules", "CLO6", "T", 8,
            "DSC Ch. 16, §16.1–16.2, pp. 743–756"),
-    theory("16.4 Choice of evaluation plans: cost-based join ordering (dynamic programming)\n"
-           "Research Corner: Selinger et al. (1979)", "CLO6", "T", 8, "DSC Ch. 16, §16.4, pp. 766–777",
+    theory("16.4 Choice of evaluation plans: cost-based join ordering (dynamic programming)", "CLO6", "T", 8, "DSC Ch. 16, §16.4, pp. 766–777",
            "DSC §16.3 Estimating statistics of expression results, pp. 757–765"),
     lab("Lab 8: reading execution plans; comparing join algorithms and equivalent queries (Investigate)\n"
         "Assignment 2 released (research topics)", "CLO6, CLO8", 8, "DSC Ch. 15–16 Exercises, pp. 736–739, 789–793",
@@ -354,8 +334,8 @@ SCHEDULE = [
     theory("18.2 Deadlock handling\n18.4 Insert operations, delete operations and predicate reads (phantoms)", "CLO7", "T", 9,
            "DSC Ch. 18, §18.2, pp. 849–852; §18.4, pp. 857–860",
            "DSC §18.5 Timestamp-based protocols, pp. 861–865; §18.7 Multiversion schemes, pp. 869–871"),
-    theory("18.8 Snapshot isolation and write skew\nResearch Corner: Berenson et al. (1995)", "CLO7", "T", 9,
-           "DSC Ch. 18, §18.8, pp. 872–879; Berenson et al. (1995)",
+    theory("18.8 Snapshot isolation and write skew", "CLO7", "T", 9,
+           "DSC Ch. 18, §18.8, pp. 872–879",
            "DSC §18.9 Weak levels of consistency in practice, pp. 880–882"),
     lab("Lab 9: concurrency experiments with two sessions (isolation levels, deadlocks); Python serializability tester",
         "CLO7", 9, "DSC Ch. 17–18 Exercises, pp. 831–833, 899–903", "\n- Python starter code (schedule.py)"),
@@ -436,15 +416,25 @@ CQ = [
     (54, "CQ3", "Why is recovery hard to test in a lab, and how could you still gain evidence that a recovery algorithm is correct?"),
 ]
 
+# Mark the discussion session of each chapter's constructivist questions in the schedule.
+for _session in sorted({q[0] for q in CQ}):
+    _t = list(SCHEDULE[_session - 1])
+    if "constructivist" not in _t[5]:
+        _t[5] += "\nDiscuss this chapter's constructivist questions; choose one and submit a 150–200-word answer within one week"
+        _t[6] += "; lead the discussion of the constructivist questions"
+    SCHEDULE[_session - 1] = tuple(_t)
+
 # ---------------------------------------------------------------------------
 # 6. Grading structure
 # (component, type, weight, part, min, duration, CLO, question type, number, scope, how, note, reference)
 # ---------------------------------------------------------------------------
 GRADING = [
-    ("Research labs", "on-going", 10, 9, 0.0001, "In lab sessions", "CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
-     "Lab exercises, Python implementations with tests, 'Investigate' mini-reports", 9,
-     "Labs 1–9 (Chapters 1–9)", "in class, by instructor",
-     "Each lab is worth about 1.1% (10% / 9). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark. Python tasks are graded by the provided unit tests and by code review.",
+    ("Labs and constructivist questions", "on-going", 10, 19, 0.0001, "Labs: in lab sessions; CQ answers: 1 week after each discussion",
+     "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
+     "Lab exercises, Python implementations with tests, 'Investigate' mini-reports; short written answers to constructivist questions",
+     "9 labs + 10 CQ answers",
+     "Labs 1–9 (Chapters 1–9); one constructivist question chosen by the student from each of the 10 chapters", "labs: in class, by instructor; CQ answers: on the LMS, by instructor with a short rubric",
+     "Labs 6% in total (about 0.67% each). Constructivist-question answers 4% in total (0.4% each; 150–200 words; graded on reasoning, use of the textbook and clarity). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark. Python tasks are graded by the provided unit tests and by code review.",
      "Lab"),
     ("Progress test 1", "on-going", 10, 1, 0.0001, "30'", "CLO1, CLO2, CLO3, CLO4",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
@@ -466,7 +456,7 @@ GRADING = [
      "Assignment"),
     ("Assignment 2", "on-going", 20, 1, 0.0001, "Take-home, 4 weeks + 15' presentation", "CLO5, CLO6, CLO7, CLO8",
      "Group mini research project (2–3 students): short paper (IEEE format, 4–6 pages), reproducible code, presentation", 1,
-     "- cover Chapters 6–10 (DSC Ch. 7, 12–19) and the Research Corner papers\n- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing a result from a paper",
+     "- cover Chapters 6–10 (DSC Ch. 7, 12–19)\n- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing at small scale a result from a published paper found by the group",
      "take-home; released in session 46; progress meeting in session 55; presentations in sessions 56–57; graded by instructor with rubric",
      "Paper 50% (question, method, results, discussion, related work), reproducibility of code and data 20%, presentation and Q&A 20%, peer evaluation 10%. Individual marks may differ within a group based on contribution logs.",
      "Assignment"),
