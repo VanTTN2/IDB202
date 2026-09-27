@@ -1,0 +1,3 @@
+# IDB201 – Course introduction (short)
+
+Almost every system we use today, from a banking app to a machine-learning pipeline, depends on data that must be stored safely and found again quickly. Introduction to Databases explains how this works and, more importantly, why it works. Students learn to model real-world information, design relational schemas, and write precise queries in relational algebra and SQL. They then look inside the database system itself: how data is laid out on disk, how indexes speed up search, how queries are optimized, and how transactions stay correct when many users act at once. Along the way, students read classic research papers, prove key results, and run small experiments of their own.
