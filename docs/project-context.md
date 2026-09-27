@@ -4,6 +4,20 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
+## 0. Where we are now (snapshot, 2026-09-27)
+
+- **Phase 1 is finished and waiting for the council.** The three deliverables are up to date and consistent:
+  `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`, `docs/IDB201_DSC_Reading_Plan.xlsx`.
+- **Syllabus structure:** 60 sessions × 45 min following DSC 7th ed. chapter order (C1–C10, see §5), each session citing DSC sections and pages; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, most of Ch. 19, and others).
+- **Description (C12):** the short objectives list in `docs/course-introduction.md` (formal foundations, algorithms, complexity, correctness, system internals).
+- **CLOs:** 8 (unchanged since 2026-09-24); CLO–PLO mapping to the 13 BCS_AD PLOs (§4).
+- **Assessment:** Labs and constructivist questions 10% (9 labs 6% + 10 CQ answers 4%), PT1 10% (C1–C4), PT2 10% (C5–C6), Assignment 1 10%, Assignment 2 20%, PE 10% (C3–C5), FE 30%.
+- **Research practice:** 30 constructivist questions (3 per chapter, discussed in sessions 3, 8, 12, 18, 24, 31, 39, 45, 52, 54); each student answers one per chapter, 150–200 words. No Research Corner and no papers in Materials (removed at the user's request to avoid overload).
+- **Materials:** DSC (main), DMS (secondary), T-SQL reference.
+- **Waiting for:** the council's feedback on the syllabus. The DSC PDF will be uploaded by the user when content work (phase 2) starts.
+
+---
+
 ## 1. Course and program facts
 
 | Item | Value | Source |
@@ -121,14 +135,14 @@ Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 
 | Phase | Content | Status |
 |---|---|---|
 | 1 | Syllabus (xlsx in the template), council brief (docx), design notes | **Done – awaiting council review** |
-| 1b | Revise the syllabus after council feedback; add page references from the textbooks' tables of contents | Next: wait for the council feedback and the textbook PDFs (DSC first, DMS later) |
+| 1b | Revise the syllabus after council feedback | DSC page references **done** (2026-09-27). Next: wait for the council feedback. DMS is only a secondary reference, so no DMS page references are needed unless the council asks |
 | 2 | Detailed lecture notes per chapter (revise the drafts in `lectures/`) | Not started (drafts exist, on hold) |
 | 3 | Slides per chapter | Not started |
 | 4 | Labs with Investigate parts, starter code and solutions (revise the drafts in `labs/`) | Not started (drafts exist, on hold) |
 | 5 | Assignment 1 and 2 briefs and rubrics; research topic list | Not started |
 | 6 | Question bank: progress tests, practical exam, final exam (≥ 30% analysis-level items) | Not started |
 
-**When phase 2 starts,** re-check the drafts against the approved syllabus: CLO numbers, session mapping, chapter 9 on storage and query processing, the Research Corner content, and chapter 7's Python section. The drafts already use the 8-CLO numbering and the course code IDB201.
+**When phase 2 starts,** the drafts in `lectures/` and `labs/` must be restructured: they still follow the old 10-chapter layout (ER before the relational model, one combined storage/query chapter, 8 labs) and contain Research Corner sections, which were removed. Rebuild them on the DSC-based structure C1–C10 and 9 labs in §5, cite DSC sections and pages, and drop the Research Corners. They already use the 8-CLO numbering and the course code IDB201.
 
 ---
 
@@ -153,3 +167,4 @@ Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 
 | 2026-09-27 | Removed the Research Corner (it was Claude's own proposal, not from any source). Replaced it with graded constructivist-question answers (one per chapter, 150–200 words, 4%), merged with labs (6%) into one 10% component. Removed the papers from Materials. Lightened per-session tasks. Updated the objective "read research papers" to "answer research-style questions". Council brief updated accordingly. |
 | 2026-09-27 | Rewrote the short course objectives in `docs/course-introduction.md` to highlight formal foundations, algorithms, complexity, correctness and system internals. Saved for later use. |
 | 2026-09-27 | Placed the rewritten objectives (`docs/course-introduction.md`) into the syllabus Description (sheet "Syllabus", C12) at the user's request. |
+| 2026-09-27 (end of day) | Session wrap-up: added the snapshot (§0), marked DSC page references as done in §6, and noted that the lecture/lab drafts must be restructured to the DSC-based layout in phase 2. The earlier pending decision about moving 2 SQL sessions is superseded by the DSC-based rebuild. All work pushed to `claude/relaxed-tesla-1t3tl7`. |
