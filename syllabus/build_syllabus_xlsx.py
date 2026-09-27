@@ -38,12 +38,15 @@ GENERAL = {
                      "PFP191 Programming Fundamentals with Python.",
     "Description": (
         "This course aims to help students:\n"
-        "- understand the basic concepts of database systems and the relational model;\n"
+        "- understand the formal foundations of the relational model: relations as sets, and keys and constraints "
+        "as logical statements;\n"
         "- design databases with the Entity-Relationship model and convert them into relational schemas;\n"
-        "- write queries in relational algebra, relational calculus and SQL;\n"
-        "- use functional dependencies to evaluate and normalize a database design;\n"
-        "- explain how a DBMS stores data, uses indexes and processes queries;\n"
-        "- explain how transactions, concurrency control and recovery keep data correct;\n"
+        "- write queries in relational algebra, relational calculus and SQL, and reason about what each language "
+        "can express;\n"
+        "- apply functional-dependency theory and its algorithms to normalize a design, and prove that a "
+        "decomposition is correct;\n"
+        "- analyze the cost and complexity of storage, indexing and query-processing algorithms;\n"
+        "- explain the system internals that keep data correct: transactions, concurrency control and recovery;\n"
         "- answer research-style questions and carry out small experiments on database topics."
     ),
     "Student's tasks": (
@@ -508,7 +511,7 @@ def fill_syllabus(ws):
         if key in GENERAL:
             put(ws, row, 3, GENERAL[key])
     # Row heights for the long text rows.
-    for row, height in ((3, 30), (11, 30), (12, 125), (13, 150), (14, 110), (15, 210)):
+    for row, height in ((3, 30), (11, 30), (12, 150), (13, 150), (14, 110), (15, 210)):
         ws.row_dimensions[row].height = height
 
 

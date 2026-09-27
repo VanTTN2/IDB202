@@ -35,7 +35,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 | `syllabus/syllabus.md` | Generated Markdown view of the same syllabus |
 | `docs/build_brief.js` | Source of the council brief (docx-js) |
 | `docs/IDB201_Academic_Emphasis_Brief.docx` | Generated brief for the syllabus review council |
-| `docs/course-introduction.md` | Short course objectives (latest wording, highlighting formal foundations, algorithms, complexity, correctness, system internals); candidate text for the syllabus Description |
+| `docs/course-introduction.md` | Short course objectives (latest wording, highlighting formal foundations, algorithms, complexity, correctness, system internals); used as the syllabus Description (C12) |
 | `docs/course-design-notes.md` | CS-core vs. other majors; research orientation; seminal readings |
 | `docs/project-context.md` | Full phase-1 record: decisions, sources, history, next steps |
 | `docs/sources/` | Source files from the user: curriculum (Phuluc_2_BCS_AD_Final.xlsx), 13 PLOs (BCS_AD_13_PLO.xlsx) |
