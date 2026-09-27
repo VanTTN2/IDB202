@@ -19,7 +19,14 @@
 
 ## 2. Description
 
-This course gives a rigorous, research-oriented introduction to database systems for talented first-year Computer Science students. Students model data with the Entity-Relationship model and map it to the relational model, which is studied as a mathematical structure. They express queries in relational algebra, relational calculus and SQL, and reason about the semantics and expressive power of these languages. Functional dependency theory is developed with proofs and algorithms and applied to normalization. The course then opens the DBMS: storage and indexing under an I/O cost model, query processing and optimization, and the theory of transactions, concurrency control and recovery. Every chapter includes a 'Research Corner' built around a seminal paper, and students implement core algorithms in Python and carry out reproducible experiments. At the end of the course, students can design normalized schemas, query databases proficiently in SQL, explain the internal mechanisms of storage and transaction control, and conduct and report a small research study in the database field.
+This course aims to help students:
+- understand the basic concepts of database systems and the relational model;
+- design databases with the Entity-Relationship model and convert them into relational schemas;
+- write queries in relational algebra, relational calculus and SQL;
+- use functional dependencies to evaluate and normalize a database design;
+- explain how a DBMS stores data, uses indexes and processes queries;
+- explain how transactions, concurrency control and recovery keep data correct;
+- read research papers and carry out small experiments on database topics.
 
 ## 3. Student's tasks
 

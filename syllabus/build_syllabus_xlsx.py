@@ -37,17 +37,14 @@ GENERAL = {
     "Pre-requisite": "None (semester 1). Taken together with MAD102 Discrete Mathematics and "
                      "PFP191 Programming Fundamentals with Python.",
     "Description": (
-        "This course gives a rigorous, research-oriented introduction to database systems for talented first-year "
-        "Computer Science students. Students model data with the Entity-Relationship model and map it to the "
-        "relational model, which is studied as a mathematical structure. They express queries in relational algebra, "
-        "relational calculus and SQL, and reason about the semantics and expressive power of these languages. "
-        "Functional dependency theory is developed with proofs and algorithms and applied to normalization. The "
-        "course then opens the DBMS: storage and indexing under an I/O cost model, query processing and "
-        "optimization, and the theory of transactions, concurrency control and recovery. Every chapter includes a "
-        "'Research Corner' built around a seminal paper, and students implement core algorithms in Python and carry "
-        "out reproducible experiments. At the end of the course, students can design normalized schemas, query "
-        "databases proficiently in SQL, explain the internal mechanisms of storage and transaction control, and "
-        "conduct and report a small research study in the database field."
+        "This course aims to help students:\n"
+        "- understand the basic concepts of database systems and the relational model;\n"
+        "- design databases with the Entity-Relationship model and convert them into relational schemas;\n"
+        "- write queries in relational algebra, relational calculus and SQL;\n"
+        "- use functional dependencies to evaluate and normalize a database design;\n"
+        "- explain how a DBMS stores data, uses indexes and processes queries;\n"
+        "- explain how transactions, concurrency control and recovery keep data correct;\n"
+        "- read research papers and carry out small experiments on database topics."
     ),
     "Student's tasks": (
         "- Students must attend at least 80% of contact slots in order to be accepted to the final examination.\n"
@@ -397,7 +394,7 @@ def fill_syllabus(ws):
         if key in GENERAL:
             put(ws, row, 3, GENERAL[key])
     # Row heights for the long text rows.
-    for row, height in ((3, 30), (11, 30), (12, 190), (13, 150), (14, 110), (15, 210)):
+    for row, height in ((3, 30), (11, 30), (12, 125), (13, 150), (14, 110), (15, 210)):
         ws.row_dimensions[row].height = height
 
 
