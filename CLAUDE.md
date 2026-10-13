@@ -24,7 +24,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 
 ## Current phase
 
-**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
+**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). Since 2026-10-13: 5 SQL-only labs, one group project (Assignment 30%), no practical exam, final exam 50%; bag semantics and Python are self-study (see `docs/project-context.md` §0). The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
 
 ## Key files
 
@@ -53,4 +53,4 @@ If you change CLOs, the schedule or the weights, update **both** `syllabus/build
 ## Testing the drafts (phase 2)
 
 - SQL scripts target SQL Server 2022. In a cloud session: start `dockerd`, run `mcr.microsoft.com/mssql/server:2022-latest`, and use `/opt/mssql-tools18/bin/sqlcmd` inside the container.
-- Python reference solutions: `cd labs/python && PYTHONPATH=../solutions/python python -m pytest tests`.
+- Python reference solutions: `cd labs/python && PYTHONPATH=../solutions/python python -m pytest tests`. (Python is now optional self-study, not part of the labs.)

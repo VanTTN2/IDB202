@@ -4,15 +4,17 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
-## 0. Where we are now (snapshot, 2026-09-27)
+## 0. Where we are now (snapshot, 2026-10-13)
 
 - **Phase 1 is finished and waiting for the council.** The three deliverables are up to date and consistent:
   `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`, `docs/IDB201_DSC_Reading_Plan.xlsx`.
 - **Syllabus structure:** 60 sessions × 45 min following DSC 7th ed. chapter order (C1–C10, see §5), each session citing DSC sections and pages; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, most of Ch. 19, and others).
 - **Description (C12):** the short objectives list in `docs/course-introduction.md` (formal foundations, algorithms, complexity, correctness, system internals).
 - **CLOs:** 8 (unchanged since 2026-09-24); CLO–PLO mapping to the 13 BCS_AD PLOs (§4).
-- **Assessment:** Labs and constructivist questions 10% (9 labs 6% + 10 CQ answers 4%), PT1 10% (C1–C4), PT2 10% (C5–C6), Assignment 1 10%, Assignment 2 20%, PE 10% (C3–C5), FE 30%.
-- **Research practice:** 30 constructivist questions (3 per chapter, discussed in sessions 3, 8, 12, 18, 24, 31, 39, 45, 52, 54); each student answers one per chapter, 150–200 words. No Research Corner and no papers in Materials (removed at the user's request to avoid overload).
+- **Assessment (revised 2026-10-13):** Labs and constructivist questions 10% (5 labs 6% + 10 CQ answers 4%), PT1 5% (C1–C4), PT2 5% (C5–C6), Assignment (one group project) 30%, FE 50%. **No practical exam.** Completion: every on-going component > 0, FE ≥ 5, total ≥ 5.
+- **Labs (5, SQL only):** Lab 1 SQL queries (sessions 13–14), Lab 2 DDL/constraints/views/parameterized queries (19), Lab 3 E-R design (25), Lab 4 indexing and query plans (40, 46), Lab 5 concurrency (53). Relational algebra (session 8) and FD theory (session 32) are guided exercise sessions on paper.
+- **Self-study (not taught in class):** bag semantics of SQL (C3, worksheet); Python (database access with pyodbc/pandas, Python versions of the algorithms) is optional self-study and not required in the labs.
+- **Research practice:** 30 constructivist questions (3 per chapter, discussed in sessions 3, 8, 12, 18, 24, 31, 39, 45, 52, 54); each student answers one per chapter (short answer; the 150–200-word limit was removed by the user). Group project: introduced in session 7, design review in 33, progress meeting in 55, presentations in 56–57. No Research Corner and no papers in Materials (removed at the user's request to avoid overload).
 - **Materials:** DSC (main), DMS (secondary), T-SQL reference.
 - **Waiting for:** the council's feedback on the syllabus. The DSC PDF will be uploaded by the user when content work (phase 2) starts.
 
@@ -60,9 +62,9 @@ IDB201 is the entry point of the program skill set "Data Handling, Databases and
 | D2 | Course code **IDB201**, not IDB202 (the repository keeps the name IDB202) | User confirmed the curriculum code |
 | D3 | Academic, research-oriented design for honors students | Program leadership, via the user |
 | D4 | CS-core emphasis: formal foundations, query languages, SQL semantics, dependency theory, storage and indexing, query optimization, transaction theory. Application topics (stored procedures, triggers, administration) de-emphasized; procedures and triggers moved to an optional appendix | `docs/course-design-notes.md` §2 |
-| D5 | DBMS: Microsoft SQL Server (T-SQL); Python via pyodbc and pandas; Python implementations of the algorithms | Fits PFP191 in the same semester; FPT practice |
+| D5 | DBMS: Microsoft SQL Server (T-SQL). **Python is optional self-study only** (since 2026-10-13): not taught in class, not required in labs | User (2026-10-13); earlier version used Python in labs |
 | D6 | Time allocation follows the template: 45h contact = **60 sessions × 45 minutes**, plus 1h final exam and 104h self-study | Template |
-| D7 | **Assessment:** research labs 10%, progress tests 2 × 10%, Assignment 1 (individual technical report) 10%, Assignment 2 (group mini research project, IEEE paper) 20%, practical exam 10%, final exam 30%. Completion: every on-going component > 0, PE > 0, FE ≥ 4, total ≥ 5 | Proposed by Claude, requested by the user. Template standard was Asm 20 / PT 20 / PE 30 / FE 30 |
+| D7 | **Assessment (revised 2026-10-13):** labs and CQ answers 10% (5 labs), PT1 5%, PT2 5%, one Assignment (group project, academic report) 30%, final exam 50%; no practical exam. Completion: every on-going component > 0, FE ≥ 5, total ≥ 5 | User (2026-10-13): FE must be 50%; labs 9 → 5; two assignments → one group project; PE removed. The PT 5%/5% and project 30% split comes from the user's own edit of the Note cell. Template standard was Asm 20 / PT 20 / PE 30 / FE 30 |
 | D8 | **8 CLOs** (one per template row); 6 of 8 at Analyze level or above; CLO8 is the research outcome | See §3 |
 | D9 | CLO–PLO mapping to the 13 BCS_AD PLOs: PLO2, PLO5, PLO7, PLO8, PLO9, PLO10, PLO11. PLO1, PLO3, PLO4, PLO6, PLO12 and PLO13 are not claimed | See §4 |
 | D10 | Research practice: 30 constructivist questions (3 per chapter, discussed in 10 sessions); each student answers one per chapter in 150–200 words, graded 4% inside the "Labs and constructivist questions" component (labs 6%). The earlier "Research Corner" paper readings were removed at the user's request (2026-09-27) to avoid overload; Materials keep only DSC, DMS and the T-SQL reference | User / Claude |
@@ -79,15 +81,17 @@ IDB201 is the entry point of the program skill set "Data Handling, Databases and
 | CLO1 | Explain fundamental DB concepts and relate them to their research origins | Understand | 1 |
 | CLO2 | Design a database: ER model → relational schema with precise keys and constraints (including as logic) | Create | 2, 3, 5 |
 | CLO3 | Formulate queries in relational algebra and calculus; prove equivalences; explain expressive-power limits | Analyze | 4, 6 |
-| CLO4 | Use SQL (and SQL from Python); explain results through SQL semantics (bags, 3VL) | Apply | 5, 6, 7 |
-| CLO5 | FD theory: closures, keys, minimal covers, proofs, 3NF/BCNF, lossless join, dependency preservation; implement in Python | Analyze | 8 |
+| CLO4 | Use SQL; explain results through SQL semantics (3VL; bags as self-study) | Apply | 5, 6, 7 |
+| CLO5 | FD theory: closures, keys, minimal covers, proofs, 3NF/BCNF, lossless join, dependency preservation | Analyze | 8 |
 | CLO6 | Evaluate storage, index, join-algorithm and plan choices with I/O cost models and experiments | Evaluate | 9 |
 | CLO7 | Analyze serializability and recoverability; justify 2PL, isolation levels, WAL | Analyze | 10 |
-| CLO8 | Conduct a small reproducible research study and report it academically | Create | Research Corners, Assignments |
+| CLO8 | Conduct a small reproducible research study and report it academically | Create | CQs, group project |
 
 The full wording is in `syllabus/build_syllabus_xlsx.py` (`CLOS`).
 
-CLO–assessment: Labs → CLO2–8; PT1 → CLO1–3; PT2 → CLO4–5; Asm 1 → CLO2, 3, 8; Asm 2 → CLO5–8; PE → CLO4; FE → CLO1–7.
+CLO–assessment: Labs & CQ → CLO1–8; PT1 → CLO1–4; PT2 → CLO2, CLO5; Assignment (group project) → CLO2, 3, 5, 6, 7, 8; FE → CLO1–7.
+
+Wording changes of 2026-10-13 (from the user's edits): CLO4 no longer mentions Python (bag semantics through guided self-study); CLO5 drops "implement these algorithms in Python"; CLO8 reports in an "academic report" instead of a paper.
 
 History: a first version had 9 CLOs (ER design and mapping were separate). They were merged into CLO2 so that the CLOs fit the 8 template rows.
 
@@ -114,21 +118,21 @@ Since 2026-09-27 the course follows the chapter order of [DSC] (Database System 
 
 | Course ch. | Topic | DSC | Sessions |
 |---|---|---|---|
-| C1 | Introduction | Ch. 1 | 1–3 (Lab 1 in 3) |
-| C2 | Relational model and relational algebra | Ch. 2; online Ch. 27 (relational calculus) = self-study | 4–8 (Lab 2 in 7; worksheet review in 8) |
-| C3 | Introduction to SQL | Ch. 3 | 9–14 (Lab 3 in 13–14) |
-| C4 | Intermediate and advanced SQL | Ch. 4, §5.1, §5.4 | 15–19 (Lab 4 in 19); Progress test 1 in 20 |
-| C5 | E-R model | Ch. 6 | 21–25 (Lab 5 in 25; Assignment 1 released) |
-| C6 | Relational database design | Ch. 7 | 26–32 (Lab 6 in 32); Assignment 1 defense in 33; Progress test 2 in 34 |
-| C7 | Storage and indexing | Ch. 12 (self-study), 13, 14 | 35–40 (guided exercises in 39, Lab 7 in 40) |
-| C8 | Query processing and optimization | Ch. 15, 16 (§16.3 self-study) | 41–46 (Lab 8 and Assignment 2 release in 46) |
-| C9 | Transactions and concurrency control | Ch. 17, 18 | 47–53 (Lab 9 in 53) |
+| C1 | Introduction | Ch. 1 | 1–3 (tool set-up, not graded, in 3) |
+| C2 | Relational model and relational algebra | Ch. 2; online Ch. 27 (relational calculus) = self-study | 4–8 (group project introduction in 7; algebra exercises and worksheet review in 8) |
+| C3 | Introduction to SQL | Ch. 3 (bag semantics = self-study) | 9–14 (Lab 1 in 13–14) |
+| C4 | Intermediate and advanced SQL | Ch. 4, §5.1, §5.4 | 15–19 (Lab 2 in 19); Progress test 1 in 20 |
+| C5 | E-R model | Ch. 6 | 21–25 (Lab 3 in 25) |
+| C6 | Relational database design | Ch. 7 | 26–32 (FD guided exercises in 32); project design review in 33; Progress test 2 in 34 |
+| C7 | Storage and indexing | Ch. 12 (self-study), 13, 14 | 35–40 (guided exercises in 39, Lab 4 part 1 in 40) |
+| C8 | Query processing and optimization | Ch. 15, 16 (§16.3 self-study) | 41–46 (Lab 4 part 2 in 46) |
+| C9 | Transactions and concurrency control | Ch. 17, 18 | 47–53 (Lab 5 in 53) |
 | C10 | Recovery (mainly self-study) | Ch. 19 | 54 (overview only) |
-| – | Assignment 2 progress, presentations; review; PE preparation | – | 55–60 |
+| – | Project progress meeting, presentations; review; final-exam practice | – | 55–60 |
 
 Stored procedures, functions and triggers (DSC §5.2–5.3) are optional reading. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
 
-Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 = C5–C6 (CLO2, CLO5); PE = C3–C5; 9 labs.
+Assessment scopes: PT1 = C1–C4 (CLO1–CLO4); PT2 = C5–C6 (CLO2, CLO5); 5 labs; no practical exam.
 
 ## 6. Phases and next steps
 
@@ -139,10 +143,10 @@ Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 
 | 2 | Detailed lecture notes per chapter (revise the drafts in `lectures/`) | Not started (drafts exist, on hold) |
 | 3 | Slides per chapter | Not started |
 | 4 | Labs with Investigate parts, starter code and solutions (revise the drafts in `labs/`) | Not started (drafts exist, on hold) |
-| 5 | Assignment 1 and 2 briefs and rubrics; research topic list | Not started |
-| 6 | Question bank: progress tests, practical exam, final exam (≥ 30% analysis-level items) | Not started |
+| 5 | Group-project brief, milestones and rubric; research topic list | Not started |
+| 6 | Question bank: progress tests, final exam (≥ 30% analysis-level items) | Not started |
 
-**When phase 2 starts,** the drafts in `lectures/` and `labs/` must be restructured: they still follow the old 10-chapter layout (ER before the relational model, one combined storage/query chapter, 8 labs) and contain Research Corner sections, which were removed. Rebuild them on the DSC-based structure C1–C10 and 9 labs in §5, cite DSC sections and pages, and drop the Research Corners. They already use the 8-CLO numbering and the course code IDB201.
+**When phase 2 starts,** the drafts in `lectures/` and `labs/` must be restructured: they still follow the old 10-chapter layout (ER before the relational model, one combined storage/query chapter, 8 labs) and contain Research Corner sections, which were removed. Rebuild them on the DSC-based structure C1–C10 and the 5 SQL-only labs in §5 (Python material becomes optional self-study), cite DSC sections and pages, and drop the Research Corners. They already use the 8-CLO numbering and the course code IDB201.
 
 ---
 
@@ -168,3 +172,4 @@ Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 
 | 2026-09-27 | Rewrote the short course objectives in `docs/course-introduction.md` to highlight formal foundations, algorithms, complexity, correctness and system internals. Saved for later use. |
 | 2026-09-27 | Placed the rewritten objectives (`docs/course-introduction.md`) into the syllabus Description (sheet "Syllabus", C12) at the user's request. |
 | 2026-09-27 (end of day) | Session wrap-up: added the snapshot (§0), marked DSC page references as done in §6, and noted that the lecture/lab drafts must be restructured to the DSC-based layout in phase 2. The earlier pending decision about moving 2 SQL sessions is superseded by the DSC-based rebuild. All work pushed to `claude/relaxed-tesla-1t3tl7`. |
+| 2026-10-13 | The user uploaded an edited syllabus workbook and asked for six changes. Merged the user's own edits (shorter Program line, Pre-requisite, Description capitalization, Student's tasks, Tools, CLO4/CLO5/CLO8 wording, FE minimum 5, no word limit on CQ answers, project introduction session) into `build_syllabus_xlsx.py`, then: labs 9 → 5 (SQL only); Assignments 1 and 2 → one group project (introduced in 7, design review in 33, progress meeting in 55, presentations in 56–57); practical exam removed (session 60 is now final-exam practice); FE 50% and on-going 50% (labs & CQ 10, PT1 5, PT2 5, project 30); bag semantics → guided self-study (CQ3 of session 12 replaced); Python → optional self-study. Updated the council brief, the reading plan notes and this file. |

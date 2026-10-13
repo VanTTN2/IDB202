@@ -25,8 +25,7 @@ OUTPUT = ROOT / "IDB201_Syllabus.xlsx"
 # ---------------------------------------------------------------------------
 GENERAL = {
     "Document type": "SYLLABUS",
-    "Program": "UNDERGRADUATE PROGRAM – Bachelor of Computer Science, specialization in Artificial Intelligence "
-               "and Data Science (BCS_AD), cohort K22A onward – Talented-student (honors) classes",
+    "Program": "UNDERGRADUATE PROGRAM – Bachelor of Computer Science.",
     "Decision No.": "",
     "Course Name": "Introduction to Databases_Giới thiệu về cơ sở dữ liệu",
     "Course Code": "IDB201",
@@ -34,34 +33,35 @@ GENERAL = {
     "No of credits": "3",
     "Degree Level": "Bachelor",
     "Time Allocation": "45h (60 sessions) contact hours + 1h final exam + 104h self-study",
-    "Pre-requisite": "None (semester 1). Taken together with MAD102 Discrete Mathematics and "
-                     "PFP191 Programming Fundamentals with Python.",
+    "Pre-requisite": "None (semester 1).",
     "Description": (
         "This course aims to help students:\n"
-        "- understand the formal foundations of the relational model: relations as sets, and keys and constraints "
+        "- Understand the formal foundations of the relational model: relations as sets, and keys and constraints "
         "as logical statements;\n"
-        "- design databases with the Entity-Relationship model and convert them into relational schemas;\n"
-        "- write queries in relational algebra, relational calculus and SQL, and reason about what each language "
+        "- Design databases with the Entity-Relationship model and convert them into relational schemas;\n"
+        "- Write queries in relational algebra, relational calculus and SQL, and reason about what each language "
         "can express;\n"
-        "- apply functional-dependency theory and its algorithms to normalize a design, and prove that a "
+        "- Apply functional-dependency theory and its algorithms to normalize a design, and prove that a "
         "decomposition is correct;\n"
-        "- analyze the cost and complexity of storage, indexing and query-processing algorithms;\n"
-        "- explain the system internals that keep data correct: transactions, concurrency control and recovery;\n"
-        "- answer research-style questions and carry out small experiments on database topics."
+        "- Analyze the cost and complexity of storage, indexing and query-processing algorithms;\n"
+        "- Explain the system internals that keep data correct: transactions, concurrency control and recovery;\n"
+        "- Answer research-style questions and carry out small experiments on database topics."
     ),
     "Student's tasks": (
         "- Students must attend at least 80% of contact slots in order to be accepted to the final examination.\n"
         "- Read the assigned textbook sections BEFORE each theory session.\n"
         "- For each chapter, choose ONE of its three constructivist questions and submit a short written answer "
-        "(150–200 words) on the LMS within one week of the discussion session. The answers are graded as part "
-        "of the research score (4% in total).\n"
-        "- Complete all 9 labs, including the 'Investigate' part and the Python implementation tasks, "
-        "and submit them on time.\n"
-        "- Complete Assignment 1 (individual technical report) and Assignment 2 (group mini research project: "
-        "short paper, reproducible code and presentation).\n"
+        "on the LMS within one week of the discussion session. The answers are graded as part of the lab and "
+        "constructivist-question score (4% in total).\n"
+        "- Complete all 5 labs, including the 'Investigate' part, and submit them on time.\n"
+        "- Complete the group project (one assignment for the whole course): a database designed through the "
+        "course and a small study answering research questions about it, delivered as an academic report, "
+        "reproducible SQL scripts and a presentation.\n"
         "- Complete the guided self-study readings listed in the schedule (abstract topics such as relational "
-        "calculus, statistics estimation and recovery algorithms); they are assessed in the progress tests and the "
-        "final exam.\n"
+        "calculus, bag semantics of SQL, statistics estimation and recovery algorithms); they are assessed in the "
+        "progress tests and the final exam.\n"
+        "- Python (accessing SQL Server from Python; Python versions of the course algorithms) is optional "
+        "self-study. It is not taught in class and is not required in the labs.\n"
         "- Keep all code, scripts and measurements in a version-controlled repository so that results are "
         "reproducible.\n"
         "- Disclose any use of generative AI tools in submitted work; undisclosed use is treated as a breach of "
@@ -70,31 +70,24 @@ GENERAL = {
         "- Promptly access to the FU FLM at https://flm.fpt.edu.vn/ for up-to-date course information."
     ),
     "Tools": (
-        "- Microsoft SQL Server 2022 (Developer/Express) or SQL Server in Docker\n"
-        "- SQL Server Management Studio (SSMS) or Azure Data Studio\n"
-        "- Python 3 with pyodbc, pandas and pytest; Visual Studio Code or PyCharm\n"
-        "- RelaX relational algebra calculator (online)\n"
+        "- Microsoft SQL Server (Developer/Express)\n"
+        "- SQL Server Management Studio (SSMS)\n"
         "- draw.io (diagrams.net) for ER diagrams\n"
-        "- Git / GitHub for reproducible code and experiments\n"
-        "- LaTeX (Overleaf) with the IEEE conference template for Assignment 2"
+        "- RelaX relational algebra calculator (online, optional)\n"
+        "- Git / GitHub for reproducible code and experiments (optional)\n"
+        "- Python 3 with pyodbc and pandas; Visual Studio Code or PyCharm (optional, self-study only)"
     ),
     "Note": (
-        "1) On-going Assessment\n"
-        "- 9 labs + 10 CQ answers:              10%\n"
-        "- 2 Progress tests:                        20%\n"
-        "- Assignment 1 (technical report):   10%\n"
-        "- Assignment 2 (research project):  20%\n"
-        "- 1 Practical Exam (PE):                 10%\n"
-        "2) 1 Final Exam:                            30%\n"
+        "1) On-going Assessment:                 50%\n"
+        "- 5 labs + 10 CQ answers:              10%\n"
+        "- Progress test 1:                          5%\n"
+        "- Progress test 2:                          5%\n"
+        "- 1 Assignment (group project):      30%\n"
+        "2) 1 Final Exam:                            50%\n"
         "3) Final Result                             100%\n"
         "Completion Criteria:\n"
         "1) Every on-going assessment component > 0\n"
-        "2) Practical Exam > 0\n"
-        "3) Final Exam Score >= 4 & Final Result >= 5\n"
-        "Rationale: the course serves talented students on an academic track, so 40% of the grade rewards "
-        "research work (labs, constructivist questions, report, research project), 60% rewards individual mastery of theory and skills "
-        "(progress tests, practical exam, final exam), and the final exam includes at least 30% "
-        "analysis-level items."
+        "2) Final Exam Score >= 5 & Final Result >= 5"
     ),
     "Min GPA to pass": "5",
     "Scoring scale": "10",
@@ -129,18 +122,18 @@ CLOS = [
     ("CLO3", "Formulate queries in relational algebra and relational calculus, prove simple equivalences between "
              "expressions, and explain the limits of their expressive power."),
     ("CLO4", "Use SQL to define, populate, modify and query relational databases (joins, aggregation, subqueries, "
-             "views, access from Python) and explain query results through SQL semantics (bag semantics, "
-             "three-valued logic)."),
+             "views, parameterized queries) and explain query results through SQL semantics (three-valued logic; "
+             "bag semantics through guided self-study)."),
     ("CLO5", "Analyze and improve relational schemas with functional dependency theory: compute closures, candidate "
              "keys and minimal covers, prove basic properties, decompose to 3NF/BCNF with lossless-join and "
-             "dependency-preservation guarantees, and implement these algorithms in Python."),
+             "dependency-preservation guarantees."),
     ("CLO6", "Evaluate physical design and query execution choices (storage organization, indexes, join algorithms, "
              "execution plans) using I/O cost models and controlled experiments."),
     ("CLO7", "Analyze concurrent executions for conflict serializability and recoverability, and justify "
              "concurrency-control and recovery mechanisms (two-phase locking, isolation levels, write-ahead logging)."),
     ("CLO8", "Conduct a small, reproducible research study on a database topic: review primary literature, formulate "
              "a research question or hypothesis, design and carry out an experiment or implementation, and report "
-             "the results in an academic paper and presentation."),
+             "the results in an academic report and presentation."),
 ]
 
 # CLO -> PLO mapping for the 13 PLOs of BCS_AD (source: docs/sources/BCS_AD_13_PLO.xlsx)
@@ -209,10 +202,11 @@ SCHEDULE = [
     theory("1.4 Database languages\n1.5 Database design\n1.6 Database engine\n1.7 Database and application architecture",
            "CLO1", "T", 1, "DSC Ch. 1, §1.4–1.7, pp. 13–23",
            "DSC §1.8–1.9 (users and administrators; history of database systems), pp. 24–28"),
-    S("Discussion of the Chapter 1 constructivist questions\nLab 1: install SQL Server; load the sample university database",
-      "CLO1", "T\nU", "- Slides: Chapter 1\n- Lab 1 handout\n- Textbook: DSC Appendix A, pp. 1287–1298",
-      "- Slides: Chapter 1\n- Lab 1 handout",
-      "Discuss the Chapter 1 constructivist questions; choose one and submit a 150–200-word answer within one week\nDo Lab 1", "Lead the discussion; guide Lab 1"),
+    S("Discussion of the Chapter 1 constructivist questions\nTool set-up (not graded): install SQL Server and SSMS; load the sample university database",
+      "CLO1", "T\nU", "- Slides: Chapter 1\n- Set-up guide\n- Textbook: DSC Appendix A, pp. 1287–1298",
+      "- Slides: Chapter 1\n- Set-up guide",
+      "Discuss the Chapter 1 constructivist questions; choose one and submit an answer within one week\nInstall the tools and load the sample database",
+      "Lead the discussion; help students with the set-up"),
     # ---- C2 Relational model and relational algebra (DSC Ch. 2; online Ch. 27) ------------------
     theory("2.1 Structure of relational databases\n2.2 Database schema\n2.3 Keys\n2.4 Schema diagrams\n"
            "The relational model as mathematics: relations as sets, keys and constraints as logic",
@@ -224,11 +218,16 @@ SCHEDULE = [
            "division and aggregation as extended operators",
            "CLO3", "T", 2, "DSC Ch. 2, §2.6, pp. 48–57",
            "Relational calculus (tuple and domain) and Codd's theorem, DSC online Ch. 27 – guided reading with worksheet"),
-    lab("Lab 2: relational algebra exercises; Python mini relational-algebra evaluator", "CLO3", 2,
-        "DSC §2.6, pp. 48–57; Exercises, pp. 60–62", "\n- Python starter code (ra.py)"),
-    review("Guided exercises: algebra and calculus proofs; review of the relational-calculus self-study worksheet",
-           "CLO3", "- Slides: Chapter 2\n- Relational-calculus worksheet (DSC online Ch. 27)",
-           "- Worksheet solutions", "Submit the self-study worksheet; solve the proof exercises",
+    S("Assignment (group project) introduction: project brief, teams of 3–4, milestones and rubric; "
+      "how to state a research question, design a small experiment and keep it reproducible",
+      "CLO8", "I", "- Assignment brief and rubric", "- Assignment brief, rubric and topic list",
+      "Form teams; choose an application domain; read the brief",
+      "Present the assignment; approve teams and domains"),
+    review("Guided exercises: relational algebra queries (checked with RelaX); algebra and calculus proofs; "
+           "review of the relational-calculus self-study worksheet",
+           "CLO3", "- Slides: Chapter 2\n- Exercise sheet\n- Relational-calculus worksheet (DSC online Ch. 27)\n"
+           "- Textbook: DSC Ch. 2 Exercises, pp. 60–62",
+           "- Exercise and worksheet solutions", "Submit the self-study worksheet; solve the algebra and proof exercises",
            "Check the worksheet; discuss common mistakes"),
     # ---- C3 Introduction to SQL (DSC Ch. 3) ------------------------------------------------------
     theory("3.1 Overview of SQL\n3.2 SQL data definition\n3.3 Basic structure of SQL queries",
@@ -237,11 +236,13 @@ SCHEDULE = [
            "CLO4", "T", 3, "DSC Ch. 3, §3.4–3.6, pp. 79–90"),
     theory("3.7 Aggregate functions\n3.8 Nested subqueries",
            "CLO4", "T", 3, "DSC Ch. 3, §3.7–3.8, pp. 91–107"),
-    theory("3.9 Modification of the database\nSemantics of SQL: bag semantics and translation to relational algebra",
-           "CLO3, CLO4", "T", 3, "DSC Ch. 3, §3.9, pp. 108–113"),
-    lab("Lab 3 (part 1): single-table queries, joins, NULL behaviour", "CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
-    lab("Lab 3 (part 2): aggregation, subqueries, set operations; equivalent formulations of the same query",
-        "CLO3, CLO4", 3, "DSC Ch. 3 Exercises, pp. 115–123"),
+    theory("3.9 Modification of the database\nTranslating SQL queries into relational algebra",
+           "CLO3, CLO4", "T", 3, "DSC Ch. 3, §3.9, pp. 108–113",
+           "Bag (multiset) semantics of SQL: duplicates, ALL vs. DISTINCT, and which algebraic laws fail for bags "
+           "(DSC Ch. 3, §3.3–3.5 and §3.7, with a worksheet)"),
+    lab("Lab 1 (part 1): single-table queries, joins, NULL behaviour", "CLO4", 1, "DSC Ch. 3 Exercises, pp. 115–123"),
+    lab("Lab 1 (part 2): aggregation, subqueries, set operations; equivalent formulations of the same query",
+        "CLO3, CLO4", 1, "DSC Ch. 3 Exercises, pp. 115–123"),
     # ---- C4 Intermediate and advanced SQL (DSC Ch. 4, §5.1, §5.4) -------------------------------
     theory("4.1 Join expressions\n4.2 Views", "CLO4", "T", 4, "DSC Ch. 4, §4.1–4.2, pp. 125–142"),
     theory("4.3 Transactions (preview)\n4.4 Integrity constraints\n4.5 SQL data types and schemas",
@@ -250,10 +251,12 @@ SCHEDULE = [
     theory("4.6 Index definition in SQL\n5.4 Recursive queries: transitive closure and the limits of relational algebra",
            "CLO3, CLO4", "T", 4, "DSC §4.6, p. 164; §5.4, pp. 213–218",
            "DSC §5.5 Advanced aggregation features (ranking, windowing), pp. 219–230"),
-    theory("5.1 Accessing SQL from a programming language (Python)\nSQL injection and parameterized queries",
+    theory("5.1 Accessing SQL from a programming language: concepts (API, cursors, prepared statements)\n"
+           "SQL injection and parameterized queries in T-SQL",
            "CLO4", "T", 4, "DSC §5.1, pp. 183–197",
-           "DSC §9.8 Application security, pp. 437–446; optional: §5.2–5.3 functions, procedures, triggers, pp. 198–212"),
-    lab("Lab 4: DDL, integrity constraints, views, and SQL from Python", "CLO2, CLO4", 4,
+           "DSC §9.8 Application security, pp. 437–446; Python access to SQL Server (pyodbc, pandas), optional; "
+           "§5.2–5.3 functions, procedures, triggers, pp. 198–212, optional"),
+    lab("Lab 2: DDL, integrity constraints, views and parameterized queries", "CLO2, CLO4", 2,
         "DSC Ch. 4 Exercises, pp. 176–179; §5.1"),
     review("Progress test 1 (Chapters 1–4)\nReview exercises", "CLO1, CLO2, CLO3, CLO4",
            "- Slides: Chapters 1–4\n- DSC Ch. 1–4", "- Progress test 1",
@@ -268,10 +271,8 @@ SCHEDULE = [
     theory("6.9 Entity-relationship design issues; limits of the E-R model",
            "CLO2", "T", 5, "DSC Ch. 6, §6.9, pp. 279–284",
            "DSC §6.10–6.11 Alternative notations (crow's foot, UML) and other aspects of design, pp. 285–291"),
-    S("Lab 5: E-R design and reduction to relational schemas\nAssignment 1 released", "CLO2", "U",
-      "- Lab 5 handout\n- Assignment 1 brief\n- Textbook: DSC Ch. 6 Exercises, pp. 294–299",
-      "- Lab 5 sample solution\n- Assignment 1 brief and rubric",
-      "Do Lab 5; read the Assignment 1 brief", "Guide Lab 5; present Assignment 1"),
+    lab("Lab 3: E-R design, reduction to relational schemas and implementation in SQL Server", "CLO2", 3,
+        "DSC Ch. 6 Exercises, pp. 294–299"),
     # ---- C6 Relational database design (DSC Ch. 7) ----------------------------------------------
     theory("7.1 Features of good relational designs: redundancy and anomalies\n7.2 Decomposition using functional dependencies",
            "CLO5", "T", 6, "DSC Ch. 7, §7.1–7.2, pp. 303–312"),
@@ -284,11 +285,15 @@ SCHEDULE = [
            "DSC Ch. 7, §7.5, pp. 330–335"),
     theory("7.6 Decomposition using multivalued dependencies (4NF, overview)\n7.8 Atomic domains and first normal form", "CLO5", "T", 6, "DSC Ch. 7, §7.6, §7.8, pp. 336–340, 342",
            "DSC §7.7 More normal forms, p. 341; §7.9 Database-design process, pp. 343–346"),
-    lab("Lab 6: FD theory on paper; Python FD toolkit (closure, keys, canonical cover, BCNF, lossless-join test)",
-        "CLO5", 6, "DSC Ch. 7 Exercises, pp. 353–359", "\n- Python starter code (fd.py)"),
-    S("Assignment 1: submission and oral defense", "CLO2, CLO3, CLO8", "U",
-      "- Assignment 1 brief and rubric", "- Assignment 1 rubric",
-      "Submit the report; defend it orally (5 minutes)", "Assess reports and oral defenses"),
+    review("Guided exercises: FD theory on paper (attribute closure, candidate keys, canonical cover, "
+           "BCNF and 3NF decomposition, lossless-join test)",
+           "CLO5", "- Slides: Chapter 6\n- Textbook: DSC Ch. 7 Exercises, pp. 353–359", "- Exercise solutions",
+           "Solve the exercises; check each decomposition for lossless join and dependency preservation",
+           "Guide the exercises; discuss solutions"),
+    S("Assignment milestone 1: design review (E-R model, normalized schema with constraints, research questions)",
+      "CLO2, CLO5, CLO8", "U",
+      "- Assignment brief and rubric", "- Assignment rubric",
+      "Submit the design document; present it (5 minutes per team)", "Assess the designs; give feedback"),
     review("Progress test 2 (Chapters 5–6)\nReview exercises", "CLO2, CLO5",
            "- Slides: Chapters 5–6\n- DSC Ch. 6–7", "- Progress test 2",
            "Review Chapters 5–6; take Progress test 2", "Run and grade Progress test 2; review the answers"),
@@ -307,8 +312,8 @@ SCHEDULE = [
     review("Guided exercises: B+-tree insertion and deletion by hand; hashing; I/O cost of index lookups versus table scans",
            "CLO6", "- Slides: Chapter 7\n- Textbook: DSC Ch. 14 Exercises, pp. 679–682", "- Exercise solutions",
            "Solve the exercises; compare hand-computed costs with the formulas", "Guide the exercises; discuss solutions"),
-    lab("Lab 7: indexing experiments on a large table; execution plans and logical reads (Investigate)", "CLO6, CLO8", 7,
-        "DSC Ch. 14 Exercises, pp. 679–682"),
+    lab("Lab 4 (part 1): indexing experiments on a large table; logical reads with and without indexes (Investigate)",
+        "CLO6, CLO8", 4, "DSC Ch. 14 Exercises, pp. 679–682"),
     # ---- C8 Query processing and optimization (DSC Ch. 15–16) -----------------------------------
     theory("15.1 Overview of query processing\n15.2 Measures of query cost\n15.3 Selection operation", "CLO6", "T", 8,
            "DSC Ch. 15, §15.1–15.3, pp. 689–700"),
@@ -321,9 +326,8 @@ SCHEDULE = [
            "DSC Ch. 16, §16.1–16.2, pp. 743–756"),
     theory("16.4 Choice of evaluation plans: cost-based join ordering (dynamic programming)", "CLO6", "T", 8, "DSC Ch. 16, §16.4, pp. 766–777",
            "DSC §16.3 Estimating statistics of expression results, pp. 757–765"),
-    lab("Lab 8: reading execution plans; comparing join algorithms and equivalent queries (Investigate)\n"
-        "Assignment 2 released (research topics)", "CLO6, CLO8", 8, "DSC Ch. 15–16 Exercises, pp. 736–739, 789–793",
-        "\n- Assignment 2 brief"),
+    lab("Lab 4 (part 2): reading execution plans; comparing join algorithms and equivalent queries (Investigate)",
+        "CLO6, CLO8", 4, "DSC Ch. 15–16 Exercises, pp. 736–739, 789–793"),
     # ---- C9 Transactions and concurrency control (DSC Ch. 17–18) --------------------------------
     theory("17.1 Transaction concept\n17.2 A simple transaction model\n17.3 Storage structure\n"
            "17.4 Transaction atomicity and durability", "CLO7", "T", 9, "DSC Ch. 17, §17.1–17.4, pp. 799–806"),
@@ -340,33 +344,35 @@ SCHEDULE = [
     theory("18.8 Snapshot isolation and write skew", "CLO7", "T", 9,
            "DSC Ch. 18, §18.8, pp. 872–879",
            "DSC §18.9 Weak levels of consistency in practice, pp. 880–882"),
-    lab("Lab 9: concurrency experiments with two sessions (isolation levels, deadlocks); Python serializability tester",
-        "CLO7", 9, "DSC Ch. 17–18 Exercises, pp. 831–833, 899–903", "\n- Python starter code (schedule.py)"),
+    lab("Lab 5: concurrency experiments with two sessions (isolation levels, dirty reads, phantoms, deadlocks); "
+        "serializability of the observed schedules by precedence graph",
+        "CLO7", 5, "DSC Ch. 17–18 Exercises, pp. 831–833, 899–903"),
     # ---- C10 Recovery system (DSC Ch. 19, mainly self-study) ------------------------------------
     theory("Recovery system (overview): 19.1 Failure classification, 19.3 Recovery and atomicity (write-ahead logging), "
            "19.4 Recovery algorithm (main ideas)\nBriefing for the self-study of Chapter 19",
            "CLO7", "T", 10, "DSC Ch. 19, §19.1, §19.3, pp. 907, 912–921",
            "DSC §19.2 Storage, pp. 908–911; §19.4 Recovery algorithm, pp. 922–925; §19.5–19.6, pp. 926–930; "
            "optional §19.9 ARIES, pp. 941–946"),
-    # ---- Assignment 2, review ------------------------------------------------------------------------
-    S("Assignment 2: research progress meeting (question, method, preliminary results)", "CLO8", "U",
-      "- Assignment 2 brief and rubric", "- Assignment 2 rubric", "Present progress; revise the method",
-      "Give feedback on each group's method"),
-    S("Assignment 2: paper presentations (part 1)", "CLO5, CLO6, CLO7, CLO8", "U",
-      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper (10 minutes + 5 minutes Q&A)",
-      "Assess presentations and papers"),
-    S("Assignment 2: paper presentations (part 2)", "CLO5, CLO6, CLO7, CLO8", "U",
-      "- Assignment 2 brief", "- Assignment 2 rubric", "Present the paper; submit the final paper and code",
-      "Assess presentations and papers"),
+    # ---- Assignment (group project), review ----------------------------------------------------------
+    S("Assignment milestone 2: progress meeting (experiment method, preliminary results)", "CLO6, CLO7, CLO8", "U",
+      "- Assignment brief and rubric", "- Assignment rubric", "Present progress; revise the method",
+      "Give feedback on each team's method"),
+    S("Assignment: final presentations (part 1)", "CLO2, CLO5, CLO6, CLO7, CLO8", "U",
+      "- Assignment brief", "- Assignment rubric", "Present the project (10 minutes + 5 minutes Q&A)",
+      "Assess presentations and reports"),
+    S("Assignment: final presentations (part 2)", "CLO2, CLO5, CLO6, CLO7, CLO8", "U",
+      "- Assignment brief", "- Assignment rubric", "Present the project; submit the final report and SQL scripts",
+      "Assess presentations and reports"),
     review("Course review (part 1): Chapters 1–6, including the self-study readings", "CLO1, CLO2, CLO3, CLO4, CLO5",
            "- Slides: Chapters 1–6\n- Self-study reading list", "- Review questions",
            "Review Chapters 1–6 and the self-study readings", "Answer questions; review key results"),
     review("Course review (part 2): Chapters 7–10, including the self-study of recovery", "CLO6, CLO7",
            "- Slides: Chapters 7–10\n- Self-study reading list", "- Review questions",
            "Review Chapters 7–10 and the self-study readings", "Answer questions; review key results"),
-    review("Practical exam preparation: SQL practice on the computer", "CLO4",
-           "- Practice problems (DDL and queries)", "- Practice problems and solutions",
-           "Practise SQL under exam conditions", "Guide the practice; clarify the exam rules"),
+    review("Final-exam practice: analysis-level questions (proofs, algorithm traces, cost estimates, schedules)",
+           "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7",
+           "- Practice question set", "- Practice questions and solutions",
+           "Answer the practice questions under exam conditions", "Discuss the answers; clarify the exam rules"),
 ]
 assert len(SCHEDULE) == 60, len(SCHEDULE)
 
@@ -374,9 +380,12 @@ assert len(SCHEDULE) == 60, len(SCHEDULE)
 SELF_STUDY = [
     ("C1", "DSC §1.8–1.9, pp. 24–28", "Users and administrators; history of database systems"),
     ("C2", "DSC online Ch. 27 (tuple and domain relational calculus)", "Abstract; studied with a worksheet reviewed in session 8"),
+    ("C3", "DSC Ch. 3, §3.3–3.5, §3.7 (duplicates, ALL vs. DISTINCT, aggregates)", "Bag (multiset) semantics of SQL; studied with a worksheet"),
     ("C4", "DSC §4.7, pp. 165–172; §5.5, pp. 219–230; §9.8, pp. 437–446", "Authorization; ranking and windowing; application security"),
+    ("C4", "Python with pyodbc and pandas (optional)", "Accessing SQL Server from Python; not taught in class or required in labs"),
     ("C5", "DSC §6.8, pp. 271–278; §6.10–6.11, pp. 285–291", "Extended E-R features; alternative notations"),
     ("C6", "DSC §7.7, p. 341; §7.9, pp. 343–346", "More normal forms; the design process"),
+    ("C6", "Python versions of the FD algorithms (optional)", "Closure, keys, canonical cover, BCNF decomposition"),
     ("C7", "DSC §12.1, §12.6, §13.4, §14.4", "Storage media and disk-block access; data dictionary; B+-tree extensions"),
     ("C8", "DSC §15.6–15.7, pp. 719–730; §16.3, pp. 757–765", "Other operations and pipelining; statistics estimation (abstract, hard to observe directly)"),
     ("C9", "DSC §18.3, §18.5, §18.7, §18.9", "Multiple granularity; timestamp and multiversion protocols; weak consistency"),
@@ -395,7 +404,7 @@ CQ = [
     (8, "CQ3", "Relational algebra cannot compute the transitive closure of a relation. Why does a fixed-size expression limit what a language can express?"),
     (12, "CQ1", "Under three-valued logic, 'p OR NOT p' is not always true. Which everyday query mistakes follow from this?"),
     (12, "CQ2", "Why does 'x NOT IN (subquery)' return no rows when the subquery contains NULL, while NOT EXISTS behaves differently?"),
-    (12, "CQ3", "Which algebraic laws that hold for sets fail for bags? Why did SQL choose bag semantics anyway?"),
+    (12, "CQ3", "COUNT(*) and COUNT(attribute) can return different values on the same table. Why, and what does this show about how aggregates treat NULL?"),
     (18, "CQ1", "Why should integrity rules be declared in the database rather than checked in application code? When is the opposite true?"),
     (18, "CQ2", "A view costs nothing extra at run time. How is that possible, and when would a materialized view be better?"),
     (18, "CQ3", "Why do parameterized queries prevent SQL injection, while escaping user input is considered fragile?"),
@@ -423,7 +432,7 @@ CQ = [
 for _session in sorted({q[0] for q in CQ}):
     _t = list(SCHEDULE[_session - 1])
     if "constructivist" not in _t[5]:
-        _t[5] += "\nDiscuss this chapter's constructivist questions; choose one and submit a 150–200-word answer within one week"
+        _t[5] += "\nDiscuss this chapter's constructivist questions; choose one and submit an answer within one week"
         _t[6] += "; lead the discussion of the constructivist questions"
     SCHEDULE[_session - 1] = tuple(_t)
 
@@ -431,45 +440,36 @@ for _session in sorted({q[0] for q in CQ}):
 # 6. Grading structure
 # (component, type, weight, part, min, duration, CLO, question type, number, scope, how, note, reference)
 # ---------------------------------------------------------------------------
+PT_NOTE_ = "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded."
 GRADING = [
-    ("Labs and constructivist questions", "on-going", 10, 19, 0.0001, "Labs: in lab sessions; CQ answers: 1 week after each discussion",
+    ("Labs and constructivist questions", "on-going", 10, 15, 0.0001, "Labs: in lab sessions; CQ answers: 1 week after each discussion",
      "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
-     "Lab exercises, Python implementations with tests, 'Investigate' mini-reports; short written answers to constructivist questions",
-     "9 labs + 10 CQ answers",
-     "Labs 1–9 (Chapters 1–9); one constructivist question chosen by the student from each of the 10 chapters", "labs: in class, by instructor; CQ answers: on the LMS, by instructor with a short rubric",
-     "Labs 6% in total (about 0.67% each). Constructivist-question answers 4% in total (0.4% each; 150–200 words; graded on reasoning, use of the textbook and clarity). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark. Python tasks are graded by the provided unit tests and by code review.",
+     "Lab exercises in SQL Server, 'Investigate' mini-reports; short written answers to constructivist questions",
+     "5 labs + 10 CQ answers",
+     "Labs 1–5 (Chapters 3–9: SQL queries; DDL, constraints and views; E-R design; indexing and query plans; concurrency); one constructivist question chosen by the student from each of the 10 chapters",
+     "labs: in class, by instructor; CQ answers: on the LMS, by instructor with a short rubric",
+     "Labs 6% in total (1.2% each). Constructivist-question answers 4% in total (0.4% each; graded on reasoning, use of the textbook and clarity). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark.",
      "Lab"),
-    ("Progress test 1", "on-going", 10, 1, 0.0001, "30'", "CLO1, CLO2, CLO3, CLO4",
+    ("Progress test 1", "on-going", 5, 1, 0.0001, "30'", "CLO1, CLO2, CLO3, CLO4",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
-     "- cover Chapters 1–4 (DSC Ch. 1–4, §5.1, §5.4) and the self-study of relational calculus (DSC online Ch. 27)\n- written items: one relational algebra/calculus proof or query, one SQL semantics question (NULL, bags)",
+     "- cover Chapters 1–4 (DSC Ch. 1–4, §5.1, §5.4) and their self-study readings (relational calculus, bag semantics)\n- written items: one relational algebra/calculus proof or query, one SQL semantics question (NULL, three-valued logic)",
      "in class, by instructor",
-     "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded.",
+     PT_NOTE_,
      "Progress test"),
-    ("Progress test 2", "on-going", 10, 1, 0.0001, "30'", "CLO2, CLO5",
+    ("Progress test 2", "on-going", 5, 1, 0.0001, "30'", "CLO2, CLO5",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
      "- cover Chapters 5–6 (DSC Ch. 6–7) and their self-study sections\n- written items: one E-R design and reduction task, one FD proof or normalization task",
      "in class, by instructor",
-     "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded.",
+     PT_NOTE_,
      "Progress test"),
-    ("Assignment 1", "on-going", 10, 1, 0.0001, "Take-home, 3 weeks + 5' oral defense", "CLO2, CLO3, CLO8",
-     "Individual technical report (4–6 pages) + oral defense", 1,
-     "- cover Chapters 2–6 (DSC Ch. 2–4, 6–7)\n- design and theory report: ER model with justified alternatives, formal relational schema, constraints as logic, algebra/calculus/SQL queries with correctness arguments, one guided experiment",
-     "take-home; released in session 25, submitted and defended in session 33; graded by instructor with rubric",
-     "Instructor has responsibility to review the assignment for students after graded. Plagiarism or undisclosed AI-generated content leads to a score of 0.",
+    ("Assignment (group project)", "on-going", 30, 1, 0.0001, "Take-home, whole semester; 2 milestones + 15' final presentation",
+     "CLO2, CLO3, CLO5, CLO6, CLO7, CLO8",
+     "Group project (3–4 students): academic report, reproducible SQL scripts and data, presentation", 1,
+     "- cover Chapters 2–10\n- each team designs one database for its own domain (E-R model, normalized schema with constraints, SQL queries with correctness arguments) and then answers research questions about it through experiments (indexes and query plans, join algorithms, isolation levels) or through constructivist questions linked to the design",
+     "take-home; introduced in session 7; milestone 1 (design review) in session 33; milestone 2 (progress meeting) in session 55; final presentations in sessions 56–57; graded by instructor with rubric",
+     "Milestone 1 design review 25%, final report 40% (question, method, results, discussion), reproducibility of scripts and data 10%, presentation and Q&A 20%, peer evaluation 5%. Individual marks may differ within a team based on contribution logs. Plagiarism or undisclosed AI-generated content leads to a score of 0. Instructor has responsibility to review the assignment for students after graded.",
      "Assignment"),
-    ("Assignment 2", "on-going", 20, 1, 0.0001, "Take-home, 4 weeks + 15' presentation", "CLO5, CLO6, CLO7, CLO8",
-     "Group mini research project (2–3 students): short paper (IEEE format, 4–6 pages), reproducible code, presentation", 1,
-     "- cover Chapters 6–10 (DSC Ch. 7, 12–19)\n- topics: empirical studies (indexes, join algorithms, isolation levels), algorithm implementation and evaluation (FD algorithms, serializability, relational algebra), or reproducing at small scale a result from a published paper found by the group",
-     "take-home; released in session 46; progress meeting in session 55; presentations in sessions 56–57; graded by instructor with rubric",
-     "Paper 50% (question, method, results, discussion, related work), reproducibility of code and data 20%, presentation and Q&A 20%, peer evaluation 10%. Individual marks may differ within a group based on contribution logs.",
-     "Assignment"),
-    ("Practical exam", "on-going", 10, 1, 0.0001, "60'", "CLO4",
-     "Practical questions on computer", 2,
-     "- cover Chapters 3–5 (DSC Ch. 3, 4, 6)\n- create a schema with constraints from a specification; write SQL queries (joins, aggregation, subqueries, views)",
-     "by exam board, using computer",
-     "The exam questions must be updated or different at least 70% to the previous ones.",
-     "on-going"),
-    ("Final exam", "final exam", 30, 1, 4, "60'", "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7",
+    ("Final exam", "final exam", 50, 1, 5, "60'", "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7",
      "Multiple choices\nMarked by Computer", 50,
      "concepts, proofs, algorithms and analysis; all chapters, including the self-study readings (about 20% of items); at least 30% of items at the Analyze level or above",
      "by exam board, using computer",
@@ -477,6 +477,7 @@ GRADING = [
      "Final exam"),
 ]
 assert sum(g[2] for g in GRADING) == 100
+assert next(g[2] for g in GRADING if g[1] == "final exam") == 50
 
 
 # ---------------------------------------------------------------------------
@@ -583,6 +584,10 @@ def fill_schedule(ws):
 
 
 def fill_grading(ws):
+    # Clear the template's example rows (they can extend below the shorter component list).
+    for row in range(2, ws.max_row + 1):
+        for col in range(1, 15):
+            ws.cell(row=row, column=col).value = None
     for i, g in enumerate(GRADING):
         row = 2 + i
         (comp, typ, weight, part, minv, dur, clo, qtype, num, scope, how, note, ref) = g
@@ -642,7 +647,7 @@ def build_markdown(path=ROOT / "syllabus.md"):
           "| # | Component | Weight | Duration | CLOs | Format | Scope |", "|---|---|---|---|---|---|---|"]
     for i, g in enumerate(GRADING, 1):
         L.append(f"| {i} | {g[0]} | {g[2]}% | {esc(g[5])} | {g[6]} | {esc(g[7])} | {esc(g[9])} |")
-    L += ["", "**Completion criteria:** every on-going component > 0; practical exam > 0; final exam ≥ 4; final result ≥ 5.", "",
+    L += ["", "**Completion criteria:** every on-going component > 0; final exam ≥ 5; final result ≥ 5.", "",
           "## 8. Schedule (60 sessions × 45 minutes)", "", "| Session | Topic | CLO | ITU | Student's task |", "|---|---|---|---|---|"]
     for i, s in enumerate(SCHEDULE, 1):
         L.append(f"| {i} | {esc(s[0])} | {esc(s[1])} | {esc(s[2])} | {esc(s[5])} |")
