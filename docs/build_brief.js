@@ -104,7 +104,7 @@ children.push(
   B("==Proofs and algorithms==: students prove core results (Armstrong's axioms, the lossless-join test, correctness of two-phase locking) and trace the algorithms step by step on paper; Python implementations are optional self-study for students who take PFP191."),
   B("==System internals==: storage, indexing, query optimization and transaction theory analyzed with cost models, as the official description requires; the depth is set for first-semester students, who have not yet taken Data Structures and Algorithms."),
   B("==Programming the database server==: one chapter (6 sessions) on T-SQL user-defined functions, stored procedures, triggers and cursors, studied with a research angle (declarative constraints versus triggers; row-by-row versus set-based processing)."),
-  B("==Research practice==: for every chapter, students answer one constructivist (why / what-if) question in writing, labs include an Investigate part (hypothesis → experiment → evidence), and one group project runs through the whole course: teams design a database and answer research questions about it in an academic report."),
+  B("==Research practice==: for every chapter that extends the knowledge base (all except the T-SQL skills chapter), students answer one constructivist (why / what-if) question in writing, labs include an Investigate part (hypothesis → experiment → evidence), and one group project runs through the whole course: teams design a database and answer research questions about it in an academic report."),
   B("==Assessment aligned with the orientation==: 40% of the grade rewards research work, the final exam carries 50%, and it includes at least 30% analysis-level items."),
   gap(),
   table(
@@ -114,7 +114,7 @@ children.push(
       ["Learners", "Talented-student (honors) classes; Year 1, Semester 1; no prerequisite"],
       ["Workload", "3 credits: 45h contact (60 sessions) + 1h final exam + 104h self-study"],
       ["Textbooks", "Silberschatz, Korth & Sudarshan, Database System Concepts, 7th ed. (2020); Ramakrishnan & Gehrke, Database Management Systems, 3rd ed. (2003)"],
-      ["Constructivist questions", "==30 questions (3 per chapter)==; each student answers one per chapter in a short written answer, graded as part of the labs and CQ score"],
+      ["Constructivist questions", "==27 questions (3 per chapter, 9 chapters; none for the T-SQL skills chapter C5)==; each student answers one per chapter in a short written answer, graded as part of the labs and CQ score"],
       ["CLOs", "8 CLOs (one per row of the template); ==6 of 8 at the Analyze level or above== (Bloom); CLO8 is a dedicated research outcome"],
       ["PLO contribution", "PLO2, PLO5, PLO7, PLO8, PLO9, PLO10, PLO11 (7 of the 13 BCS_AD PLOs; ==PLO5 research and critical thinking is supported by 5 CLOs==)"],
       ["Assessment", "5 labs and CQ answers 10% · Progress tests 5% + 5% · Assignment (group project) 30% · Final exam 50% · no practical exam"],
@@ -169,7 +169,7 @@ const ch = [
   ["C2 Relational model and relational algebra (DSC 2; online Ch. 27 self-study)", "4–8", "==Relations as sets; keys and constraints as logic; relational algebra with proofs; relational calculus and Codd's theorem (guided self-study)==; algebra exercises checked with RelaX", "Session 8", "CLO2, CLO3"],
   ["C3 Introduction to SQL (DSC 3)", "9–14", "==Formal semantics of SQL: three-valued logic, translation to algebra; bag semantics as guided self-study==; equivalent formulations of one query", "Session 12", "CLO3, CLO4"],
   ["C4 Intermediate and advanced SQL (DSC 4, §5.1, §5.4)", "15–19", "Declarative integrity; ==recursive queries and the limits of relational algebra (transitive closure)==; SQL injection explained by separating code and data", "Session 18", "CLO2, CLO3, CLO4"],
-  ["C5 Programming the database server in T-SQL (DSC §5.2–5.3; T-SQL reference)", "20–25", "Functions, stored procedures, triggers and cursors; ==declarative constraints versus triggers; termination of cascading triggers; row-by-row versus set-based processing measured in the lab==", "Session 23", "CLO2, CLO4"],
+  ["C5 Programming the database server in T-SQL (DSC §5.2–5.3; T-SQL reference)", "20–25", "Functions, stored procedures, triggers and cursors; ==declarative constraints versus triggers; termination of cascading triggers; row-by-row versus set-based processing measured in the lab==", "— (skills chapter; no CQs)", "CLO2, CLO4"],
   ["C6 Database design with the E-R model (DSC 6)", "27–31", "Design alternatives with justification; ==limits of the E-R model== (constraints it cannot express)", "Session 30", "CLO2"],
   ["C7 Relational database design (DSC 7)", "32–38", "==Functional-dependency theory with proofs (Armstrong's axioms, closure, canonical cover, lossless join); decomposition algorithms; MVDs and 4NF==; FD exercises on paper", "Session 37", "CLO5"],
   ["C8 Storage and indexing (DSC 12–14)", "41–44", "==I/O cost model; B+-tree height analysis; cost of index lookups versus scans; learned indexes==; B+-tree deletion and multiple-key access as self-study", "Session 44", "CLO6"],
@@ -291,7 +291,7 @@ children.push(
       ["CLO5", "C7", "32–38; project design review in 39; Progress test 2 in 40; project presentations in 56–57"],
       ["CLO6", "C8, C9", "41–48 (Lab 5 part 1 in 48); project in 55–57"],
       ["CLO7", "C10", "49–54 (Lab 5 part 2 in 53); project in 55–57"],
-      ["CLO8", "Constructivist questions; group project", "10 discussion sessions (3, 8, 12, 18, 23, 30, 37, 44, 47, 54); project in 7, 39, 55–57; Investigate part of every lab"],
+      ["CLO8", "Constructivist questions; group project", "9 discussion sessions (3, 8, 12, 18, 30, 37, 44, 47, 54); project in 7, 39, 55–57; Investigate part of every lab"],
     ],
     [800, 3700, 4526],
   ),
@@ -392,7 +392,7 @@ children.push(
   table(
     ["Component", "Standard template", "Proposal", "Format", "CLOs"],
     [
-      ["Labs and constructivist questions", "–", "==10%==", "5 labs (6%): SQL and T-SQL exercises and Investigate mini-reports; 10 short CQ answers (4%)", "CLO1–CLO8"],
+      ["Labs and constructivist questions", "–", "==10%==", "5 labs (6%): SQL and T-SQL exercises and Investigate mini-reports; 9 short CQ answers (4%)", "CLO1–CLO8"],
       ["Progress test 1", "10%", "==5%==", "30': 20 MCQ + 2 written reasoning items (Chapters 1–5)", "CLO1–CLO4"],
       ["Progress test 2", "10%", "==5%==", "30': 20 MCQ + 2 written reasoning items (Chapters 6–7)", "CLO2, CLO5"],
       ["Assignment (group project)", "20%", "==30%==", "One project for the whole course (teams of 3–4): design review, academic report, reproducible SQL scripts, presentation", "CLO2–CLO8"],
@@ -437,10 +437,10 @@ children.push(
   N("**Sessions 56–57 – final presentations:** academic report, reproducible SQL scripts and data, 15-minute presentation with Q&A."),
   P("Grading: design review 25%, final report 40%, reproducibility 10%, presentation and Q&A 20%, peer evaluation 5%."),
   H2("6.4 Constructivist questions"),
-  P("The syllabus lists **30 constructivist questions**, three for each of 10 key sessions, one per chapter. They are open *why* and *what if* questions. Students answer one per chapter (§3.1). Examples:"),
+  P("The syllabus lists **27 constructivist questions**, three for each of 9 key sessions, one per chapter. The T-SQL chapter (C5) has none: it is a skills chapter, and the questions are kept for the chapters that extend the conceptual knowledge. They are open *why* and *what if* questions. Students answer one per chapter (§3.1). Examples:"),
   B("\"What would break if relations were allowed to contain duplicate tuples?\""),
   B("\"Testing whether an attribute is prime is NP-complete. What does this mean for automatic schema design tools?\""),
-  B("\"A trigger can fire another trigger, or itself. How could you argue that a given set of triggers always terminates?\""),
+  B("\"Why does two-phase locking guarantee serializability? Explain the idea of the lock point.\""),
 );
 
 // 7. Alignment with official description

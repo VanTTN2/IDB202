@@ -52,7 +52,7 @@ GENERAL = {
     "Student's tasks": (
         "- Students must attend at least 80% of contact slots in order to be accepted to the final examination.\n"
         "- Read the assigned textbook sections BEFORE each theory session.\n"
-        "- For each chapter, choose ONE of its three constructivist questions and submit a short written answer "
+        "- For each chapter with constructivist questions (all chapters except C5, T-SQL programming), choose ONE of its three constructivist questions and submit a short written answer "
         "on the LMS within one week of the discussion session. The answers are graded as part of the lab and "
         "constructivist-question score (4% in total).\n"
         "- Complete all 5 labs, including the 'Investigate' part, and submit them on time.\n"
@@ -81,7 +81,7 @@ GENERAL = {
     ),
     "Note": (
         "1) On-going Assessment:                 50%\n"
-        "- 5 labs + 10 CQ answers:              10%\n"
+        "- 5 labs + 9 CQ answers:                10%\n"
         "- Progress test 1:                          5%\n"
         "- Progress test 2:                          5%\n"
         "- 1 Assignment (group project):      30%\n"
@@ -430,9 +430,6 @@ CQ = [
     (18, "CQ1", "Why should integrity rules be declared in the database rather than checked in application code? When is the opposite true?"),
     (18, "CQ2", "A view costs nothing extra at run time. How is that possible, and when would a materialized view be better?"),
     (18, "CQ3", "Why do parameterized queries prevent SQL injection, while escaping user input is considered fragile?"),
-    (23, "CQ1", "A business rule can often be enforced by a CHECK constraint, a trigger or a stored procedure. Which would you choose, and why does the declarative option usually win when it is possible?"),
-    (23, "CQ2", "A cursor processes one row at a time, while SQL is set-based. Why is the set-based version usually much faster, and when is a cursor still justified? Design an experiment that measures the difference."),
-    (23, "CQ3", "A trigger can fire another trigger, or itself. What can go wrong with cascading triggers, and how could you argue that a given set of triggers always terminates?"),
     (30, "CQ1", "Why is a grade an attribute of the enrollment relationship and not of STUDENT or SECTION? What goes wrong if it is placed on either entity?"),
     (30, "CQ2", "Is a ternary relationship always equivalent to three binary relationships? Construct a counterexample."),
     (30, "CQ3", "Give a business rule of the university database that cannot be drawn in an E-R diagram. How should a designer record and enforce it?"),
@@ -464,13 +461,13 @@ for _session in sorted({q[0] for q in CQ}):
 # ---------------------------------------------------------------------------
 PT_NOTE_ = "Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus.\n\nProgress test must be taken right after the last lectures of required material.\n\nInstructor has responsibility to review the test for students after graded."
 GRADING = [
-    ("Labs and constructivist questions", "on-going", 10, 15, 0.0001, "Labs: in lab sessions; CQ answers: 1 week after each discussion",
+    ("Labs and constructivist questions", "on-going", 10, 14, 0.0001, "Labs: in lab sessions; CQ answers: 1 week after each discussion",
      "CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8",
      "Lab exercises in SQL Server, 'Investigate' mini-reports; short written answers to constructivist questions",
-     "5 labs + 10 CQ answers",
-     "Labs 1–5 (Chapters 3–10: SQL queries; DDL, constraints and views; T-SQL functions, procedures, triggers and cursors; E-R design; indexing, query plans and concurrency); one constructivist question chosen by the student from each of the 10 chapters",
+     "5 labs + 9 CQ answers",
+     "Labs 1–5 (Chapters 3–10: SQL queries; DDL, constraints and views; T-SQL functions, procedures, triggers and cursors; E-R design; indexing, query plans and concurrency); one constructivist question chosen by the student from each of the 9 chapters that have them (all except C5, T-SQL programming)",
      "labs: in class, by instructor; CQ answers: on the LMS, by instructor with a short rubric",
-     "Labs 6% in total (1.2% each). Constructivist-question answers 4% in total (0.4% each; graded on reasoning, use of the textbook and clarity). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark.",
+     "Labs 6% in total (1.2% each). Constructivist-question answers 4% in total (shared equally among the 9 answers; graded on reasoning, use of the textbook and clarity). The 'Investigate' part (hypothesis, experiment, evidence) counts for at least 40% of each lab mark.",
      "Lab"),
     ("Progress test 1", "on-going", 5, 1, 0.0001, "30'", "CLO1, CLO2, CLO3, CLO4",
      "Multiple choices (marked by computer) + short written reasoning", "20 MCQ + 2 written",
