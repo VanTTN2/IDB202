@@ -51,7 +51,7 @@ A database course serves different purposes in different programs.
 
 | Topic | Decision |
 |---|---|
-| Stored procedures, functions, triggers (T-SQL programming) | Moved to **optional Appendix A**. Not assessed. |
+| Stored procedures, functions, triggers, cursors (T-SQL programming) | **Taught since 2026-10-14** as chapter C5 (sessions 20–25, Lab 3), with a CS angle: declarative constraints versus triggers, termination of cascading triggers, set-based versus row-by-row cost. Time taken from the internals chapters. |
 | DBMS administration: backups, logins, jobs | Mentioned briefly only (Ch. 5 §5.9, Ch. 10 §10.10) |
 | Tool-specific skills (SSMS menus, GUI designers) | Kept to what the labs need |
 | Front-end or ORM application development | Not covered. SE-track courses cover it |

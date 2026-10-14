@@ -61,7 +61,7 @@ IDB201 is the entry point of the program skill set "Data Handling, Databases and
 | D1 | All project content in English | User |
 | D2 | Course code **IDB201**, not IDB202 (the repository keeps the name IDB202) | User confirmed the curriculum code |
 | D3 | Academic, research-oriented design for honors students | Program leadership, via the user |
-| D4 | CS-core emphasis: formal foundations, query languages, SQL semantics, dependency theory, storage and indexing, query optimization, transaction theory. Application topics (stored procedures, triggers, administration) de-emphasized; procedures and triggers moved to an optional appendix | `docs/course-design-notes.md` §2 |
+| D4 | CS-core emphasis: formal foundations, query languages, SQL semantics, dependency theory, storage and indexing, query optimization, transaction theory. Administration de-emphasized. **T-SQL programming (functions, stored procedures, triggers, cursors) is a taught chapter C5 (sessions 20–25, Lab 3) since 2026-10-14**; its time came from trimming storage, query processing and transactions | `docs/course-design-notes.md` §2; user (2026-10-14) |
 | D5 | DBMS: Microsoft SQL Server (T-SQL). **Python is optional self-study only** (since 2026-10-13): not taught in class, not required in labs | User (2026-10-13); earlier version used Python in labs |
 | D6 | Time allocation follows the template: 45h contact = **60 sessions × 45 minutes**, plus 1h final exam and 104h self-study | Template |
 | D7 | **Assessment (revised 2026-10-13):** labs and CQ answers 10% (5 labs), PT1 5%, PT2 5%, one Assignment (group project, academic report) 30%, final exam 50%; no practical exam. Completion: every on-going component > 0, FE ≥ 5, total ≥ 5 | User (2026-10-13): FE must be 50%; labs 9 → 5; two assignments → one group project; PE removed. The PT 5%/5% and project 30% split comes from the user's own edit of the Note cell and was confirmed by the user on 2026-10-13. Template standard was Asm 20 / PT 20 / PE 30 / FE 30 |
@@ -121,18 +121,18 @@ Since 2026-09-27 the course follows the chapter order of [DSC] (Database System 
 | C1 | Introduction | Ch. 1 | 1–3 (tool set-up, not graded, in 3) |
 | C2 | Relational model and relational algebra | Ch. 2; online Ch. 27 (relational calculus) = self-study | 4–8 (group project introduction in 7; algebra exercises and worksheet review in 8) |
 | C3 | Introduction to SQL | Ch. 3 (bag semantics = self-study) | 9–14 (Lab 1 in 13–14) |
-| C4 | Intermediate and advanced SQL | Ch. 4, §5.1, §5.4 | 15–19 (Lab 2 in 19); Progress test 1 in 20 |
-| C5 | E-R model | Ch. 6 | 21–25 (Lab 3 in 25) |
-| C6 | Relational database design | Ch. 7 | 26–32 (FD guided exercises in 32); project design review in 33; Progress test 2 in 34 |
-| C7 | Storage and indexing | Ch. 12 (self-study), 13, 14 | 35–40 (guided exercises in 39, Lab 4 part 1 in 40) |
-| C8 | Query processing and optimization | Ch. 15, 16 (§16.3 self-study) | 41–46 (Lab 4 part 2 in 46) |
-| C9 | Transactions and concurrency control | Ch. 17, 18 | 47–53 (Lab 5 in 53) |
-| C10 | Recovery (mainly self-study) | Ch. 19 | 54 (overview only) |
+| C4 | Intermediate and advanced SQL | Ch. 4, §5.1, §5.4 | 15–19 (Lab 2 in 19) |
+| C5 | Programming the server in T-SQL (functions, procedures, triggers, cursors) | §5.2–5.3; T-SQL reference | 20–25 (Lab 3 in 24–25); Progress test 1 in 26 |
+| C6 | E-R model | Ch. 6 | 27–31 (Lab 4 in 31) |
+| C7 | Relational database design | Ch. 7 | 32–38 (FD guided exercises in 38); project design review in 39; Progress test 2 in 40 |
+| C8 | Storage and indexing | Ch. 12 (self-study), 13, 14 | 41–44 (guided exercises in 44) |
+| C9 | Query processing and optimization | Ch. 15, 16 (§16.3 self-study, §16.4 optional) | 45–48 (Lab 5 part 1 in 48) |
+| C10 | Transactions, concurrency control and recovery | Ch. 17, 18, 19 (recovery mainly self-study) | 49–54 (Lab 5 part 2 in 53; recovery overview in 54) |
 | – | Project progress meeting, presentations; review; final-exam practice | – | 55–60 |
 
-Stored procedures, functions and triggers (DSC §5.2–5.3) are optional reading. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
+Stored procedures, functions and triggers (DSC §5.2–5.3) are taught in C5 (since 2026-10-14); `docs/IDB201_DSC_Reading_Plan.xlsx` still marks them optional and should be updated when it is next rebuilt. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
 
-Assessment scopes: PT1 = C1–C4 (CLO1–CLO4); PT2 = C5–C6 (CLO2, CLO5); 5 labs; no practical exam.
+Assessment scopes: PT1 = C1–C5 (CLO1–CLO4); PT2 = C6–C7 (CLO2, CLO5); 5 labs (Lab 1 SQL queries, Lab 2 DDL/constraints/views, Lab 3 T-SQL programming, Lab 4 E-R design, Lab 5 indexing/plans + concurrency); no practical exam.
 
 ## 6. Phases and next steps
 
@@ -173,3 +173,4 @@ Assessment scopes: PT1 = C1–C4 (CLO1–CLO4); PT2 = C5–C6 (CLO2, CLO5); 5 la
 | 2026-09-27 | Placed the rewritten objectives (`docs/course-introduction.md`) into the syllabus Description (sheet "Syllabus", C12) at the user's request. |
 | 2026-09-27 (end of day) | Session wrap-up: added the snapshot (§0), marked DSC page references as done in §6, and noted that the lecture/lab drafts must be restructured to the DSC-based layout in phase 2. The earlier pending decision about moving 2 SQL sessions is superseded by the DSC-based rebuild. All work pushed to `claude/relaxed-tesla-1t3tl7`. |
 | 2026-10-13 | The user uploaded an edited syllabus workbook and asked for six changes. Merged the user's own edits (shorter Program line, Pre-requisite, Description capitalization, Student's tasks, Tools, CLO4/CLO5/CLO8 wording, FE minimum 5, no word limit on CQ answers, project introduction session) into `build_syllabus_xlsx.py`, then: labs 9 → 5 (SQL only); Assignments 1 and 2 → one group project (introduced in 7, design review in 33, progress meeting in 55, presentations in 56–57); practical exam removed (session 60 is now final-exam practice); FE 50% and on-going 50% (labs & CQ 10, PT1 5, PT2 5, project 30); bag semantics → guided self-study (CQ3 of session 12 replaced); Python → optional self-study. Updated the council brief, the reading plan notes and this file. |
+| 2026-10-14 | The user compared IDB201 with the DBI202 FA26 syllabus and asked to trim storage/indexing, query processing and transactions to make room for T-SQL programming, keeping 60 sessions, 5 labs, 2 progress tests and one project. New chapter C5 (sessions 20–25: functions, procedures, triggers, cursors; Lab 3 in two parts). Internals trimmed from 20 to 14 sessions: C8 storage/indexing 4, C9 query processing 4 (DP join ordering → optional self-study), C10 transactions + recovery 6 (snapshot isolation → overview). Labs renumbered (E-R → Lab 4; indexing + concurrency → Lab 5 in two parts). CLO4 now includes T-SQL programming. CQ sessions: 3, 8, 12, 18, 23, 30, 37, 44, 47, 54 (new T-SQL CQs; transactions and recovery CQs merged). PT1 now in 26 (C1–C5), design review 39, PT2 40. Updated the council brief and design notes. Branch synced from `claude/intelligent-curie-p8mipe` and pushed to `claude/trusting-mccarthy-1jyvtc`. |
