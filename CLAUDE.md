@@ -24,7 +24,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 
 ## Current phase
 
-**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). Since 2026-10-13: 5 SQL-only labs, one group project (Assignment 30%), no practical exam, final exam 50%; bag semantics and Python are self-study (see `docs/project-context.md` §0). The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
+**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). Since 2026-10-13: 5 labs in SQL Server, one group project (Assignment 30%), no practical exam, final exam 50%; bag semantics and Python are self-study. Since 2026-10-14: chapter C5 is T-SQL programming (functions, procedures, triggers, cursors; sessions 20–25, Lab 3), the internals chapters C8–C10 have 14 sessions, and C5 has no constructivist questions (27 CQs in 9 sessions). See `docs/project-context.md` §0 and §5. The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
 
 ## Key files
 
