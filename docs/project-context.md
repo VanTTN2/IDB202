@@ -6,8 +6,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ## 0. Where we are now (snapshot, 2026-10-14)
 
-- **Phase 1 is finished and waiting for the council.** The syllabus and the brief are up to date and consistent:
-  `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`. `docs/IDB201_DSC_Reading_Plan.xlsx` predates the 2026-10-14 T-SQL change and still marks §5.2–5.3 optional.
+- **Phase 1 is finished and waiting for the council.** The three deliverables are up to date and consistent:
+  `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`, `docs/IDB201_DSC_Reading_Plan.xlsx`.
 - **Syllabus structure:** 60 sessions × 45 min following DSC 7th ed. chapter order (C1–C10, see §5), each session citing DSC sections and pages; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, §16.4 optional, most of Ch. 19, and others). Since 2026-10-14: C5 is T-SQL programming (sessions 20–25) and the internals chapters C8–C10 have 14 sessions instead of 20.
 - **Description (C12):** the short objectives list in `docs/course-introduction.md` (formal foundations, algorithms, complexity, correctness, system internals).
 - **CLOs:** 8; CLO4 extended with T-SQL programming on 2026-10-14; CLO–PLO mapping to the 13 BCS_AD PLOs (§4).
@@ -130,7 +130,7 @@ Since 2026-09-27 the course follows the chapter order of [DSC] (Database System 
 | C10 | Transactions, concurrency control and recovery | Ch. 17, 18, 19 (recovery mainly self-study) | 49–54 (Lab 5 part 2 in 53; recovery overview in 54) |
 | – | Project progress meeting, presentations; review; final-exam practice | – | 55–60 |
 
-Stored procedures, functions and triggers (DSC §5.2–5.3) are taught in C5 (since 2026-10-14); `docs/IDB201_DSC_Reading_Plan.xlsx` still marks them optional and should be updated when it is next rebuilt. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
+Stored procedures, functions and triggers (DSC §5.2–5.3) are taught in C5 (since 2026-10-14). The reading plan reflects this. The full per-section classification with page ranges is in `docs/IDB201_DSC_Reading_Plan.xlsx` (built by `docs/build_reading_plan.py`).
 
 Assessment scopes: PT1 = C1–C5 (CLO1–CLO4); PT2 = C6–C7 (CLO2, CLO5); 5 labs (Lab 1 SQL queries, Lab 2 DDL/constraints/views, Lab 3 T-SQL programming, Lab 4 E-R design, Lab 5 indexing/plans + concurrency); no practical exam.
 
@@ -175,3 +175,4 @@ Assessment scopes: PT1 = C1–C5 (CLO1–CLO4); PT2 = C6–C7 (CLO2, CLO5); 5 la
 | 2026-10-13 | The user uploaded an edited syllabus workbook and asked for six changes. Merged the user's own edits (shorter Program line, Pre-requisite, Description capitalization, Student's tasks, Tools, CLO4/CLO5/CLO8 wording, FE minimum 5, no word limit on CQ answers, project introduction session) into `build_syllabus_xlsx.py`, then: labs 9 → 5 (SQL only); Assignments 1 and 2 → one group project (introduced in 7, design review in 33, progress meeting in 55, presentations in 56–57); practical exam removed (session 60 is now final-exam practice); FE 50% and on-going 50% (labs & CQ 10, PT1 5, PT2 5, project 30); bag semantics → guided self-study (CQ3 of session 12 replaced); Python → optional self-study. Updated the council brief, the reading plan notes and this file. |
 | 2026-10-14 | The user compared IDB201 with the DBI202 FA26 syllabus and asked to trim storage/indexing, query processing and transactions to make room for T-SQL programming, keeping 60 sessions, 5 labs, 2 progress tests and one project. New chapter C5 (sessions 20–25: functions, procedures, triggers, cursors; Lab 3 in two parts). Internals trimmed from 20 to 14 sessions: C8 storage/indexing 4, C9 query processing 4 (DP join ordering → optional self-study), C10 transactions + recovery 6 (snapshot isolation → overview). Labs renumbered (E-R → Lab 4; indexing + concurrency → Lab 5 in two parts). CLO4 now includes T-SQL programming. CQ sessions: 3, 8, 12, 18, 23, 30, 37, 44, 47, 54 (new T-SQL CQs; transactions and recovery CQs merged). PT1 now in 26 (C1–C5), design review 39, PT2 40. Updated the council brief and design notes. Branch synced from `claude/intelligent-curie-p8mipe` and pushed to `claude/trusting-mccarthy-1jyvtc`. |
 | 2026-10-14 (later) | At the user's request, removed the constructivist questions from the T-SQL chapter C5: CQs are kept for the chapters that extend conceptual knowledge. Now 27 CQs in 9 discussion sessions; 9 CQ answers share the 4%. Syllabus, brief and notes updated. |
+| 2026-10-14 (later) | Updated the council brief wording (2PL, reading load, PLO8) and rebuilt `docs/IDB201_DSC_Reading_Plan.xlsx` for the new structure: §5.2–5.3 in class (C5), §14.6 self-study, §16.4 optional, chapters and sessions renumbered C5–C10, session-load sheet recomputed (about 11 in-class pages per theory session; C8 about 18). |
