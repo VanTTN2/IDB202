@@ -4,17 +4,17 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
-## 0. Where we are now (snapshot, 2026-10-13)
+## 0. Where we are now (snapshot, 2026-10-14)
 
-- **Phase 1 is finished and waiting for the council.** The three deliverables are up to date and consistent:
-  `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`, `docs/IDB201_DSC_Reading_Plan.xlsx`.
-- **Syllabus structure:** 60 sessions × 45 min following DSC 7th ed. chapter order (C1–C10, see §5), each session citing DSC sections and pages; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, most of Ch. 19, and others).
+- **Phase 1 is finished and waiting for the council.** The syllabus and the brief are up to date and consistent:
+  `syllabus/IDB201_Syllabus.xlsx`, `docs/IDB201_Academic_Emphasis_Brief.docx`. `docs/IDB201_DSC_Reading_Plan.xlsx` predates the 2026-10-14 T-SQL change and still marks §5.2–5.3 optional.
+- **Syllabus structure:** 60 sessions × 45 min following DSC 7th ed. chapter order (C1–C10, see §5), each session citing DSC sections and pages; guided self-study for abstract, hard-to-experiment parts (online Ch. 27 relational calculus, §16.3, §16.4 optional, most of Ch. 19, and others). Since 2026-10-14: C5 is T-SQL programming (sessions 20–25) and the internals chapters C8–C10 have 14 sessions instead of 20.
 - **Description (C12):** the short objectives list in `docs/course-introduction.md` (formal foundations, algorithms, complexity, correctness, system internals).
-- **CLOs:** 8 (unchanged since 2026-09-24); CLO–PLO mapping to the 13 BCS_AD PLOs (§4).
-- **Assessment (revised 2026-10-13):** Labs and constructivist questions 10% (5 labs 6% + 10 CQ answers 4%), PT1 5% (C1–C4), PT2 5% (C5–C6), Assignment (one group project) 30%, FE 50%. **No practical exam.** Completion: every on-going component > 0, FE ≥ 5, total ≥ 5.
-- **Labs (5, SQL only):** Lab 1 SQL queries (sessions 13–14), Lab 2 DDL/constraints/views/parameterized queries (19), Lab 3 E-R design (25), Lab 4 indexing and query plans (40, 46), Lab 5 concurrency (53). Relational algebra (session 8) and FD theory (session 32) are guided exercise sessions on paper.
+- **CLOs:** 8; CLO4 extended with T-SQL programming on 2026-10-14; CLO–PLO mapping to the 13 BCS_AD PLOs (§4).
+- **Assessment (revised 2026-10-13):** Labs and constructivist questions 10% (5 labs 6% + 10 CQ answers 4%), PT1 5% (C1–C5), PT2 5% (C6–C7), Assignment (one group project) 30%, FE 50%. **No practical exam.** Completion: every on-going component > 0, FE ≥ 5, total ≥ 5.
+- **Labs (5, SQL/T-SQL only, 8 sessions):** Lab 1 SQL queries (13–14), Lab 2 DDL/constraints/views/parameterized queries (19), Lab 3 T-SQL functions, procedures, triggers, cursors (24–25), Lab 4 E-R design (31), Lab 5 indexing and query plans (48) + concurrency (53). Relational algebra (session 8), FD theory (38) and B+-tree/I/O cost (44) are guided exercise sessions on paper.
 - **Self-study (not taught in class):** bag semantics of SQL (C3, worksheet); Python (database access with pyodbc/pandas, Python versions of the algorithms) is optional self-study and not required in the labs.
-- **Research practice:** 30 constructivist questions (3 per chapter, discussed in sessions 3, 8, 12, 18, 24, 31, 39, 45, 52, 54); each student answers one per chapter (short answer; the 150–200-word limit was removed by the user). Group project: introduced in session 7, design review in 33, progress meeting in 55, presentations in 56–57. No Research Corner and no papers in Materials (removed at the user's request to avoid overload).
+- **Research practice:** 30 constructivist questions (3 per chapter, discussed in sessions 3, 8, 12, 18, 23, 30, 37, 44, 47, 54); each student answers one per chapter (short answer; the 150–200-word limit was removed by the user). Group project: introduced in session 7, design review in 39, progress meeting in 55, presentations in 56–57. No Research Corner and no papers in Materials (removed at the user's request to avoid overload).
 - **Materials:** DSC (main), DMS (secondary), T-SQL reference.
 - **Waiting for:** the council's feedback on the syllabus. The DSC PDF will be uploaded by the user when content work (phase 2) starts.
 
