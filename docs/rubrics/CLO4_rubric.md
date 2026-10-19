@@ -1,0 +1,16 @@
+# IDB201 – Rubric for CLO4
+
+**CLO4 (Apply):** Write SQL and T-SQL to define, query and modify relational databases, program server-side logic (functions, stored procedures, triggers, cursors), and explain query results through SQL semantics (three-valued logic, bag semantics).
+
+| Criterion | Weight | Evidence | Excellent (8.5–10) | Good (7.0–8.4) | Satisfactory (5.0–6.9) | Unsatisfactory (< 5.0) |
+|---|---|---|---|---|---|---|
+| A. Data definition and modification (DDL, constraints, DML, views) | 20% | Lab 2; group project | Scripts run without errors. Every key, foreign key, CHECK and default constraint required by the specification is declared and named. Views return the required data. | Scripts run. Most required constraints are declared; small omissions (e.g. one missing CHECK) do not break data integrity. | Scripts run after minor fixes. Primary and foreign keys are present, but several business rules are not enforced. | Scripts fail, or keys and foreign keys are missing, so the data can violate the specification. |
+| B. Query formulation (joins, aggregation, subqueries, set operations, parameterized queries) | 35% | Lab 1, Lab 2; Progress test 1; group project; final exam | Every query returns exactly the required result, including edge cases (NULLs, empty groups, duplicates). Constructs are well chosen, and user input is always passed as parameters. | Queries are correct on typical data; at most one edge case is handled incorrectly. | Single-table queries, inner joins and simple aggregation are correct; outer joins, subqueries or set operations are partly wrong. | Most queries are wrong or do not run. |
+| C. Server-side programming in T-SQL (user-defined functions, stored procedures, triggers, cursors) | 30% | Lab 3; group project | Functions, procedures and triggers work for all specified cases, handle errors (TRY…CATCH, THROW), and triggers handle multi-row statements. A cursor is used only when justified, and the set-based alternative is discussed. | Code works for normal cases; error handling or multi-row handling is incomplete. | A simple function or procedure works; triggers work only for single-row statements; little error handling. | Code does not compile, or it does not implement the required rule. |
+| D. SQL semantics (three-valued logic, bag semantics) | 15% | Progress test 1 (written item); final exam | Correctly predicts and justifies results involving NULLs (three-valued logic, NOT IN versus NOT EXISTS) and duplicates (bags versus sets, UNION versus UNION ALL), with counterexamples. | Predictions are correct, but the justification is partial. | Recognizes that NULLs and duplicates change the result, but the explanation is incomplete or partly wrong. | Cannot predict or explain the effect of NULLs or duplicates. |
+
+## Scoring and achievement
+
+1. CLO4 score of a student = weighted average of the four criteria (weights above), each scored on a 10-point scale from the CLO4-tagged items of Labs 1–3, Progress test 1, the group project and the final exam.
+2. A student achieves CLO4 when the CLO4 score is at least 5.0 (Satisfactory or above).
+3. Course-level target (proposed): at least 70% of students achieve CLO4, and at least 30% reach Good or Excellent.

@@ -128,9 +128,9 @@ CLOS = [
              "including as logical statements."),
     ("CLO3", "Formulate queries in relational algebra and relational calculus, prove simple equivalences between "
              "expressions, and explain the limits of their expressive power."),
-    ("CLO4", "Use SQL to define, populate, modify and query relational databases (joins, aggregation, subqueries, "
-             "views, access from Python) and explain query results through SQL semantics (bag semantics, "
-             "three-valued logic)."),
+    ("CLO4", "Write SQL and T-SQL to define, query and modify relational databases, program server-side logic "
+             "(functions, stored procedures, triggers, cursors), and explain query results through SQL semantics "
+             "(three-valued logic, bag semantics)."),
     ("CLO5", "Analyze and improve relational schemas with functional dependency theory: compute closures, candidate "
              "keys and minimal covers, prove basic properties, decompose to 3NF/BCNF with lossless-join and "
              "dependency-preservation guarantees, and implement these algorithms in Python."),
