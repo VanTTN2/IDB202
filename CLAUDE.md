@@ -30,7 +30,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 
 | File | Purpose |
 |---|---|
-| `syllabus/build_syllabus_xlsx.py` | **Single source of truth for the syllabus.** Edit the data here, then run it to regenerate both the xlsx and the md |
+| `syllabus/build_syllabus_xlsx.py` | Generator for the syllabus. **Out of date since 2026-10-19:** the xlsx was edited directly for the council feedback (see `docs/project-context.md` §0a). Sync it with the xlsx before running it |
 | `syllabus/IDB201_Syllabus.xlsx` | Generated syllabus workbook in the university template (6 sheets) |
 | `syllabus/syllabus.md` | Generated Markdown view of the same syllabus |
 | `docs/build_brief.js` | Source of the council brief (docx-js) |

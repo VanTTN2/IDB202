@@ -18,6 +18,15 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
+## 0a. Council-feedback revision (2026-10-19) – read first
+
+- `syllabus/IDB201_Syllabus.xlsx` is now the **council-feedback version edited directly in Excel** (by the user and by Claude). It is newer than `syllabus/build_syllabus_xlsx.py`, `syllabus/syllabus.md` and `docs/build_brief.js`, which still describe the older structure (9 labs, PE, Assignments 1 and 2). **Do not run the generator** until it has been synced with this workbook, or the changes are lost.
+- Current structure in the workbook: 5 labs + 9 CQ answers 10%, PT1 5%, PT2 5%, one group project 30%, FE 50%; final-exam eligibility only requires 80% attendance.
+- Changes in this revision: concise student tasks; CLO8 and the project rubric include related work; CQ codes per chapter (CQ1.1 … CQ10.3) with a Chapter column; milestone 2 moved to session 52 (concurrency teams present only their experiment design and run their experiments in parallel with Lab 5 part 2, session 54), final presentations 56–57; project graded by a panel of 2 lecturers (1 course instructor + 1 external lecturer), presentation not a condition for final-exam eligibility; ITU = I,T only at the first session of each CLO (sessions 1, 4, 9, 32, 41, 49), T afterwards; CLO3 removed from the assignment CLOs.
+- Open item: verify the CLO5 → PLO8 link against `docs/sources/BCS_AD_13_PLO.xlsx` (CLO5 has no lab).
+
+---
+
 ## 1. Course and program facts
 
 | Item | Value | Source |
@@ -168,3 +177,4 @@ Assessment scopes changed with this structure: PT1 = C1–C4 (CLO1–CLO4); PT2 
 | 2026-09-27 | Rewrote the short course objectives in `docs/course-introduction.md` to highlight formal foundations, algorithms, complexity, correctness and system internals. Saved for later use. |
 | 2026-09-27 | Placed the rewritten objectives (`docs/course-introduction.md`) into the syllabus Description (sheet "Syllabus", C12) at the user's request. |
 | 2026-09-27 (end of day) | Session wrap-up: added the snapshot (§0), marked DSC page references as done in §6, and noted that the lecture/lab drafts must be restructured to the DSC-based layout in phase 2. The earlier pending decision about moving 2 SQL sessions is superseded by the DSC-based rebuild. All work pushed to `claude/relaxed-tesla-1t3tl7`. |
+| 2026-10-19 | Applied the council feedback directly in the Excel workbook (see §0a). Generator, syllabus.md and council brief not yet synced with it. Pushed to `claude/relaxed-tesla-1t3tl7`. |
