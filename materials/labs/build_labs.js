@@ -58,7 +58,7 @@ const lab1 = lab({
     "test a hypothesis about query equivalence with a designed example and explain the result with the textbook.",
   ],
   requirements: [
-    P("Run `university_sqlserver.sql` in SQL Server Management Studio (SSMS). It creates the database **University** with the relations classroom, department, course, instructor, section, teaches, student, takes, advisor, time_slot and prereq (DSC Fig. 2.9)."),
+    P("Run `university_sqlserver.sql` in SQL Server Management Studio (SSMS). It creates the database **University** with the relations classroom, department, course, instructor, section, teaches, student, takes, advisor, time_slot and prereq (DSC §2.4 and Appendix A)."),
     H2("Part A – session 13 (3 points)"),
     ...numbered([
       "**A1 (0.5).** List the name, department and salary of every instructor who earns more than 80,000, highest salary first.",

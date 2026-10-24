@@ -1,7 +1,7 @@
 /* =====================================================================
    IDB201 - Introduction to Databases
    Lab database: the university schema of DSC (Silberschatz, Korth and
-   Sudarshan, Database System Concepts, 7th ed., Fig. 2.9 and Appendix A),
+   Sudarshan, Database System Concepts, 7th ed., §2.4 and Appendix A),
    written for SQL Server 2022.
    The sample data below was written for this course; it is NOT the data
    set distributed with the textbook.

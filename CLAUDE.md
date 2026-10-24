@@ -24,7 +24,7 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 
 ## Current phase
 
-**Phase 1 (syllabus) is complete and awaiting council review.** The syllabus now follows the chapter order of DSC (7th ed.), with page citations and guided self-study for abstract topics (see `docs/project-context.md` §5). The next step is to apply the council's feedback, then start phase 2 (content development). See `docs/project-context.md` §6.
+**Phase 2 (materials) started on 2026-10-24** at the user's request: slides, labs, group project, progress tests, final-exam bank and a consistency review are in `materials/` (see `docs/project-context.md` §0b). Phase 1 (syllabus) is complete; the user's uploaded workbook is the authoritative syllabus. Open decisions are listed in §8 of `materials/review/out/IDB201_Consistency_Review.docx`.
 
 ## Key files
 
@@ -39,7 +39,8 @@ Read this file and `docs/project-context.md` before doing any work in this repos
 | `docs/course-design-notes.md` | CS-core vs. other majors; research orientation; seminal readings |
 | `docs/project-context.md` | Full phase-1 record: decisions, sources, history, next steps |
 | `docs/sources/` | Source files from the user: curriculum (Phuluc_2_BCS_AD_Final.xlsx), 13 PLOs (BCS_AD_13_PLO.xlsx) |
-| `lectures/`, `labs/` | **Early drafts, on hold.** Written before the user paused content work. Revise them to the approved syllabus in phase 2; do not treat them as final |
+| `materials/` | **Phase-2 materials** and their builders: slides, labs (with SQL Server scripts), project brief, progress tests, final-exam bank, consistency review |
+| `lectures/`, `labs/` | Old drafts from before the pause; superseded by `materials/`, not used |
 
 ## Regenerating
 
