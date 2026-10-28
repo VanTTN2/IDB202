@@ -3,7 +3,7 @@
 // In the source files the first option of each item is the key; options are shuffled here with a
 // fixed seed per item, so every build gives the same documents.
 const path = require("path");
-const { docx, P, H1, H2, H3, bullets, code, table, box, titleBlock, build } = require(path.join(__dirname, "..", "docx_common.js"));
+const { docx, TR, P, H1, H2, H3, bullets, code, table, box, titleBlock, build } = require(path.join(__dirname, "..", "docx_common.js"));
 const { Paragraph, TextRun, PageBreak } = docx;
 
 const LEVEL = { R: "Remember", U: "Understand", Ap: "Apply", An: "Analyze" };
@@ -40,9 +40,9 @@ function prepare(q, id) {
 }
 
 function questionParas(q, n, withKey, chap) {
-  const out = [new Paragraph({ keepNext: true, spacing: { before: 160, after: 60 }, children: [new TextRun({ text: `${n}. `, bold: true }), new TextRun(q.s)] })];
+  const out = [new Paragraph({ keepNext: true, spacing: { before: 160, after: 60 }, children: [new TextRun({ text: `${n}. `, bold: true }), ...TR({ text: q.s })] })];
   if (q.c) out.push(...code(q.c));
-  q.opts.forEach((o, i) => out.push(new Paragraph({ keepNext: withKey || i < 3, indent: { left: 360 }, spacing: { after: 20 }, children: [new TextRun({ text: `${"ABCD"[i]}. `, bold: true }), new TextRun(o)] })));
+  q.opts.forEach((o, i) => out.push(new Paragraph({ keepNext: withKey || i < 3, indent: { left: 360 }, spacing: { after: 20 }, children: [new TextRun({ text: `${"ABCD"[i]}. `, bold: true }), ...TR({ text: o })] })));
   if (withKey) {
     const meta = [`Chapter ${chap}`, q.clo || CLO[chap], LEVEL[q.l], q.t === "P" ? "Practice" : "Theory"];
     if (q.ss) meta.push("Self-study");

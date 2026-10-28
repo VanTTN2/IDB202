@@ -14,20 +14,30 @@ const C = { primary: "1F3B4D", accent: "C8553D", muted: "5B6770", light: "EAF0F2
 const PAGE_W = 11906, MARGIN = 1134;               // A4, 2 cm margins
 const TEXT_W = PAGE_W - 2 * MARGIN;                 // 9638 DXA
 
+// Calibri and Courier New lack some mathematical symbols (⋈, ∃, ∈, …), which Word may then show
+// as empty boxes. Such characters are written in Cambria Math, which has all of them.
+const MATH = /([⋈⟕⟖⟗∃∀∈∉¬∧∨⇒⇔→←↔÷×∅⊆⊂⊇⊃∪∩⁺𝒢γσΠπρθ≤≥≠−]+)/u;
+function TR(o) {
+  const text = o.text;
+  if (typeof text !== "string" || !MATH.test(text)) return [new TextRun(o)];
+  return text.split(MATH).filter((x) => x.length).map((part) =>
+    MATH.test(part) ? new TextRun({ ...o, text: part, font: "Cambria Math" }) : new TextRun({ ...o, text: part }));
+}
+
 // Inline markup: **bold**, `code`, _italic_
 function runs(text, base = {}) {
   const out = [];
   const re = /(\*\*[^*]+\*\*|`[^`]+`|_[^_]+_)/g;
   let last = 0, m;
   while ((m = re.exec(text)) !== null) {
-    if (m.index > last) out.push(new TextRun({ text: text.slice(last, m.index), ...base }));
+    if (m.index > last) out.push(...TR({ text: text.slice(last, m.index), ...base }));
     const t = m[0];
-    if (t.startsWith("**")) out.push(new TextRun({ text: t.slice(2, -2), bold: true, ...base }));
-    else if (t.startsWith("`")) out.push(new TextRun({ text: t.slice(1, -1), font: "Courier New", size: 19, ...base }));
-    else out.push(new TextRun({ text: t.slice(1, -1), italics: true, ...base }));
+    if (t.startsWith("**")) out.push(...TR({ text: t.slice(2, -2), bold: true, ...base }));
+    else if (t.startsWith("`")) out.push(...TR({ text: t.slice(1, -1), font: "Courier New", size: 19, ...base }));
+    else out.push(...TR({ text: t.slice(1, -1), italics: true, ...base }));
     last = m.index + t.length;
   }
-  if (last < text.length) out.push(new TextRun({ text: text.slice(last), ...base }));
+  if (last < text.length) out.push(...TR({ text: text.slice(last), ...base }));
   return out;
 }
 
@@ -41,7 +51,7 @@ const bullets = (items, level = 0) => items.flatMap((it) => Array.isArray(it)
 let numInstance = 0;
 const numbered = (items) => { const inst = ++numInstance; return items.map((it) => new Paragraph({ numbering: { reference: "numbers", level: 0, instance: inst }, children: runs(it), spacing: { after: 60 } })); };
 const code = (text) => text.split("\n").map((line, i, a) => new Paragraph({
-  children: [new TextRun({ text: line.length ? line : " ", font: "Courier New", size: 18 })],
+  children: TR({ text: line.length ? line : " ", font: "Courier New", size: 18 }),
   shading: { type: ShadingType.CLEAR, fill: C.code, color: "auto" },
   spacing: { before: i === 0 ? 60 : 0, after: i === a.length - 1 ? 120 : 0, line: 240 },
   indent: { left: 113, right: 113 },
@@ -118,4 +128,4 @@ function build(file, children, o = {}) {
   return Packer.toBuffer(doc).then((buf) => { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, buf); console.log("Saved " + file); });
 }
 
-module.exports = { docx, C, TEXT_W, runs, P, H1, H2, H3, bullets, numbered, code, table, box, titleBlock, build };
+module.exports = { docx, TR, C, TEXT_W, runs, P, H1, H2, H3, bullets, numbered, code, table, box, titleBlock, build };
