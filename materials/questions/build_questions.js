@@ -27,7 +27,7 @@ function prepare(q, id) {
   if (q.o.every(isNum)) order.sort((a, b) => parseFloat(q.o[a].replace(/,/g, "")) - parseFloat(q.o[b].replace(/,/g, "")));
   else if (!q.k) {
     // shuffle, then move the key to the least-used position so far (balanced keys)
-    const r = rng(hash(id + q.s));
+    const r = rng(hash(id + (q.seed || q.s)));   // seed keeps the option order when a stem is reworded
     for (let i = 3; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
     const min = Math.min(...KEYS_USED);
     const cand = [0, 1, 2, 3].filter((p) => KEYS_USED[p] === min);
