@@ -301,7 +301,7 @@ module.exports = {
           tree(s, [[[10, 20], [25, 30], [40, 50]], [{ keys: [25, 40], kids: 3 }]], { x0: 7.0, yLeaf: 3.3, dy: 1.25, cw: 0.85, hl: ["0:1", "1:0"] });
           L.autoCard(s, X0, 4.4, CW, 2.1, null, ["[10, 20, 25, 30] overflows: keep ⌈4/2⌉ = 2 entries, move 25 and 30 to a new leaf", "25, the smallest key of the new leaf, is copied into the parent: [25 | 40]"], "lsplit", { fill: HEX.pale, size: 22 });
         } },
-        { k: "draw", h: "A split that reaches the root (n = 4)", src: "Example written for IDB201 (Chapter 8 exercise sheet); algorithm of DSC 7th ed., §14.3.3", draw: (s) => {
+        { k: "draw", h: "A split that reaches the root (n = 4)", src: "Example written for IDB201; algorithm of DSC 7th ed., §14.3.3", draw: (s) => {
           L.text(s, "Insert 31: the leaf [29, 31] is new, so the root needs key 29 and would hold [5 | 11 | 19 | 29] with 5 pointers", X0, 1.35, CW, 0.8, { fontSize: 20, color: HEX.ink });
           tree(s, [[[2, 3], [5, 7], [11, 17], [19, 23], [29, 31]], [{ keys: [5, 11], kids: 3 }, { keys: [29], kids: 2 }], [{ keys: [19], kids: 2 }]], { x0: 1.4, yLeaf: 4.85, dy: 1.25, cw: 0.85, gap: 0.45, hl: ["2:0"] });
           L.text(s, "Non-leaf split: keep ⌈5/2⌉ = 3 pointers; the middle key 19 moves up (it is not copied) into a new root: height 3.", X0, 5.75, CW, 0.8, { fontSize: 20, color: HEX.grey });
@@ -354,13 +354,13 @@ module.exports = {
     // ------------------------------------------------------------ 43
     { n: 43, name: "Guided exercises", sum: "B+-tree insertion by hand; hashing; I/O cost of index lookups versus scans; CQ8.1–CQ8.3",
       slides: [
-        { k: "plan", h: "Plan of session 43", src: "IDB201 syllabus, session 43; Chapter 8 exercise sheet", rows: [
+        { k: "plan", h: "Plan of session 43", src: "IDB201 syllabus, session 43", rows: [
           ["Exercise 1", "B+-tree insertion by hand", "12 min"],
           ["Exercise 2", "Static hashing", "8 min"],
           ["Exercise 3", "Index lookup versus table scan", "10 min"],
           ["CQ8.1–CQ8.3", "Discussion in groups, then whole class", "13 min", true],
           ["Next", "Chapter 9 in session 44", "2 min"]] },
-        { k: "bul", h: "Exercise 1: B+-tree insertion by hand", src: "Exercise written for IDB201 (Chapter 8 exercise sheet); DSC 7th ed., §14.3.3", items: [
+        { k: "bul", h: "Exercise 1: B+-tree insertion by hand", src: "Exercise written for IDB201; DSC 7th ed., §14.3.3", items: [
           "n = 4: at most 3 keys per node",
           "Start from an empty tree and insert, in this order: 2, 3, 5, 7, 11, 17, 19, 23, 29, 31",
           "Draw the tree after every split",
@@ -370,7 +370,7 @@ module.exports = {
           tree(s, [[[2, 3], [5, 7], [11, 17], [19, 23], [29, 31]], [{ keys: [5, 11], kids: 3 }, { keys: [29], kids: 2 }], [{ keys: [19], kids: 2 }]], { x0: 1.4, yLeaf: 4.2, dy: 1.3, cw: 0.85, gap: 0.45 });
           L.autoCard(s, X0, 5.15, CW, 1.45, null, ["Height 3 after 10 keys. With n = 6 (5 keys per node) the same keys need only two levels: the root [7 | 19] over leaves [2, 3, 5], [7, 11, 17], [19, 23, 29, 31]."], "ex1", { fill: HEX.paleOrange, size: 20 });
         } },
-        { k: "bul", h: "Exercise 2: static hashing", src: "Exercise written for IDB201 (Chapter 8 exercise sheet); DSC 7th ed., §14.5", items: [
+        { k: "bul", h: "Exercise 2: static hashing", src: "Exercise written for IDB201; DSC 7th ed., §14.5", items: [
           "A hash file has 8 buckets, h(K) = K mod 8, 2 entries per bucket",
           "Insert 3, 11, 19, 8, 16, 27, 5 and draw the buckets with their overflow chains",
           "Which buckets overflow? What does this say about h for these keys?",

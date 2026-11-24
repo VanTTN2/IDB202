@@ -240,15 +240,15 @@ module.exports = {
       ] },
     { n: 30, name: "Design issues", sum: "6.9 design alternatives; limits of the E-R model; CQ6.1–CQ6.3",
       slides: [
-        { k: "cards", h: "6.9 Entity set or attribute?", src: src("§6.9.1"), cards: [
+        { k: "cards", h: "6.9 Entity set or attribute?", src: src("§6.9.2"), cards: [
           ["Attribute", "phone_number as an attribute of instructor: enough if only the number matters"],
           ["Entity set", "phone as an entity set with number, location and type: needed when we keep facts about the phone"],
           ["Mistake to avoid", "Using the key of another entity set as an attribute instead of a relationship", HEX.paleOrange]] },
-        { k: "cards", h: "6.9 Entity set or relationship set?", src: src("§6.9.2"), cards: [
+        { k: "cards", h: "6.9 Entity set or relationship set?", src: src("§6.9.3"), cards: [
           ["Relationship set", "takes: an action between a student and a section"],
           ["Entity set", "registration, when the action has its own identity and attributes (date, fee, status)"],
           ["Guideline", "Use a relationship set to describe an action that occurs between entities", HEX.paleOrange]] },
-        { k: "draw", h: "6.9 Binary or n-ary?", src: drawn("§6.9.3"), draw: (s) => {
+        { k: "draw", h: "6.9 Binary or n-ary?", src: drawn("§6.9.4"), draw: (s) => {
           L.node(s, "instructor", 0.6, 1.6, 2.2, 0.75, { size: 18 }); L.node(s, "student", 0.6, 3.1, 2.2, 0.75, { size: 18 }); L.node(s, "project", 0.6, 4.6, 2.2, 0.75, { size: 18 });
           rel(s, "proj_guide", 3.6, 2.95, 2.2, 1.05);
           L.arrow(s, 2.8, 1.97, 3.9, 3.15, { noHead: true }); L.arrow(s, 2.8, 3.47, 3.6, 3.47, { noHead: true }); L.arrow(s, 2.8, 4.97, 3.9, 3.8, { noHead: true });
@@ -260,7 +260,7 @@ module.exports = {
           L.text(s, "three binary relationships", 7.0, 5.6, 3.5, 0.45, { fontSize: 18, color: HEX.grey, align: "center" });
           L.autoCard(s, 10.3, 1.6, 2.4, 3.75, "CQ6.2", "Do the three binary ones keep the same information?", "nary", { fill: HEX.pale, size: 20 });
         } },
-        { k: "cards", h: "6.9 Where do attributes go?", src: src("§6.9.4"), cards: [
+        { k: "cards", h: "6.9 Where do attributes go?", src: src("§6.9.5"), cards: [
           ["One-to-many", "An attribute of the relationship can move to the entity set on the “many” side"],
           ["Many-to-many", "It must stay on the relationship set: grade of takes (CQ6.1)"],
           ["Check", "Ask which combination of entities the value belongs to", HEX.paleOrange]] },
@@ -296,7 +296,7 @@ module.exports = {
           "How many grades does one student have? One section?",
           "Which pair of entities does one grade belong to?",
           "Relate your answer to the placement of relationship attributes (§6.9)"] },
-        { k: "cq", id: "CQ6.2", look: "Where to look: DSC 7th ed., §6.9.3", prompts: [
+        { k: "cq", id: "CQ6.2", look: "Where to look: DSC 7th ed., §6.9.4", prompts: [
           "Use instructor, student and project (proj_guide)",
           "Build two different ternary instances with the same three binary projections",
           "What does the artificial-entity-set approach add?"] },

@@ -50,6 +50,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 - Not checked by running SQL Server (image blocked in the cloud session): T-SQL on slides and the SQL Server plan shown in Ch9 (drawn as "the plan to expect", to be confirmed in Lab 5). The logo is the low-resolution copy taken from the old decks.
 - Still to update outside the decks: PT2 document, project brief and forms, session numbers in the Ch8 exercise sheet, QB self-study tags.
 
+- Audit of labs, project and exercises (24 Nov 2026): `IDB201_ket-qua-sua_lan1_2/IDB201_Audit_Labs_Project_Exercises.xlsx` (32 rows: 17 fixed, 5 checked correct, 8 need the owner's decision, 2 missing files). Corrected copies of all lab, project and exercise files are in `IDB201_ket-qua-sua_lan1_2/labs`, `project`, `exercises` (the `lan1_1` originals are unchanged); slides in both slide folders were rebuilt (Ch6 §6.9 numbering of the 7th ed., exercise labels in Ch7–9). Open: syllabus task text of sessions 19/31/54 (48-hour reports), session 42 reading list, missing Ch9/Ch10 exercise sheets, missing SQL scripts.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).

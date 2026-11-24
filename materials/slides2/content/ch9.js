@@ -286,13 +286,13 @@ module.exports = {
     // ------------------------------------------------------------ 47
     { n: 47, name: "Guided exercises", sum: "Costs by hand: selection, sorting, joins; size estimates; equivalence rules; SQL Server plans; CQ9.1–CQ9.3",
       slides: [
-        { k: "plan", h: "Plan of session 47", src: "IDB201 syllabus, session 47; Chapter 9 exercise sheet", rows: [
+        { k: "plan", h: "Plan of session 47", src: "IDB201 syllabus, session 47", rows: [
           ["Exercises 1–2", "Selection and external sorting", "10 min"],
           ["Exercise 3", "Join costs", "10 min"],
           ["Exercises 4–5", "Size estimates; equivalence rules", "10 min"],
           ["CQ9.1–CQ9.3", "Discussion in groups, then whole class", "13 min", true],
           ["Next", "Lab 5 part 1 in session 48", "2 min"]] },
-        { k: "list", h: "Exercises 1–2: selection and sorting", src: "Exercises written for IDB201 (Chapter 9 exercise sheet); DSC 7th ed., §15.3–15.4", items: [
+        { k: "list", h: "Exercises 1–2: selection and sorting", src: "Exercises written for IDB201; DSC 7th ed., §15.3–15.4", items: [
           "Exercise 1. r has 2,000 blocks. A secondary B+-tree on the non-key attribute A has height 3; σA=v matches 30 records. Compare the index plan with a linear scan (tT = 0.1 ms, tS = 4 ms).",
           "Exercise 2. Sort a relation of 1,000 blocks with M = 11, then with M = 101. Give the runs, the merge passes and the block transfers."] },
         { k: "table", h: "Exercises 1–2: solutions", src: "Solutions written for IDB201; formulas of DSC 7th ed., §15.3–15.4", size: 20, rowH: 0.72, colW: [4.6, 4.6, 2.93], rows: [
@@ -302,7 +302,7 @@ module.exports = {
           ["Ex. 2, M = 11", "91 runs, ⌈log10 91⌉ = 2 passes", "1,000 · 5 = 5,000"],
           ["Ex. 2, M = 101", "10 runs, ⌈log100 10⌉ = 1 pass", "1,000 · 3 = 3,000"]],
           note: "Ex. 1: the index wins with 30 matches; at about 47 matches the two plans cost the same." },
-        { k: "list", h: "Exercise 3: join costs", src: "Exercise written for IDB201 (Chapter 9 exercise sheet); DSC 7th ed., §15.5", items: [
+        { k: "list", h: "Exercise 3: join costs", src: "Exercise written for IDB201; DSC 7th ed., §15.5", items: [
           "r has 1,000 blocks and s has 200 blocks; the join is an equi-join.",
           "Compute the block transfers of block nested-loop join with M = 3 and with M = 52, each with r outer and with s outer.",
           "Compare with merge join (inputs already sorted) and hash join (no recursive partitioning)."] },
@@ -342,7 +342,7 @@ module.exports = {
       ] },
   ],
   back: [
-    { k: "list", h: "Practice exercises", src: "Exercises written for IDB201; more: the Chapter 9 exercise sheet and DSC Practice Exercises 15.1–15.5 and 16.1–16.4", items: [
+    { k: "list", h: "Practice exercises", src: "Exercises written for IDB201; more: DSC Practice Exercises 15.1–15.5 and 16.1–16.4", items: [
       "takes (10,000 tuples, 400 blocks) is the outer relation of an indexed nested-loop join with student; the B+-tree on student(ID) has height 3. Compute the block transfers.",
       "Is it legal to push σ year = 2025 below the join in Π name (σ year = 2025 (instructor ⋈ teaches))? Below which input?",
       "Which join algorithms can evaluate r ⋈ s on r.A < s.B, and why?"] },

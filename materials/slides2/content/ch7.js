@@ -236,7 +236,7 @@ module.exports = {
         { k: "code", h: "7.5 The BCNF decomposition algorithm", src: src("§7.5.1"), codeW: 7.8, code:
 "result := {R}; done := false;\nwhile not done do\n  if some Ri in result is not in BCNF\n  then let α → β be a nontrivial FD\n       on Ri with α → Ri not in F⁺\n       and α ∩ β = ∅;\n       result := (result − Ri)\n               ∪ (Ri − β) ∪ (α, β);\n  else done := true;",
           items: ["Every step is lossless", "The result is in BCNF", "Dependencies may be lost"] },
-        { k: "draw", h: "BCNF decomposition: an example", src: "Example written for IDB201 (Chapter 7 exercise sheet); algorithm of DSC 7th ed., §7.5.1", draw: (s) => {
+        { k: "draw", h: "BCNF decomposition: an example", src: "Example written for IDB201 (Chapter 7 exercise sheet, exercises 5–6); algorithm of DSC 7th ed., §7.5.1", draw: (s) => {
           tree(s, "R(A, B, C, D, E)", [["(B, C)"], ["(A, B, D, E)", ["(A, B)", "(A, D, E)"], "A → B violates"]], "F = { A → B, B → C, CD → E }, key AD. Result (B, C), (A, B), (A, D, E): lossless; CD → E is lost.", { rx: 4.2, rw: 4.6, kw: 3.4, via: "B → C violates" });
         } },
         { k: "cards", h: "The order of the violations matters", src: ex("§7.5.1"), cards: [
@@ -304,13 +304,13 @@ module.exports = {
       ] },
     { n: 38, name: "Guided exercises", sum: "FD theory on paper: closures, keys, covers, BCNF and 3NF",
       slides: [
-        { k: "plan", h: "Plan of session 38", src: "IDB201 syllabus, session 38; Chapter 7 exercise sheet", rows: [
+        { k: "plan", h: "Plan of session 38", src: "IDB201 syllabus, session 38", rows: [
           ["Exercise 1", "Closures and candidate keys", "10 min"],
           ["Exercise 2", "Canonical cover", "10 min"],
           ["Exercise 3", "BCNF decomposition and preservation", "13 min"],
           ["Exercise 4", "3NF synthesis", "10 min", true],
           ["Next", "Milestone 1 in session 39", "2 min"]] },
-        { k: "bul", h: "Exercise 1: candidate keys", src: "Exercise written for IDB201 (Chapter 7 exercise sheet); DSC 7th ed., §7.4", items: [
+        { k: "bul", h: "Exercise 1: candidate keys", src: "Exercise written for IDB201; DSC 7th ed., §7.4", items: [
           "R(A, B, C, D, E), F = { A → BC, CD → E, B → D, E → A }",
           "Compute A⁺, E⁺, B⁺, (BC)⁺ and (CD)⁺",
           "List all candidate keys"],
