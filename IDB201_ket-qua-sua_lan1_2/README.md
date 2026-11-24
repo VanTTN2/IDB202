@@ -1,6 +1,6 @@
 # IDB201 – revised package after council review round 1 (24 Nov 2026)
 
-The subfolders keep the numbering of `IDB201_ket-qua-sua_lan1_1/` (0–6); the review workbooks in `reviews/`.
+The subfolders keep the numbering of `IDB201_ket-qua-sua_lan1_1/` (0–6); the review workbooks are in `reviews/`.
 This folder holds every result produced after the review of 18 Nov 2026. It replaces
 `IDB201_ket-qua-sua_lan1_1/`, which is kept unchanged as the designer's first reply.
 
