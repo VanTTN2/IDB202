@@ -42,6 +42,15 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
+## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
+
+1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).
+2. DSC Ch. 18–19 are **self-study** (no lecture). Self-study readings are still assessed (PTs/final exam).
+3. Progress tests spread further apart: PT1 stays in session 26 (Ch1–5); **PT2 moves to session 47 and covers Ch6–9** (CLO2, CLO5, CLO6).
+4. Schedule renumbered: Ch8 is now sessions 40–43 (CQ8 in 43), Ch9 sessions 44–46 (CQ9 in 46), PT2 47, Lab 5 part 1 48, Ch17 sessions 49–51, M2 52, session 53 = guided exercises on Ch10 + questions on the Ch18 self-study, Lab 5 part 2 54, session 55 = CQ10 discussion + questions on the Ch18–19 self-study; sessions 1–39 and 56–60 unchanged.
+- Applied to `IDB201_ket-qua-sua_lan1_1/1_syllabus/IDB201_Syllabus.xlsx` (the newest workbook) by `syllabus/tools/resequence_syllabus.py`; `syllabus/IDB201_Syllabus.xlsx` now holds the same file. `syllabus/syllabus.md` and `syllabus/build_syllabus_xlsx.py` are still out of date.
+- Not yet propagated to the materials: session dividers in Chapter_8/9 decks (41–47 → 40–46), Chapter_10 deck (sessions 53 and 55 still lecture Ch18/19), PT2 (still Ch6–7, session 40), session numbers in the Ch8 exercise sheet, QB self-study tags for Ch18–19 items.
+
 ## 0c. Council review round 1 (18 Nov 2026) – read first
 
 - The user's revised package after the review is in `IDB201_ket-qua-sua_lan1_1/` (pushed 24 Nov 2026): the three review forms with the reviewers' comments and the designer's replies (`0_phieu_phan_hoi/`: BM.09 materials, BM.10 syllabus, BM.12 question bank), and the revised syllabus, question bank (+ MOOC export), labs and solutions, project files, exercise sheets and slides. These files are newer than `materials/` and `syllabus/`; the builders that produced them are **not** in the repository.
