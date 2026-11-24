@@ -11,7 +11,7 @@ This folder holds every result produced after the review of 18 Nov 2026. It repl
 | `3_labs/` | Lab 1–5 handouts and lecturer solutions; `university_sqlserver.sql` (database University), `lab3_scale.sql`, `lab5_large.sql`, `note.txt`; `solutions/lab1–5_solution.sql` | Current |
 | `4_project/` | Group project brief, forms, report template, sample (report due three days before session 57; presentations 57–58) | Current |
 | `5_exercises/` | Exercise sheets with solutions for Ch2, Ch3, Ch7, Ch8, **Ch9 (session 47)**, **Ch10 (session 53)**; review questions (session 59); final practice set (session 60); set-up guide (session 3) | Current |
-| `2_question_bank/` | Final-exam bank, MOOC export, Progress test 1 (copied unchanged from `lan1_1`); **Progress test 2 rewritten**: session 56, Ch6–10 (4 questions per chapter) incl. the Ch18–19 self-study, 20 MCQ, CLO2/5/6/7, no item from the final-exam bank, keys balanced 5/5/5/5 | Current |
+| `2_question_bank/` | Final-exam bank, MOOC export, Progress test 1 (copied unchanged from `lan1_1`); `IDB201_QB_Replacements_261_374.docx` proposes replacements for QB 261 (proof) and QB 374 (NP-completeness); **Progress test 2 rewritten**: session 56, Ch6–10 (4 questions per chapter) incl. the Ch18–19 self-study, 20 MCQ, CLO2/5/6/7, no item from the final-exam bank, keys balanced 5/5/5/5 | Current |
 | `0_phieu_phan_hoi/` | Review forms BM.09 (materials), BM.10 (syllabus), BM.12 (question bank); the designer's replies (round 1) updated on 24 Nov 2026 to match this package | Current |
 | `reviews/` | `IDB201_Council_Review1_Verification.xlsx` (council requests checked against `lan1_1`); `IDB201_Audit_Labs_Project_Exercises.xlsx` (audit of labs, project and exercises against the newest syllabus) | Reference |
 
