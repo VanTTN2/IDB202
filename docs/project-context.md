@@ -42,6 +42,14 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
+## 0c. Council review round 1 (18 Nov 2026) – read first
+
+- The user's revised package after the review is in `IDB201_ket-qua-sua_lan1_1/` (pushed 24 Nov 2026): the three review forms with the reviewers' comments and the designer's replies (`0_phieu_phan_hoi/`: BM.09 materials, BM.10 syllabus, BM.12 question bank), and the revised syllabus, question bank (+ MOOC export), labs and solutions, project files, exercise sheets and slides. These files are newer than `materials/` and `syllabus/`; the builders that produced them are **not** in the repository.
+- Verification of every request against that package: `docs/reviews/2026-11-18_round1/IDB201_Council_Review1_Verification.xlsx` (43 requests: 28 done, 8 partly done, 2 not done, 5 pending the course owner's decision).
+- Main open items: givenDB scripts and Lab 1–4 solution SQL missing from the package; 22 of 40 lecture sessions under 10 slides; 63 near-empty "(cont.)" slides; leftovers of removed topics (relational calculus on Ch2 s.25/32, ARIES reading in Ch10, QB 374, QB 260–261, "prove" in syllabus C12); diagram labels at 15–16 pt; missing source lines; decisions on E-R/normalization order, cutting DSC Ch18–19 and PT spacing.
+
+---
+
 ## 1. Course and program facts
 
 | Item | Value | Source |
