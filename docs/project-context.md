@@ -58,6 +58,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 - Final check of lan1_2 against BM.09/BM.10/BM.12 (24 Nov 2026, evening): `IDB201_ket-qua-sua_lan1_2/reviews/IDB201_Review1_Final_Check.xlsx` (33 items: 23 met, 8 met with a note, 2 owner decisions). Changes made during the check: syllabus Student's materials name the exercise sheets (s.12, 38, 43, 47, 53) and Tools list VS Code + mssql for macOS/Linux; QB 260 reworded, QB 261 and QB 374 replaced in both bank files (lan1_2 only); PT2 items too close to QB 446/451/267/370/377 replaced; data shared between public materials and the bank changed (Ch7 slides, Ch10 slides and sheet, Ch7 sheet Q8–9); session 55 got two slides (recovery by hand, PT2 preparation); Ch7 'iff' spelled out; Lab 5 hint wording; Ch8 chart label size; customHeight attributes in the three forms repaired. Open notes: logo resolution, T-SQL not run on SQL Server, QB 254–256/265/445 use DSC worked examples, [G1]–[G7] tags visible in MOOC stems, QB 368/374 same form, Lab 4 time plan.
 
+- 24 Nov 2026, 21:15: QB 254–256 (G5), 265, 445 given new data (lan1_2 bank and MOOC; script /home/claude/work/qbfix/fix2.py, not in repo); [G1]–[G7] tags removed from the 24 MOOC stems; the owner's PC givenDB/university_sqlserver.sql replaced by the University script (verified by checksum). Final check: 25 met, 6 met with a note, 2 owner decisions.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).
