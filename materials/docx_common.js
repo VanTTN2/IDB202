@@ -27,7 +27,7 @@ function TR(o) {
 // Inline markup: **bold**, `code`, _italic_
 function runs(text, base = {}) {
   const out = [];
-  const re = /(\*\*[^*]+\*\*|`[^`]+`|_[^_]+_)/g;
+  const re = /(\*\*[^*]+\*\*|`[^`]+`|(?<![A-Za-z0-9])_[^_\s][^_]*_(?![A-Za-z0-9]))/g; // _italic_ only at word boundaries, so names such as student_big stay intact
   let last = 0, m;
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) out.push(...TR({ text: text.slice(last, m.index), ...base }));

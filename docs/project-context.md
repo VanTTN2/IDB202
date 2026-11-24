@@ -52,6 +52,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 - Audit of labs, project and exercises (24 Nov 2026): `IDB201_ket-qua-sua_lan1_2/IDB201_Audit_Labs_Project_Exercises.xlsx` (32 rows: 17 fixed, 5 checked correct, 8 need the owner's decision, 2 missing files). Corrected copies of all lab, project and exercise files are in `IDB201_ket-qua-sua_lan1_2/labs`, `project`, `exercises` (the `lan1_1` originals are unchanged); slides in both slide folders were rebuilt (Ch6 §6.9 numbering of the 7th ed., exercise labels in Ch7–9). Syllabus updated the same day: sessions 19/31/54 and Grading structure state the 48-hour Investigate report; session 42 reads "§14.5 and §14.7" (copies in `syllabus/`, `lan1_1/1_syllabus/`, `lan1_2/syllabus/`). Open: missing Ch9/Ch10 exercise sheets, missing SQL scripts.
 
+- Ch9 and Ch10 exercise sheets (24 Nov 2026): `materials/exercises/build_ch9_ch10.js` writes `IDB201_Ch9_Query_Processing_Exercises(+_Solutions).docx` (session 47, 12 questions) and `IDB201_Ch10_Transactions_Exercises(+_Solutions).docx` (session 53, 9 questions) into `IDB201_ket-qua-sua_lan1_2/exercises`; Ch9/Ch10 exercise slides cite them. `docx_common.js` now treats `_…_` as italic only at word boundaries (names such as student_big stay intact). The current SQL scripts (`materials/labs/sql`) are copied to `lan1_2/labs` (+ `solutions/`). The givenDB folder on the owner's PC (`Ngay 28_10_Materials/givenDB`) still has the OLD UniversityDB script.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).

@@ -286,13 +286,13 @@ module.exports = {
     // ------------------------------------------------------------ 47
     { n: 47, name: "Guided exercises", sum: "Costs by hand: selection, sorting, joins; size estimates; equivalence rules; SQL Server plans; CQ9.1–CQ9.3",
       slides: [
-        { k: "plan", h: "Plan of session 47", src: "IDB201 syllabus, session 47", rows: [
+        { k: "plan", h: "Plan of session 47", src: "IDB201 syllabus, session 47; Chapter 9 exercise sheet", rows: [
           ["Exercises 1–2", "Selection and external sorting", "10 min"],
           ["Exercise 3", "Join costs", "10 min"],
           ["Exercises 4–5", "Size estimates; equivalence rules", "10 min"],
           ["CQ9.1–CQ9.3", "Discussion in groups, then whole class", "13 min", true],
           ["Next", "Lab 5 part 1 in session 48", "2 min"]] },
-        { k: "list", h: "Exercises 1–2: selection and sorting", src: "Exercises written for IDB201; DSC 7th ed., §15.3–15.4", items: [
+        { k: "list", h: "Exercises 1–2: selection and sorting", src: "Chapter 9 exercise sheet, questions 1 and 4; DSC 7th ed., §15.3–15.4", items: [
           "Exercise 1. r has 2,000 blocks. A secondary B+-tree on the non-key attribute A has height 3; σA=v matches 30 records. Compare the index plan with a linear scan (tT = 0.1 ms, tS = 4 ms).",
           "Exercise 2. Sort a relation of 1,000 blocks with M = 11, then with M = 101. Give the runs, the merge passes and the block transfers."] },
         { k: "table", h: "Exercises 1–2: solutions", src: "Solutions written for IDB201; formulas of DSC 7th ed., §15.3–15.4", size: 20, rowH: 0.72, colW: [4.6, 4.6, 2.93], rows: [
@@ -302,7 +302,7 @@ module.exports = {
           ["Ex. 2, M = 11", "91 runs, ⌈log10 91⌉ = 2 passes", "1,000 · 5 = 5,000"],
           ["Ex. 2, M = 101", "10 runs, ⌈log100 10⌉ = 1 pass", "1,000 · 3 = 3,000"]],
           note: "Ex. 1: the index wins with 30 matches; at about 47 matches the two plans cost the same." },
-        { k: "list", h: "Exercise 3: join costs", src: "Exercise written for IDB201; DSC 7th ed., §15.5", items: [
+        { k: "list", h: "Exercise 3: join costs", src: "Chapter 9 exercise sheet, question 5; DSC 7th ed., §15.5", items: [
           "r has 1,000 blocks and s has 200 blocks; the join is an equi-join.",
           "Compute the block transfers of block nested-loop join with M = 3 and with M = 52, each with r outer and with s outer.",
           "Compare with merge join (inputs already sorted) and hash join (no recursive partitioning)."] },
@@ -314,17 +314,17 @@ module.exports = {
           ["BNL, M = 52, s outer", "⌈200 / 50⌉ · 1,000 + 200", "4,200"],
           ["Merge join", "1,000 + 200", "1,200"],
           ["Hash join", "3 · (1,000 + 200)", "about 3,600"]] },
-        { k: "cards", h: "Exercise 4: size estimates", src: "Exercise written for IDB201; estimates of DSC 7th ed., §16.3", cards: [
+        { k: "cards", h: "Exercise 4: size estimates", src: "Chapter 9 exercise sheet, question 8; estimates of DSC 7th ed., §16.3", cards: [
           ["Question a", "instructor: 10,000 tuples, 20 distinct dept_name values. Estimate the size of σ dept_name = 'Physics'."],
           ["Answer a", "nr / V(dept_name, r) = 10,000 / 20 = 500 tuples, assuming a uniform distribution", HEX.paleOrange],
           ["Question b", "takes ⋈ student on ID, 10,000 takes tuples; ID is a foreign key to student. Estimate the size."],
           ["Answer b", "Each takes tuple joins exactly one student: 10,000 tuples", HEX.paleOrange]] },
-        { k: "draw", h: "Exercise 5: equivalence rules", src: "Exercise and solution written for IDB201; rules of DSC 7th ed., §16.2.1", draw: (s) => {
+        { k: "draw", h: "Exercise 5: equivalence rules", src: "Chapter 9 exercise sheet, question 9; rules of DSC 7th ed., §16.2.1", draw: (s) => {
           L.text(s, "Rewrite Π name (σ dept_name = 'Physics' ∧ year = 2025 (instructor ⋈ teaches)) so that each selection is applied as early as possible.", X0, 1.35, CW, 0.85, { fontSize: 20 });
           etree(s, N("Π name", N("⋈", N("σ dept_name = 'Physics'", N("instructor")), N("σ year = 2025", N("teaches")))), 0.8, 2.4, 7.0, { hl: ["σ dept_name = 'Physics'", "σ year = 2025"], dy: 1.0 });
           L.autoCard(s, 8.4, 2.4, 4.3, 4.1, "Steps", ["Rule 1: split the conjunction", "Rule 7: push each part to the input that has its attribute", "On University the result is Curie (Bohr teaches in 2026)"], "ex5", { fill: HEX.pale, size: 20 });
         } },
-        { k: "code", h: "Exercise 6: compare with SQL Server", src: "Exercise written for IDB201 on the course database University (givenDB); " + SQLS, codeW: 7.4, code:
+        { k: "code", h: "Exercise 6: compare with SQL Server", src: "Chapter 9 exercise sheet, question 11, on the course database University (givenDB); " + SQLS, codeW: 7.4, code:
 "set statistics io on;\n\nselect i.name\nfrom   instructor i\n       join teaches t on i.ID = t.ID\nwhere  i.dept_name = 'Physics'\n  and  t.year = 2025;\n\n-- Ctrl+M: include actual plan",
           card: ["Questions", ["Where are the two conditions applied in the plan?", "Which join operator is chosen, and why for such small tables?", "Compare estimated and actual rows", "Lab 5 repeats this on a large table"]] },
         { k: "cq", id: "CQ9.1", look: "Where to look: self-study DSC 7th ed., §16.3; Leis et al., How good are query optimizers, really?, PVLDB 9(3), 2015", prompts: [
@@ -342,7 +342,7 @@ module.exports = {
       ] },
   ],
   back: [
-    { k: "list", h: "Practice exercises", src: "Exercises written for IDB201; more: DSC Practice Exercises 15.1–15.5 and 16.1–16.4", items: [
+    { k: "list", h: "Practice exercises", src: "Exercises written for IDB201; more: the Chapter 9 exercise sheet and DSC Practice Exercises 15.1–15.5 and 16.1–16.4", items: [
       "takes (10,000 tuples, 400 blocks) is the outer relation of an indexed nested-loop join with student; the B+-tree on student(ID) has height 3. Compute the block transfers.",
       "Is it legal to push σ year = 2025 below the join in Π name (σ year = 2025 (instructor ⋈ teaches))? Below which input?",
       "Which join algorithms can evaluate r ⋈ s on r.A < s.B, and why?"] },

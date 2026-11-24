@@ -335,7 +335,7 @@ module.exports = function build(deck) {
   L.divider(deck, { label: "Session 53", title: "Guided exercises on Chapter 17; questions on the self-study of DSC Chapter 18 (preparation for Lab 5 part 2)",
     read: "Bring: answers to the self-study questions of session 51\nSelf-study: DSC §18.8, pp. 872–879; optional §18.3, §18.5, §18.7, §18.9" });
 
-  s = L.content(deck, "Plan of session 53", "IDB201 syllabus, session 53");
+  s = L.content(deck, "Plan of session 53", "IDB201 syllabus, session 53; Chapter 10 exercise sheet");
   [["Exercise 1", "Precedence graph of a three-transaction schedule", "10 min"],
    ["Exercise 2", "Recoverable or cascadeless?", "8 min"],
    ["Exercise 3", "Choosing an isolation level", "7 min"],
@@ -347,7 +347,7 @@ module.exports = function build(deck) {
     L.text(s, r[2], X0 + 10.5, y, 1.6, 0.85, { valign: "middle", color: HEX.grey, align: "right" });
   });
 
-  s = L.content(deck, "Exercise 1: is S conflict serializable?", "Exercise written for IDB201; test of DSC 7th ed., §17.6");
+  s = L.content(deck, "Exercise 1: is S conflict serializable?", "Chapter 10 exercise sheet, question 1; test of DSC 7th ed., §17.6");
   L.code(s, "S = r1(A) r2(B) w2(A) r3(A) w3(B) w1(B)", X0, 1.45, 8.6, 0.75);
   L.bullets(s, ["List every conflicting pair (same item, at least one write)", "Draw the precedence graph", "Is there a cycle? If not, give a serial order"], X0, 2.5, 7.5, 3.5);
   L.card(s, 8.6, 2.5, 4.1, 3.2, "Hint", "Item A: r1, w2, r3. Item B: r2, w3, w1. Look at each item separately.", { fill: HEX.paleOrange, size: 22 });
@@ -362,7 +362,7 @@ module.exports = function build(deck) {
   L.arrow(s, 3.5, 4.9, 1.8, 2.85, { label: "B: w3 < w1", lx: 0.6, ly: 3.75, lw: 2.2, lalign: "left" });
   L.card(s, 8.6, 1.9, 4.1, 3.9, "Answer", "Cycles T1 → T2 → T1 and T1 → T2 → T3 → T1: S is not conflict serializable.", { fill: "FBE9E7", headColor: HEX.red, size: 22 });
 
-  s = L.content(deck, "Exercise 2: recoverable or cascadeless?", "Exercise written for IDB201 on DSC 7th ed., §17.7");
+  s = L.content(deck, "Exercise 2: recoverable or cascadeless?", "Chapter 10 exercise sheet, question 3; DSC 7th ed., §17.7");
   L.table(s, [["Schedule", "Recoverable?", "Cascadeless?"],
     [{ text: "S1: w1(A) r2(A) c2 c1", options: { fontFace: L.CODE } }, "?", "?"],
     [{ text: "S2: w1(A) r2(A) c1 c2", options: { fontFace: L.CODE } }, "?", "?"],
@@ -377,7 +377,7 @@ module.exports = function build(deck) {
     [{ text: "S3: w1(A) c1 r2(A) c2", options: { fontFace: L.CODE } }, Y("yes"), Y("yes")]], X0, 1.5, CW, { colW: [6.13, 3.0, 3.0], rowH: 0.75 });
   L.bullets(s, ["S1: T2 commits before T1, from which it read", "S2: T2 reads an uncommitted value, but commits after T1", "S3: T2 reads only committed data"], X0, 4.75, CW, 1.9, { size: 22 });
 
-  s = L.content(deck, "Exercise 3: lowest safe isolation level", "Exercise written for IDB201 on DSC 7th ed., §17.8 and the account table of givenDB");
+  s = L.content(deck, "Exercise 3: lowest safe isolation level", "Chapter 10 exercise sheet, question 5; DSC 7th ed., §17.8 and the account table of givenDB");
   [["a", "A report must never show a transfer that is later rolled back; new accounts do not matter."],
    ["b", "A transaction reads the balance of account 3 twice and must get the same value both times."],
    ["c", "A transaction counts the Hanoi accounts twice and must get the same count both times."]].forEach((q, i) => {
