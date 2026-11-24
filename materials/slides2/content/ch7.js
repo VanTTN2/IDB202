@@ -74,7 +74,7 @@ module.exports = {
         } },
         { k: "code", h: "7.2 Functional dependencies", src: src("§7.2.1"), codeW: 6.8, code:
 "α → β holds on R if, for all\nlegal instances and all tuples\nt1, t2:\n\n  t1[α] = t2[α]  ⇒  t1[β] = t2[β]",
-          items: ["An FD is a constraint on every legal instance", "K is a superkey of R iff K → R", "Trivial: α → β with β ⊆ α"] },
+          items: ["An FD is a constraint on every legal instance", "K is a superkey of R if and only if K → R", "Trivial: α → β with β ⊆ α"] },
         { k: "draw", h: "The FDs of in_dep", src: ex("§7.2"), draw: (s) => {
           const at = ["ID", "name", "salary", "dept_name", "building", "budget"];
           at.forEach((a, i) => L.node(s, a, 0.7 + i * 2.05, 2.6, 1.85, 0.8, { mono: true, size: 18, fill: i === 0 || i === 3 ? HEX.paleOrange : HEX.white }));
@@ -171,14 +171,14 @@ module.exports = {
           intro: "R(A, B, C, G, H, I), F = { A → B, A → C, CG → H, CG → I, B → H }. Compute (AG)⁺.",
           note: "(AG)⁺ = R, while A⁺ and G⁺ are not: AG is a candidate key." },
         { k: "cards", h: "What attribute closure is used for", src: src("§7.4.2"), cards: [
-          ["Superkey test", "α is a superkey iff α⁺ contains all attributes of R"],
-          ["FD test", "α → β is in F⁺ iff β ⊆ α⁺"],
+          ["Superkey test", "α is a superkey if and only if α⁺ contains all attributes of R"],
+          ["FD test", "α → β is in F⁺ if and only if β ⊆ α⁺"],
           ["Computing F⁺", "For every γ ⊆ R, compute γ⁺: exponential, rarely needed", HEX.paleOrange]] },
         { k: "cards", h: "Finding all candidate keys", src: ex("§7.4.2"), cards: [
           ["Step 1", "Attributes on no right side must be in every key"],
           ["Step 2", "Compute closures of small sets that contain them"],
           ["Step 3", "Keep the minimal sets whose closure is R"]],
-          note: "R(A, B, C, D), F = { AB → C, C → D, D → A }: B is in every key; the keys are AB, BC and BD." },
+          note: "R(A, B, C, D), F = { AC → B, B → D, D → A }: C is in every key; the keys are AC, BC and CD." },
         { k: "quick", h: "Quick check: session 34", src: "Questions written for IDB201 on DSC 7th ed., §7.4",
           qs: ["F = { A → B, B → C }. Does A → C follow? Use attribute closure.",
                "Is the union rule an axiom?",
@@ -219,7 +219,7 @@ module.exports = {
           ["Preserving", "(F1 ∪ … ∪ Fn)⁺ = F⁺"],
           ["Why it matters", "An FD that is not preserved needs a join to be checked on every update", HEX.paleOrange]] },
         { k: "code", h: "Testing dependency preservation", src: src("§7.4.5"), codeW: 7.0, code:
-"-- is α → β preserved?\nresult := α;\nrepeat\n  for each Ri do\n    t := (result ∩ Ri)⁺ ∩ Ri;\n    result := result ∪ t;\nuntil result does not change;\n-- preserved iff β ⊆ result",
+"-- is α → β preserved?\nresult := α;\nrepeat\n  for each Ri do\n    t := (result ∩ Ri)⁺ ∩ Ri;\n    result := result ∪ t;\nuntil result does not change;\n-- preserved if and only if β ⊆ result",
           items: ["R(A, B, C), F = { A → B, B → C }", "(A, B), (A, C): B → C is not preserved", "(A, B), (B, C): both are preserved"] },
         { k: "quick", h: "Quick check: session 35", src: "Questions written for IDB201 on DSC 7th ed., §7.4",
           qs: ["F = { A → B, AB → C }. Is B extraneous in AB → C?",
@@ -283,7 +283,7 @@ module.exports = {
           right: { card: ["Atomic for whom?", "course_id CS-101 is atomic, unless programs extract the department CS from it."] } },
         { k: "cards", h: "Self-study: §7.7 and §7.9", src: "Self-study source: DSC 7th ed., §7.7, p. 341; §7.9, pp. 343–346", cards: [
           ["§7.7 More normal forms", "Project-join and domain-key normal forms; second normal form"],
-          ["§7.9 The design process", "E-R modelling and normalization together"],
+          ["§7.9 The design process", "E-R modeling and normalization together"],
           ["Denormalization", "Keeping redundancy on purpose for performance, with its cost", HEX.paleOrange]] },
         { k: "cards", h: "Putting design together", src: src("§7.9; synthesis for IDB201"), cards: [
           ["E-R first", "A good E-R model usually gives schemas close to BCNF"],
@@ -311,14 +311,14 @@ module.exports = {
           ["Exercise 4", "3NF synthesis", "10 min", true],
           ["Next", "Milestone 1 in session 39", "2 min"]] },
         { k: "bul", h: "Exercise 1: candidate keys", src: "Exercise written for IDB201; DSC 7th ed., §7.4", items: [
-          "R(A, B, C, D, E), F = { A → BC, CD → E, B → D, E → A }",
-          "Compute A⁺, E⁺, B⁺, (BC)⁺ and (CD)⁺",
+          "R(A, B, C, D, E), F = { A → CD, CE → B, D → E, B → A }",
+          "Compute A⁺, B⁺, D⁺, (CD)⁺ and (CE)⁺",
           "List all candidate keys"],
           right: { card: ["Hint", "Every attribute appears on a right side, so start from single attributes."] } },
         { k: "table", h: "Exercise 1: solution", src: "Solution written for IDB201; DSC 7th ed., §7.4.2", size: 22, rowH: 0.7, colW: [2.4, 5.0, 4.73], rows: [
-          ["Set", "Closure", "Key?"], ["A", "ABCDE", "candidate key"], ["E", "EABCD", "candidate key"], ["B", "BD", "no"],
-          ["BC", "BCDEA", "candidate key"], ["CD", "CDEAB", "candidate key"]],
-          note: "Keys: A, E, BC, CD. {A, B} is a superkey but not a candidate key." },
+          ["Set", "Closure", "Key?"], ["A", "ACDEB", "candidate key"], ["B", "BACDE", "candidate key"], ["D", "DE", "no"],
+          ["CD", "CDEBA", "candidate key"], ["CE", "CEBAD", "candidate key"]],
+          note: "Keys: A, B, CD, CE. {A, C} is a superkey but not a candidate key." },
         { k: "bul", h: "Exercise 2: canonical cover", src: "Exercise written for IDB201; DSC 7th ed., §7.4.3", items: [
           "F = { A → BC, B → C, AB → D }",
           "Find the extraneous attributes, one at a time",

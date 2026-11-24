@@ -238,19 +238,19 @@ module.exports = function build(deck) {
   L.card(s, 8.6, 2.4, 4.1, 3.6, "Conclusion", "Cycle T1 → T2 → T1: not conflict serializable. Without w1(Y) the order T1, T2, T3 works.", { size: 22 });
 
   s = L.content(deck, "From an acyclic graph to a serial order", "Example written for IDB201; topological sorting as in DSC 7th ed., §17.6");
-  L.code(s, "S = r2(B) w1(B) r1(A) w3(A)", X0, 1.45, 6.5, 0.75);
-  L.node(s, "T2", 0.9, 3.2, 1.3, 0.95, { shape: "ellipse" });
+  L.code(s, "S = r1(B) w2(B) r3(A) w1(A)", X0, 1.45, 6.5, 0.75);
+  L.node(s, "T3", 0.9, 3.2, 1.3, 0.95, { shape: "ellipse" });
   L.node(s, "T1", 3.7, 3.2, 1.3, 0.95, { shape: "ellipse" });
-  L.node(s, "T3", 6.5, 3.2, 1.3, 0.95, { shape: "ellipse" });
-  L.arrow(s, 2.2, 3.67, 3.7, 3.67, { label: "B", ly: 2.75, lx: 2.45, lw: 1.0 });
-  L.arrow(s, 5.0, 3.67, 6.5, 3.67, { label: "A", ly: 2.75, lx: 5.25, lw: 1.0 });
-  L.card(s, 8.6, 2.2, 4.1, 3.4, "Serial order", "No cycle. Topological order T2, T1, T3 is an equivalent serial schedule.", { fill: "E3F1E8", headColor: HEX.green, size: 22 });
+  L.node(s, "T2", 6.5, 3.2, 1.3, 0.95, { shape: "ellipse" });
+  L.arrow(s, 2.2, 3.67, 3.7, 3.67, { label: "A", ly: 2.75, lx: 2.45, lw: 1.0 });
+  L.arrow(s, 5.0, 3.67, 6.5, 3.67, { label: "B", ly: 2.75, lx: 5.25, lw: 1.0 });
+  L.card(s, 8.6, 2.2, 4.1, 3.4, "Serial order", "No cycle. Topological order T3, T1, T2 is an equivalent serial schedule.", { fill: "E3F1E8", headColor: HEX.green, size: 22 });
   L.text(s, "Lab 5 part 2 asks you to draw these graphs for schedules you observe in SQL Server.", X0, 5.4, 7.6, 0.9, { fontSize: 20, color: HEX.grey });
 
   s = L.content(deck, "Quick check: session 50", "Questions written for IDB201 on DSC 7th ed., §17.6",
-    "Answers: 1 no, two reads never conflict; 2 yes, both edges go T1 -> T2, serial order T1, T2; 3 not serializable, cycle T1 -> T2 -> T3 -> T1.");
-  ["Do r1(A) and r2(A) conflict?",
-   "Is r1(A) w1(A) r2(A) w2(A) r1(B) w1(B) r2(B) w2(B) conflict serializable? In which order?",
+    "Answers: 1 no, they access different items; 2 yes, both edges go T2 -> T1, serial order T2, T1; 3 not serializable, cycle T1 -> T2 -> T3 -> T1.");
+  ["Do w1(A) and r2(B) conflict?",
+   "Is r2(A) w2(A) r1(A) w1(A) r2(B) w2(B) r1(B) w1(B) conflict serializable? In which order?",
    "A precedence graph has the edges T1 → T2, T2 → T3 and T3 → T1. What do you conclude?"].forEach((q, i) => {
     L.card(s, X0, 1.45 + i * 1.7, CW, 1.5, null, `${i + 1}.  ${q}`, { fill: i % 2 ? HEX.pale : HEX.paleOrange });
   });
@@ -333,7 +333,7 @@ module.exports = function build(deck) {
   // ---------------- Session 53 ----------------
   L.section(deck, "Session 53");
   L.divider(deck, { label: "Session 53", title: "Guided exercises on Chapter 17; questions on the self-study of DSC Chapter 18 (preparation for Lab 5 part 2)",
-    read: "Bring: answers to the self-study questions of session 51\nSelf-study: DSC §18.8, pp. 872–879; optional §18.3, §18.5, §18.7, §18.9" });
+    read: "Bring: your questions on the Chapter 18 self-study (and your answers to the self-study questions of session 51)\nSelf-study: DSC §18.8, pp. 872–879; optional §18.3, §18.5, §18.7, §18.9" });
 
   s = L.content(deck, "Plan of session 53", "IDB201 syllabus, session 53; Chapter 10 exercise sheet");
   [["Exercise 1", "Precedence graph of a three-transaction schedule", "10 min"],
@@ -455,8 +455,8 @@ module.exports = function build(deck) {
   s = L.content(deck, "Plan of session 55", "IDB201 syllabus, session 55");
   [["CQ10.1–CQ10.3", "Discussion in groups, then whole class", "20 min"],
    ["Self-study check", "Failures, write-ahead logging, recovery", "15 min"],
-   ["Practice", "Three exam-style exercises", "8 min"],
-   ["Next", "Progress test 2 in session 56", "2 min"]].forEach((r, i) => {
+   ["Practice", "Recovery by hand; three exam-style exercises", "8 min"],
+   ["Next", "Progress test 2 in session 56: format and scope", "2 min"]].forEach((r, i) => {
     const y = 1.6 + i * 1.25;
     L.node(s, r[0], X0, y, 3.4, 0.9, { size: 20, fill: i === 1 ? HEX.paleOrange : HEX.white });
     L.text(s, r[1], X0 + 3.7, y, 6.8, 0.9, { valign: "middle" });
@@ -509,6 +509,22 @@ module.exports = function build(deck) {
   L.arrow(s, 1.3, 3.5, 11.3, 3.5, { color: HEX.navy, label: "redo phase: repeat history forward, build the undo-list", ly: 3.65, lx: 2.3, lw: 8.0, labelColor: HEX.navy });
   L.arrow(s, 11.3, 4.6, 6.6, 4.6, { color: HEX.orange, label: "undo phase: roll back T2 backward", ly: 4.75, lx: 6.6, lw: 4.7, labelColor: HEX.orange });
   L.text(s, "T1 committed before the crash: kept. T2 did not commit: undone, and <T2 abort> is written.", X0, 5.85, CW, 0.8, { fontSize: 22 });
+
+  s = L.content(deck, "Self-study check: recovery by hand", "Self-study; example written for IDB201 on DSC 7th ed., §19.4");
+  L.code(s, "<T1 start>\n<T1, A, 500, 450>\n<T2 start>\n<T2, B, 300, 350>\n<T1 commit>\n-- system crash", X0, 1.45, 5.2, 3.0);
+  L.text(s, "<Ti, X, old value, new value>", X0, 4.55, 5.2, 0.5, { fontSize: SZ.caption, color: HEX.grey });
+  L.card(s, 6.2, 1.45, 6.53, 2.35, "Question", "Which values do A and B have after recovery, and which log records are added?", { fill: HEX.pale, size: 22 });
+  L.card(s, 6.2, 4.0, 6.53, 2.6, "Answer", "Redo phase: A = 450, B = 350, undo-list {T2}. Undo phase: B = 300, a redo-only record <T2, B, 300> and then <T2 abort> are written. Final: A = 450, B = 300.", { fill: HEX.paleOrange, size: 20 });
+
+  s = L.content(deck, "Preparing Progress test 2 (session 56)", "IDB201 syllabus, Grading structure (Progress test 2) and Schedule session 56");
+  [["Format", "20 multiple-choice questions, 30 minutes, marked by computer; 5% of the course grade"],
+   ["Scope", "Chapters 6–10: DSC Ch. 6–7; Ch. 13, §13.1–13.3, §13.5; Ch. 14, §14.1–14.3, §14.5, §14.7; Ch. 15, §15.1–15.5; Ch. 16, §16.1–16.2; Ch. 17"],
+   ["Self-study", "The self-study readings of Chapters 6–10, including DSC Ch. 18–19 (§18.1–18.2, §18.4, §18.8; §19.1, §19.3–19.4)"],
+   ["CLOs", "CLO2, CLO5, CLO6, CLO7"]].forEach((r, i) => {
+    const y = 1.45 + i * 1.3;
+    L.node(s, r[0], X0, y, 2.6, 1.1, { size: 20, fill: i === 2 ? HEX.paleOrange : HEX.pale });
+    L.text(s, r[1], X0 + 2.9, y, 9.2, 1.1, { valign: "middle", fontSize: 20 });
+  });
 
   s = L.content(deck, "Practice exercises", "Exercises written for IDB201; more: DSC Practice Exercises 17.1–17.7 and 18.1–18.4; Lab 5 part 2");
   ["Is S = r1(A) r2(B) w1(B) w2(A) conflict serializable? Draw the precedence graph.",

@@ -177,7 +177,7 @@ module.exports = {
           ["Method", "Run both on 1,000, 10,000 and 100,000 rows (lab3_scale.sql) and time them"],
           ["Evidence", "Plot time against rows; explain the result with this session"]] },
         { k: "cards", h: "Progress test 1: session 26", src: "IDB201 syllabus, Grading structure (Progress test 1)", cards: [
-          ["Scope", "Chapters 1–5 and their self-study: bag semantics, §4.7, §5.5"],
+          ["Scope", "Chapters 1–5 and their self-study: bag semantics, §4.7, §5.5, §9.8"],
           ["Format", "20 multiple-choice questions, 30 minutes, 5% of the grade"],
           ["Prepare", "Quick checks, practice exercises and Labs 1–3", HEX.paleOrange]] },
         { k: "quick", h: "Quick check: session 23", src: "Questions written for IDB201 on the T-SQL reference and DSC 7th ed., §5.2",

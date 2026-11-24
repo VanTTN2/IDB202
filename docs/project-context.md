@@ -56,6 +56,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 - Progress test 2 rewritten (24 Nov 2026): `materials/questions/tests/pt2.js` (session 56, Ch6–10, 4 items per chapter, 4 self-study items incl. §18.1 and §19.3–19.4; R1/U6/Ap7/An6; keys A–D 5 each), built with `node materials/questions/build_questions.js pt2` (PT2 only; the repository builder is older than the designer's bank/PT1, so do not rebuild those). Items checked against the MOOC bank for similarity. Copy in `IDB201_ket-qua-sua_lan1_2/2_question_bank/`.
 
+- Final check of lan1_2 against BM.09/BM.10/BM.12 (24 Nov 2026, evening): `IDB201_ket-qua-sua_lan1_2/reviews/IDB201_Review1_Final_Check.xlsx` (33 items: 23 met, 8 met with a note, 2 owner decisions). Changes made during the check: syllabus Student's materials name the exercise sheets (s.12, 38, 43, 47, 53) and Tools list VS Code + mssql for macOS/Linux; QB 260 reworded, QB 261 and QB 374 replaced in both bank files (lan1_2 only); PT2 items too close to QB 446/451/267/370/377 replaced; data shared between public materials and the bank changed (Ch7 slides, Ch10 slides and sheet, Ch7 sheet Q8–9); session 55 got two slides (recovery by hand, PT2 preparation); Ch7 'iff' spelled out; Lab 5 hint wording; Ch8 chart label size; customHeight attributes in the three forms repaired. Open notes: logo resolution, T-SQL not run on SQL Server, QB 254–256/265/445 use DSC worked examples, [G1]–[G7] tags visible in MOOC stems, QB 368/374 same form, Lab 4 time plan.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).

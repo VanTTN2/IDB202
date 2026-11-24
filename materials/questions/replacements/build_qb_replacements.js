@@ -13,11 +13,11 @@ const items = [
   { qn: 374, unit: "Chapter10", lo: "CLO7", level: "Understand", ref: "DSC §17.6",
     stem: "Two consecutive operations of different transactions appear in a schedule S. Which pair can be swapped without changing the conflict equivalence of S, as is done when testing conflict serializability?",
     opts: ["r1(Q) r2(Q): two reads of the same item Q", "r1(Q) w2(Q): a read and then a write of Q", "w1(Q) r2(Q): a write and then a read of Q", "w1(Q) w2(Q): two writes of the same item Q"], key: "d",
-    why: "Two operations conflict when they come from different transactions, access the same item and at least one is a write. Two reads never conflict, so their order does not matter; the other three pairs conflict and cannot be swapped (DSC §17.6). The item replaces the NP-completeness argument of the old QB 374 and does not overlap QB 369, 372, 373, 383, 466 or 470." },
+    why: "Two operations conflict when they come from different transactions, access the same item and at least one is a write. Two reads never conflict, so their order does not matter; the other three pairs conflict and cannot be swapped (DSC §17.6). The item replaces the NP-completeness argument of the old QB 374. It rests on the same definition as QB 368, so QB 368 and QB 374 should not appear in the same exam form." },
 ];
 const kids = [...titleBlock("Question bank: proposed replacements for QB 261 and QB 374",
   "Removed topics: proofs and NP-completeness (review form BM.09, item 2.1)",
-  [["Date", "24 Nov 2026"], ["Use", "Replace QN=261 and QN=374 in IDB201_QB_MC_MOOC.docx and in IDB201_Final_Exam_Question_Bank.docx; the key keeps the letter of the old item (C for 261, D for 374), so the A–D balance of the bank does not change"],
+  [["Date", "24 Nov 2026"], ["Use", "Applied on 24 Nov 2026 to IDB201_QB_MC_MOOC.docx and IDB201_Final_Exam_Question_Bank.docx in IDB201_ket-qua-sua_lan1_2/2_question_bank; the key keeps the letter of the old item (C for 261, D for 374), so the A–D balance of the bank does not change. QB 260 now reads 'derives' instead of 'proves'"],
    ["Checked", "One correct option each; options of similar length; no overlap with Progress test 1–2 or other bank items"]])];
 for (const q of items) {
   // the first option in the source is the key; put it at the position of the old item's key, so the A–D balance of the bank stays the same

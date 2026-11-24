@@ -33,7 +33,7 @@
   "topic": "2.6 The relational algebra (cont.): joins, intersection, assignment, equivalent queries; division and aggregation as extended operators",
   "clo": "CLO3",
   "student": "- Slides: Chapter 2\n- Textbook: DSC Ch. 2, §2.6, pp. 48–57",
-  "task": "Read DSC Ch. 2, §2.6, pp. 48–57 before class\nSelf-study: practise the queries of this session in RelaX (exercise sheet, part A)"
+  "task": "Read DSC Ch. 2, §2.6, pp. 48–57 before class\nSelf-study: practice the queries of this session in RelaX (exercise sheet, part A)"
  },
  "7": {
   "topic": "Assignment (group project) introduction: project brief, teams of 3–4, milestones and rubric; how to state a research question, find and summarize related work, design a small experiment and keep it reproducible",
@@ -68,7 +68,7 @@
  "12": {
   "topic": "3.9 Modification of the database\nTranslating SQL queries into relational algebra",
   "clo": "CLO3, CLO4",
-  "student": "- Slides: Chapter 3\n- Textbook: DSC Ch. 3, §3.9, pp. 108–113",
+  "student": "- Slides: Chapter 3\n- Bag-semantics worksheet (self-study after the session)\n- Textbook: DSC Ch. 3, §3.9, pp. 108–113",
   "task": "Read DSC Ch. 3, §3.9, pp. 108–113 before class\nSelf-study: Bag (multiset) semantics of SQL: duplicates, ALL vs. DISTINCT, and which algebraic laws fail for bags (DSC Ch. 3, §3.3–3.5 and §3.7, with a worksheet)\nDiscuss this chapter's constructivist questions (CQ3.1–CQ3.3); choose one and submit an answer within one week"
  },
  "13": {
@@ -224,7 +224,7 @@
  "38": {
   "topic": "Guided exercises: FD theory on paper (attribute closure, candidate keys, canonical cover, BCNF and 3NF decomposition, lossless-join test)",
   "clo": "CLO5",
-  "student": "- Slides: Chapter 7\n- Textbook: DSC Ch. 7 Exercises, pp. 353–359",
+  "student": "- Slides: Chapter 7\n- Exercise sheet (functional dependencies)\n- Textbook: DSC Ch. 7 Exercises, pp. 353–359",
   "task": "Solve the exercises; check each decomposition for lossless join and dependency preservation"
  },
  "39": {
@@ -254,7 +254,7 @@
  "43": {
   "topic": "Guided exercises: B+-tree insertion by hand; hashing; I/O cost of index lookups versus table scans",
   "clo": "CLO6",
-  "student": "- Slides: Chapter 8\n- Textbook: DSC Ch. 14 Exercises, pp. 679–682",
+  "student": "- Slides: Chapter 8\n- Exercise sheet (indexing)\n- Textbook: DSC Ch. 14 Exercises, pp. 679–682",
   "task": "Solve the exercises; compare hand-computed costs with the formulas\nDiscuss this chapter's constructivist questions (CQ8.1–CQ8.3); choose one and submit an answer within one week"
  },
  "44": {
@@ -278,7 +278,7 @@
  "47": {
   "topic": "Guided exercises: cost of selections, external sorting and join algorithms by hand; size estimates; equivalence rules and expression trees; comparing the estimates with SQL Server execution plans",
   "clo": "CLO6",
-  "student": "- Slides: Chapter 9\n- Textbook: DSC Ch. 15–16 Exercises, pp. 736–739, 789–793",
+  "student": "- Slides: Chapter 9\n- Exercise sheet (query processing)\n- Textbook: DSC Ch. 15–16 Exercises, pp. 736–739, 789–793",
   "task": "Solve the exercises; compare hand-computed costs with the plans chosen by SQL Server\nDiscuss this chapter's constructivist questions (CQ9.1–CQ9.3); choose one and submit an answer within one week"
  },
  "48": {
@@ -314,7 +314,7 @@
  "53": {
   "topic": "Guided exercises: conflict serializability and precedence graphs, recoverable and cascadeless schedules, isolation levels\nQuestions on the self-study of DSC Ch. 18 (two-phase locking, deadlocks, phantoms, snapshot isolation) in preparation for Lab 5 part 2",
   "clo": "CLO7",
-  "student": "- Slides: Chapter 10\n- Textbook: DSC Ch. 17 Exercises, pp. 831–833; self-study DSC Ch. 18, §18.1–18.2, §18.4, §18.8",
+  "student": "- Slides: Chapter 10\n- Exercise sheet (transactions)\n- Textbook: DSC Ch. 17 Exercises, pp. 831–833; self-study DSC Ch. 18, §18.1–18.2, §18.4, §18.8",
   "task": "Solve the exercises; bring questions on the Chapter 18 self-study\nSelf-study: DSC §18.8 Snapshot isolation, pp. 872–879; optional: §18.3 Multiple granularity, pp. 853–856; §18.5 Timestamp-based protocols, pp. 861–865; §18.7 Multiversion schemes, pp. 869–871; §18.9 Weak levels of consistency in practice, pp. 880–882"
  },
  "54": {

@@ -110,16 +110,16 @@ const ch10 = {
     ["Database", "The account table of Lab 5 (lab5_large.sql) for questions 5, 8 and 9"]],
   intro: [
     "Notation: ri(X) and wi(X) are a read and a write of item X by transaction Ti; ci and ai are its commit and abort. Two operations conflict when they belong to different transactions, access the same item, and at least one of them is a write (DSC §17.6).",
-    "Questions 1–5 practise Chapter 17. Questions 6–9 check the self-study of Chapter 18, which prepares Lab 5 part 2 (session 54) and is assessed in Progress test 2.",
+    "Questions 1–5 practice Chapter 17. Questions 6–9 check the self-study of Chapter 18, which prepares Lab 5 part 2 (session 54) and is assessed in Progress test 2.",
   ],
   parts: [
     { h: "Part A – serializability and recoverability (DSC Ch. 17)", items: [
       { q: "S = r1(A) r2(B) w2(A) r3(A) w3(B) w1(B). List every conflicting pair, draw the precedence graph and decide whether S is conflict serializable.",
         a: ["Item A: r1(A) before w2(A) gives T1 → T2; w2(A) before r3(A) gives T2 → T3. Item B: r2(B) before w3(B) gives T2 → T3; r2(B) before w1(B) gives T2 → T1; w3(B) before w1(B) gives T3 → T1.",
             "Edges T1 → T2, T2 → T1, T2 → T3, T3 → T1. The graph has the cycles T1 → T2 → T1 and T1 → T2 → T3 → T1, so S is not conflict serializable."] },
-      { q: "S = r1(A) w1(A) r2(A) w2(A) r1(B) w1(B) r2(B) w2(B). Is S conflict serializable? If yes, give the equivalent serial schedule and show the swaps that lead to it.",
-        a: ["All conflicts go from T1 to T2 (on A and on B): the precedence graph has the single edge T1 → T2 and no cycle, so S is conflict serializable and equivalent to T1 T2.",
-            "Swaps: r1(B) and w1(B) do not conflict with r2(A) or w2(A) (different items), so they can be moved before r2(A), giving r1(A) w1(A) r1(B) w1(B) r2(A) w2(A) r2(B) w2(B) = T1 T2 (DSC §17.6)."] },
+      { q: "S = r1(B) w1(B) r2(B) w2(B) r1(A) w1(A) r2(A) w2(A). Is S conflict serializable? If yes, give the equivalent serial schedule and show the swaps that lead to it.",
+        a: ["All conflicts go from T1 to T2 (on B and on A): the precedence graph has the single edge T1 → T2 and no cycle, so S is conflict serializable and equivalent to T1 T2.",
+            "Swaps: r1(A) and w1(A) do not conflict with r2(B) or w2(B) (different items), so they can be moved before r2(B), giving r1(B) w1(B) r1(A) w1(A) r2(B) w2(B) r2(A) w2(A) = T1 T2 (DSC §17.6)."] },
       { q: "For each schedule, decide whether it is recoverable and whether it is cascadeless: S1 = w1(A) r2(A) c2 c1; S2 = w1(A) r2(A) c1 c2; S3 = w1(A) c1 r2(A) c2.",
         a: [[...table([4, 2, 2, 5], ["Schedule", "Recoverable", "Cascadeless", "Reason"], [
           ["S1 = w1(A) r2(A) c2 c1", "no", "no", "T2 read from T1 and commits first; if T1 aborts, T2 cannot be undone"],

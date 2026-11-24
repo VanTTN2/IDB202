@@ -80,7 +80,7 @@ module.exports = {
           L.arrow(s, 4.0, 2.7, 6.2, 2.85, { noHead: true, width: 1.75 }); L.arrow(s, 4.0, 3.4, 6.2, 3.15, { noHead: true, width: 1.75 });
           L.text(s, "course_id", 4.3, 2.15, 1.8, 0.4, { fontSize: 18, color: HEX.orange, bold: true });
           L.text(s, "prereq_id", 4.3, 3.35, 1.8, 0.4, { fontSize: 18, color: HEX.orange, bold: true });
-          L.autoCard(s, 8.8, 1.8, 3.9, 3.4, "Roles", "When the same entity set appears twice, each line is labelled with the role it plays: the course and its prerequisite.", "roles", { fill: HEX.pale, size: 22 });
+          L.autoCard(s, 8.8, 1.8, 3.9, 3.4, "Roles", "When the same entity set appears twice, each line is labeled with the role it plays: the course and its prerequisite.", "roles", { fill: HEX.pale, size: 22 });
           L.text(s, "The data of prereq is the graph of Chapter 4.", 1.0, 5.4, 11.0, 0.6, { fontSize: 20, color: HEX.grey });
         } },
         { k: "cards", h: "E-R notation used in this course", src: src("§6.2–6.5 (notation of DSC)"), cards: [

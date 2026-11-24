@@ -392,7 +392,7 @@ module.exports = {
           s.addChart("line", [
             { name: "Secondary index: 3 + n", labels, values: labels.map((v) => 3 + Number(v)) },
             { name: "Linear scan: 1,000", labels, values: labels.map(() => 1000) }],
-            { x: X0, y: 1.4, w: 8.2, h: 5.2, chartColors: [HEX.orange, HEX.navy], lineSize: 3, lineDataSymbol: "none",
+            { x: X0, y: 1.4, w: 8.2, h: 5.2, chartColors: [HEX.orange, HEX.navy], lineSize: 3, lineDataSymbol: "none", dataLabelFontSize: 18, dataLabelFontFace: "Arial",
               showLegend: true, legendPos: "b", legendFontSize: 18, legendFontFace: "Arial",
               catAxisLabelFontSize: 18, valAxisLabelFontSize: 18, catAxisLabelFontFace: "Arial", valAxisLabelFontFace: "Arial",
               catAxisLabelColor: HEX.grey, valAxisLabelColor: HEX.grey, valGridLine: { color: "D5DCE3", size: 1 }, catGridLine: { style: "none" },
