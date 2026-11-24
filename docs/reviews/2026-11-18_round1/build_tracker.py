@@ -22,6 +22,18 @@ R = [
  "Done",
  "No underscore-less names (courseid, secid, totcred, lab3scale, stux, studentbig, takesbig, deptname) in any of the 5 labs, 5 solutions, 4 project files or 13 exercise files.",
  ""),
+("M19","BM.09","1.1 (row 6)","Spelling (whole package)",
+ "The presentation must be free of spelling errors.",
+ "(No separate reply; covered by row 6.)",
+ "Partly done",
+ "Spell check of all slides (incl. notes), labs, solutions, project files, exercise sheets, PTs, QB and syllabus: no misspelled words found. Remaining small points: British spellings mixed into American text ('behaviour' ×4 in Lab 1, Lab 5 and syllabus Schedule s.13; 'analyse' in Lab 5; 'defence' in Lab 2 and QB 'SQL injection' item, vs 'analyze' ×179); Lab 5 task 1.3 reads 'force the index with with (index(<index name>))'; Grading structure header F1 'Minimun value' (template typo, like the 'Leaning' the reviewer found).",
+ "Use American spelling throughout (behavior, analyze, defense); write 'force the index with the hint with (index(…))' in Lab 5; correct 'Minimun' → 'Minimum'."),
+("M20","BM.09","1.6 (row 11)","Slides – overflow",
+ "(Part of readability.) Text must fit in its boxes and on the slide.",
+ "(No separate reply.)",
+ "Done",
+ "No shape lies outside the slide area in any of the 433 slides, and no text box is estimated to overflow its frame at the set font sizes.",
+ ""),
 ("M02","BM.09","1.3 (row 8)","Slides – visuals",
  "Add diagrams: DBMS architecture, schema diagram, E-R diagram, B+-tree, hashing, expression tree / execution plan, precedence graph, wait-for graph, transaction state diagram.",
  "16 diagrams drawn with PowerPoint shapes.",
@@ -92,8 +104,8 @@ R = [
  "Examples need visuals and must run on givenDB.",
  "Diagrams added; all slide SQL moved to givenDB data (Fall 2025 / Spring 2026) and run on SQL Server 2022.",
  "Done",
- "SQL examples on slides use the givenDB years 2025/2026 (Ch2, Ch3, Ch9); diagrams as in M02. The SQL was not re-run for this check, because the revised givenDB script is not in the folder (see M12).",
- "Re-run the slide SQL once the current givenDB script is added."),
+ "SQL examples on slides use the givenDB years 2025/2026 (Ch2, Ch3, Ch9); diagrams as in M02. Syntax check: the 45 plain-SQL code blocks on the slides were parsed as T-SQL; none has a syntax error (the 3 that do not parse are intentional pseudo-code: Ch3 s.34, Ch4 s.35, Ch9 s.10). The SQL could not be executed for this check: the revised givenDB script is not in the folder (M12) and the SQL Server image cannot be downloaded in this environment.",
+ "Run the slide SQL and the five lab solutions once on SQL Server 2022 with the current givenDB script before sending the package back."),
 ("M14","BM.09","2.7 (row 20)","Slides – practice",
  "Each chapter should have a 'Practice exercises' slide plus SQL self-practice on givenDB.",
  "'Practice exercises' and 'answers' slides in all 10 chapters (3 exercises each); separate sheets for Ch2, Ch3, Ch7, Ch8.",
@@ -220,8 +232,8 @@ R = [
  "No wrong key found; Chapter ↔ CLO consistent.",
  "Keys kept; keys of edited and 70 new items checked.",
  "Done",
- "470 items parsed, each with 4 options and one key; chapter–CLO pattern unchanged.",
- "Keys of the edited items were not re-solved one by one in this check."),
+ "470 items parsed, each with 4 options and one key; chapter–CLO pattern unchanged. Keys of all 77 new or replaced items re-solved: all correct.",
+ "The 70 new items (QB 401–470) and the replaced items (QB 22, 31, 99, 128, 251, 253, 267) were solved independently: every key is correct. QB 448 (BCNF result) depends on the order in which violating FDs are taken; option B is the only valid output among the options, so the key stands."),
 ("Q02","BM.12","I.2 (row 8)","QB – template",
  "Follow the 'Question Bank_Template_MC_MOOC' format (QN=, a–f, ANSWER, MARK, UNIT, LO, MIX CHOICES).",
  "IDB201_QB_MC_MOOC.docx exported; retired items not exported.",
@@ -278,6 +290,7 @@ R = [
  "Rewrite QB 374 without NP-completeness; retire or rewrite QB 260–261 as derivation items."),
 ]
 
+R.sort(key=lambda r: ("MSQ".index(r[0][0]), int(r[0][1:])))
 wb = Workbook()
 
 # ---------- Summary ----------
@@ -286,7 +299,7 @@ ws["A1"] = "IDB201 – Council review of 18 Nov 2026 (round 1): verification of 
 ws["A1"].font = Font(name=F, bold=True, size=14, color="1F3864")
 ws["A2"] = ("Each request from the three review forms (BM.09 learning materials, BM.10 syllabus, BM.12 question bank) "
             "was checked against the folder IDB201_ket-qua-sua_lan1_1 (pushed 24 Nov 2026). "
-            "Status is what the files show, not what the reply in column D of the form says.")
+            "Status is what the files show, not what the designer's reply says. The forms resent on 24 Nov 2026 contain the same reviewer comments as the forms in the folder, without the designer's replies (column D).")
 ws["A2"].alignment = Alignment(wrap_text=True, vertical="top"); ws.merge_cells("A2:F2"); ws.row_dimensions[2].height = 45
 ws["A2"].font = Font(name=F, size=10)
 hdr = ["Form", "Requests"] + STATUSES
