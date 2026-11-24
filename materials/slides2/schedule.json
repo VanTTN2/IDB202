@@ -111,7 +111,7 @@
   "topic": "Lab 2: DDL, integrity constraints, views and parameterized queries",
   "clo": "CLO2, CLO4",
   "student": "- Lab 2 handout\n- Textbook: DSC Ch. 4 Exercises, pp. 176–179; §5.1",
-  "task": "Do Lab 2; submit before the end of the session"
+  "task": "Do Lab 2; submit the script before the end of the session and the Investigate (Level 3) report within 48 hours"
  },
  "20": {
   "topic": "5.2 Functions and procedures (1): T-SQL batches, variables and control flow (IF, WHILE); scalar and table-valued user-defined functions",
@@ -183,7 +183,7 @@
   "topic": "Lab 4: E-R design, reduction to relational schemas and implementation in SQL Server",
   "clo": "CLO2",
   "student": "- Lab 4 handout\n- Textbook: DSC Ch. 6 Exercises, pp. 294–299",
-  "task": "Do Lab 4; submit before the end of the session"
+  "task": "Do Lab 4; submit the diagram and the script before the end of the session and the Investigate (Level 3) report within 48 hours"
  },
  "32": {
   "topic": "7.1 Features of good relational designs: redundancy and anomalies\n7.2 Decomposition using functional dependencies",
@@ -248,8 +248,8 @@
  "42": {
   "topic": "14.3 B+-tree index files (cont.): insertion; deletion (main idea)\n14.5 Hash indices\n14.7 Creation of indices",
   "clo": "CLO6",
-  "student": "- Slides: Chapter 8\n- Textbook: DSC Ch. 14, §14.3 (updates), pp. 634–649; §14.5–14.7, pp. 658–664",
-  "task": "Read DSC Ch. 14, §14.3 (updates), pp. 634–649; §14.5–14.7, pp. 658–664 before class\nSelf-study: DSC §14.4 B+-tree extensions, pp. 650–657; §14.6 Multiple-key access; optional: §13.6 Column-oriented storage, pp. 611–614; §14.8 Write-optimized index structures (LSM), pp. 665–669"
+  "student": "- Slides: Chapter 8\n- Textbook: DSC Ch. 14, §14.3 (updates), pp. 634–649; §14.5 and §14.7 (within pp. 658–664)",
+  "task": "Read DSC Ch. 14, §14.3 (updates), pp. 634–649; §14.5 and §14.7 (within pp. 658–664) before class\nSelf-study: DSC §14.4 B+-tree extensions, pp. 650–657; §14.6 Multiple-key access; optional: §13.6 Column-oriented storage, pp. 611–614; §14.8 Write-optimized index structures (LSM), pp. 665–669"
  },
  "43": {
   "topic": "Guided exercises: B+-tree insertion by hand; hashing; I/O cost of index lookups versus table scans",
@@ -321,7 +321,7 @@
   "topic": "Lab 5 (part 2): concurrency experiments with two sessions (isolation levels, dirty reads, phantoms, deadlocks); serializability of the observed schedules by precedence graph",
   "clo": "CLO7, CLO8",
   "student": "- Lab 5 handout\n- Textbook: DSC Ch. 17–18 Exercises, pp. 831–833, 899–903",
-  "task": "Do Lab 5; submit before the end of the session"
+  "task": "Do Lab 5 (part 2); submit the script before the end of the session and the Investigate (task 2.4) report within 48 hours"
  },
  "55": {
   "topic": "Discussion of the Chapter 10 constructivist questions (CQ10.1–CQ10.3)\nQuestions on the self-study of DSC Ch. 18–19 (two-phase locking and the lock point; failure classification, write-ahead logging, main ideas of the recovery algorithm)",
