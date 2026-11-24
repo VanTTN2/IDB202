@@ -1,0 +1,110 @@
+{
+ "CQ1.1": {
+  "session": 3,
+  "text": "Codd separated the logical view of data from its physical storage. What would be lost if applications had to know how and where each record is stored?"
+ },
+ "CQ1.2": {
+  "session": 3,
+  "text": "Why do new data models (XML, document, graph, vector) keep appearing, and why do many of them end up adding SQL-like features?"
+ },
+ "CQ1.3": {
+  "session": 3,
+  "text": "When is a database system NOT the right tool? Give a concrete example and justify it."
+ },
+ "CQ2.1": {
+  "session": 8,
+  "text": "What would break if relations were allowed to contain duplicate tuples? Consider keys, projection and the meaning of a fact."
+ },
+ "CQ2.2": {
+  "session": 8,
+  "text": "Division expresses 'for all' queries. Why is there no basic 'for all' operator in relational algebra, and how is the same idea written in SQL (for example with not exists and except)?"
+ },
+ "CQ2.3": {
+  "session": 8,
+  "text": "Relational algebra cannot compute the transitive closure of a relation. Why does a fixed-size expression limit what a language can express?"
+ },
+ "CQ3.1": {
+  "session": 12,
+  "text": "Under three-valued logic, 'p OR NOT p' is not always true. Which everyday query mistakes follow from this?"
+ },
+ "CQ3.2": {
+  "session": 12,
+  "text": "Why does 'x NOT IN (subquery)' return no rows when the subquery contains NULL, while NOT EXISTS behaves differently?"
+ },
+ "CQ3.3": {
+  "session": 12,
+  "text": "COUNT(*) and COUNT(attribute) can return different values on the same table. Why, and what does this show about how aggregates treat NULL?"
+ },
+ "CQ4.1": {
+  "session": 18,
+  "text": "Why should integrity rules be declared in the database rather than checked in application code? When is the opposite true?"
+ },
+ "CQ4.2": {
+  "session": 18,
+  "text": "A view costs nothing extra at run time. How is that possible, and when would a materialized view be better?"
+ },
+ "CQ4.3": {
+  "session": 18,
+  "text": "Why do parameterized queries prevent SQL injection, while escaping user input is considered fragile?"
+ },
+ "CQ6.1": {
+  "session": 30,
+  "text": "Why is a grade an attribute of the enrollment relationship and not of STUDENT or SECTION? What goes wrong if it is placed on either entity?"
+ },
+ "CQ6.2": {
+  "session": 30,
+  "text": "Is a ternary relationship always equivalent to three binary relationships? Construct a counterexample."
+ },
+ "CQ6.3": {
+  "session": 30,
+  "text": "Give a business rule of the university database that cannot be drawn in an E-R diagram. How should a designer record and enforce it?"
+ },
+ "CQ7.1": {
+  "session": 37,
+  "text": "Every normal form can be seen as removing one kind of redundancy. What single idea unifies them?"
+ },
+ "CQ7.2": {
+  "session": 37,
+  "text": "BCNF decomposition may lose a dependency. When would you accept 3NF instead, and what do you gain?"
+ },
+ "CQ7.3": {
+  "session": 37,
+  "text": "Finding all candidate keys of a schema may require checking very many sets of attributes. Why is this a practical problem for automatic schema-design tools, and how can a designer work around it?"
+ },
+ "CQ8.1": {
+  "session": 43,
+  "text": "Why is a B+-tree node the size of a disk block instead of holding a single key as in a binary search tree?"
+ },
+ "CQ8.2": {
+  "session": 43,
+  "text": "When can a full table scan be cheaper than using an index? Design an experiment that shows it."
+ },
+ "CQ8.3": {
+  "session": 43,
+  "text": "Could a machine-learning model replace an index? What would you need to measure to decide?"
+ },
+ "CQ9.1": {
+  "session": 47,
+  "text": "The optimizer relies on estimates. What happens when the estimates are wrong, and where do the errors come from?"
+ },
+ "CQ9.2": {
+  "session": 47,
+  "text": "The same query can often be written with a join, a subquery or a set operation. Should the choice affect performance? Why or why not?"
+ },
+ "CQ9.3": {
+  "session": 47,
+  "text": "Why does the number of possible join orders grow so quickly, and why can an optimizer not simply try them all?"
+ },
+ "CQ10.1": {
+  "session": 55,
+  "text": "Why is serializability the accepted correctness criterion for concurrent transactions? What weaker criteria do real systems use, and why?"
+ },
+ "CQ10.2": {
+  "session": 55,
+  "text": "Why does two-phase locking guarantee serializability? Explain the idea of the lock point."
+ },
+ "CQ10.3": {
+  "session": 55,
+  "text": "Why must a log record reach stable storage before the data page it describes (write-ahead logging)?"
+ }
+}

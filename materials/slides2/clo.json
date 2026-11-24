@@ -1,0 +1,10 @@
+{
+ "CLO1": "Explain the fundamental concepts of database systems (data models, schemas and instances, the three-schema architecture, data independence, DBMS components) and relate them to the research contributions that introduced them.",
+ "CLO2": "Design a database from requirements: build an Entity-Relationship model, justify design alternatives, and map it to a relational schema whose keys and integrity constraints are specified precisely, including as logical statements.",
+ "CLO3": "Formulate queries in relational algebra, check whether two simple expressions are equivalent, and explain why some queries (such as transitive closure) cannot be expressed in it.",
+ "CLO4": "Independently write correct SQL and T-SQL for a given relational schema, from multi-table joins, aggregation and nested subqueries to views, stored procedures and triggers, and explain how NULLs and duplicates affect the results.",
+ "CLO5": "Analyze and improve relational schemas with functional dependency theory: compute attribute closures, candidate keys and canonical covers, and decompose schemas into 3NF/BCNF, checking the lossless-join and dependency-preservation properties.",
+ "CLO6": "Evaluate physical design and query execution choices (storage organization, indexes, join algorithms, execution plans) using I/O cost models and controlled experiments.",
+ "CLO7": "Analyze concurrent executions for conflict serializability and recoverability, and justify concurrency-control and recovery mechanisms (two-phase locking, isolation levels, write-ahead logging).",
+ "CLO8": "Conduct a small, reproducible study on a database topic in a team: review related work, formulate a research question or hypothesis, design and carry out an experiment, and report the results in an academic report and presentation, showing academic integrity (citing sources, disclosing any use of generative AI tools) and taking responsibility for one's own part of the teamwork."
+}

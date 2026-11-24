@@ -42,6 +42,14 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 ---
 
+## 0e. Slide decks rebuilt (24 Nov 2026) – read first
+
+- The 10 chapter decks were rebuilt from scratch by `materials/slides2/` (pptxgenjs): `lib.js` (layouts, auto-fitting, slide kinds), `content/ch1.js`–`ch10.js` (one spec per chapter), `build.js` (`node build.js 1 … 10` writes `out/Chapter_N.pptx`); `schedule.json`, `cq.json`, `clo.json` are exported from the newest syllabus, so session dividers, readings, self-study lines and CQ texts come from the syllabus. The decks replace the old ones in `IDB201_ket-qua-sua_lan1_1/6_slides/` (`chapter_1.pptx` renamed `Chapter_1.pptx`).
+- They follow the council's BM.09 rules: FPTU logo on every slide; titles 36 pt, body ≥ 20 pt, nothing under 18 pt (diagram labels included); Arial plus Courier New for code only; a source line on every content slide; no "(cont.)" slides; ≥ 10 slides per session including the divider; objectives with CLOs, a quick check per session, practice exercises with answers, summary and "before the next session" per chapter; diagrams on most slides; examples on givenDB (University) with results checked on a SQLite copy of the data; no relational calculus, proofs, NP-completeness or ARIES.
+- Sessions follow §0d: Ch8 40–43, Ch9 44–47, Ch10 49–51, 53, 55 (Ch18–19 as self-study Q&A).
+- Not checked by running SQL Server (image blocked in the cloud session): T-SQL on slides and the SQL Server plan shown in Ch9 (drawn as "the plan to expect", to be confirmed in Lab 5). The logo is the low-resolution copy taken from the old decks.
+- Still to update outside the decks: PT2 document, project brief and forms, session numbers in the Ch8 exercise sheet, QB self-study tags.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).
@@ -49,7 +57,7 @@ This document records everything decided in phase 1 (syllabus development), so t
 3. Progress tests spread further apart: PT1 stays in session 26 (Ch1–5). **PT2 is taken after all chapters but before the project presentations (decisions of 24 Nov, 14:07 and 14:44): session 56, covering Ch6–10 incl. the self-study of Ch18–19** (CLO2, CLO5, CLO6, CLO7). Final presentations moved to sessions 57–58 (report due three days before session 57). The two review sessions were merged into one review in session 59.
 4. Schedule renumbered: Ch8 is now sessions 40–43 (CQ8 in 43), Ch9 sessions 44–46, session 47 = Ch9 guided exercises + CQ9, Lab 5 part 1 48, Ch17 sessions 49–51, M2 52, session 53 = guided exercises on Ch10 + questions on the Ch18 self-study, Lab 5 part 2 54, session 55 = CQ10 discussion + questions on the Ch18–19 self-study; sessions 1–39 and 60 unchanged; 56 = PT2, 57–58 = final presentations, 59 = course review Ch1–10.
 - Applied to `IDB201_ket-qua-sua_lan1_1/1_syllabus/IDB201_Syllabus.xlsx` (the newest workbook) by `syllabus/tools/resequence_syllabus.py` then `syllabus/tools/pt2_after_all_chapters.py` and `syllabus/tools/pt2_before_presentations.py`; `syllabus/IDB201_Syllabus.xlsx` now holds the same file. `syllabus/syllabus.md` and `syllabus/build_syllabus_xlsx.py` are still out of date.
-- Not yet propagated to the materials: session dividers in Chapter_8/9 decks (41–47 → 40–46), Chapter_10 deck (sessions 53 and 55 still lecture Ch18/19), PT2 (still Ch6–7, session 40; must become Ch6–10, session 56); project brief and forms (presentations 56–57 and report deadline must become 57–58 / three days before 57), session numbers in the Ch8 exercise sheet, QB self-study tags for Ch18–19 items.
+- Not yet propagated to the materials (decks done, see §0e): PT2 (still Ch6–7, session 40; must become Ch6–10, session 56); project brief and forms (presentations 56–57 and report deadline must become 57–58 / three days before 57), session numbers in the Ch8 exercise sheet, QB self-study tags for Ch18–19 items.
 
 ## 0c. Council review round 1 (18 Nov 2026) – read first
 
