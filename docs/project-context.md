@@ -54,6 +54,8 @@ This document records everything decided in phase 1 (syllabus development), so t
 
 - Ch9 and Ch10 exercise sheets (24 Nov 2026): `materials/exercises/build_ch9_ch10.js` writes `IDB201_Ch9_Query_Processing_Exercises(+_Solutions).docx` (session 47, 12 questions) and `IDB201_Ch10_Transactions_Exercises(+_Solutions).docx` (session 53, 9 questions) into `IDB201_ket-qua-sua_lan1_2/exercises`; Ch9/Ch10 exercise slides cite them. `docx_common.js` now treats `_…_` as italic only at word boundaries (names such as student_big stay intact). The current SQL scripts (`materials/labs/sql`) are copied to `lan1_2/labs` (+ `solutions/`). The givenDB folder on the owner's PC (`Ngay 28_10_Materials/givenDB`) still has the OLD UniversityDB script.
 
+- Progress test 2 rewritten (24 Nov 2026): `materials/questions/tests/pt2.js` (session 56, Ch6–10, 4 items per chapter, 4 self-study items incl. §18.1 and §19.3–19.4; R1/U6/Ap7/An6; keys A–D 5 each), built with `node materials/questions/build_questions.js pt2` (PT2 only; the repository builder is older than the designer's bank/PT1, so do not rebuild those). Items checked against the MOOC bank for similarity. Copy in `IDB201_ket-qua-sua_lan1_2/question_bank/`.
+
 ## 0d. Course owner's decisions after review round 1 (24 Nov 2026) – read first
 
 1. The order stays: SQL (Ch3–5) before E-R (Ch6) and normalization (Ch7).

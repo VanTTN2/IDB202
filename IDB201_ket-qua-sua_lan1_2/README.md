@@ -10,7 +10,7 @@ This folder holds every result produced after the review of 18 Nov 2026. It repl
 | `labs/` | Lab 1–5 handouts and lecturer solutions; `university_sqlserver.sql` (database University), `lab3_scale.sql`, `lab5_large.sql`, `note.txt`; `solutions/lab1–5_solution.sql` | Current |
 | `project/` | Group project brief, forms, report template, sample (report due three days before session 57; presentations 57–58) | Current |
 | `exercises/` | Exercise sheets with solutions for Ch2, Ch3, Ch7, Ch8, **Ch9 (session 47)**, **Ch10 (session 53)**; review questions (session 59); final practice set (session 60); set-up guide (session 3) | Current |
-| `question_bank/` | Final-exam bank, MOOC export, Progress tests 1–2 – copied unchanged from `lan1_1` | **Progress test 2 still has the old scope (Ch6–7, session 40); it must cover Ch6–10 incl. the Ch18–19 self-study, session 56** |
+| `question_bank/` | Final-exam bank, MOOC export, Progress test 1 (copied unchanged from `lan1_1`); **Progress test 2 rewritten**: session 56, Ch6–10 (4 questions per chapter) incl. the Ch18–19 self-study, 20 MCQ, CLO2/5/6/7, no item from the final-exam bank, keys balanced 5/5/5/5 | Current |
 | `review_forms/` | Review forms BM.09 (materials), BM.10 (syllabus), BM.12 (question bank) with the designer's replies | Reference |
 | `reviews/` | `IDB201_Council_Review1_Verification.xlsx` (council requests checked against `lan1_1`); `IDB201_Audit_Labs_Project_Exercises.xlsx` (audit of labs, project and exercises against the newest syllabus) | Reference |
 

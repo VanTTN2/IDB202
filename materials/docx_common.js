@@ -16,7 +16,7 @@ const TEXT_W = PAGE_W - 2 * MARGIN;                 // 9638 DXA
 
 // Calibri and Courier New lack some mathematical symbols (⋈, ∃, ∈, …), which Word may then show
 // as empty boxes. Such characters are written in Cambria Math, which has all of them.
-const MATH = /([⋈⟕⟖⟗∃∀∈∉¬∧∨⇒⇔→←↔÷×∅⊆⊂⊇⊃∪∩⁺𝒢γσΠπρθ≤≥≠−]+)/u;
+const MATH = /([⌈⌉⋈⟕⟖⟗∃∀∈∉¬∧∨⇒⇔→←↔÷×∅⊆⊂⊇⊃∪∩⁺𝒢γσΠπρθ≤≥≠−]+)/u;
 function TR(o) {
   const text = o.text;
   if (typeof text !== "string" || !MATH.test(text)) return [new TextRun(o)];

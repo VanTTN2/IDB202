@@ -126,15 +126,20 @@ function bank() {
   return build(path.join(__dirname, "out", "IDB201_Final_Exam_Question_Bank.docx"), children, { title: "IDB201 Final exam question bank", header: "IDB201 – Final exam question bank (lecturer copy)" }).then(() => ({ st, keyDist }));
 }
 
+function buildPT2() {
+  return progressTest(2, "IDB201_Progress_Test_2.docx", require("./tests/pt2.js"), {
+    subtitle: "Chapters 6–10 and their self-study readings, including DSC Chapters 18–19", session: "56 (after the last Chapter 10 session, before the project presentations)", clos: "CLO2, CLO5, CLO6, CLO7",
+    coverage: "Chapters 6–10: DSC Ch. 6–7; Ch. 13, §13.1–13.3, §13.5; Ch. 14, §14.1–14.3, §14.5, §14.7; Ch. 15, §15.1–15.5; Ch. 16, §16.1–16.2; Ch. 17; and their self-study readings, including DSC Ch. 18–19. Four questions per chapter",
+  });
+}
+if (process.argv[2] === "pt2") { buildPT2().then((st) => console.log("PT2", JSON.stringify(st))); return; }
+
 (async () => {
   const p1 = await progressTest(1, "IDB201_Progress_Test_1.docx", require("./tests/pt1.js"), {
     subtitle: "Chapters 1–5 and their self-study readings", session: "26", clos: "CLO1, CLO2, CLO3, CLO4",
     coverage: "Chapters 1–5 (DSC Ch. 1–4, §5.1–5.4, §5.5) including the self-study readings (relational calculus, bag semantics, §4.7, §5.5, §9.8) and the constructivist questions CQ1–CQ4",
   });
-  const p2 = await progressTest(2, "IDB201_Progress_Test_2.docx", require("./tests/pt2.js"), {
-    subtitle: "Chapters 6–7 and their self-study readings", session: "40", clos: "CLO2, CLO5",
-    coverage: "Chapters 6–7 (DSC Ch. 6–7) including the self-study sections (§6.8, §6.10–6.11, §7.7, §7.9) and the constructivist questions CQ6–CQ7",
-  });
+  const p2 = await buildPT2();
   const b = await bank();
   console.log("PT1", JSON.stringify(p1)); console.log("PT2", JSON.stringify(p2)); console.log("Bank", JSON.stringify(b));
 })();
